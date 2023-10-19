@@ -1,0 +1,102 @@
+ /* 친절히 주석 다 박겠습니다!! */
+ /* 주석봐도 모르겠으면 CHAT GPT한테 물어보세요!! */
+ /* 전체 페이지 스타일링을 위한 스타일 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /*나중에 글꼴추가*/
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* 화면 전체 높이만큼 설정/높이 계속 늘어남*/
+        }
+
+        /* 상단 영역 스타일링 */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+
+        /* 로고 스타일링 */
+        header img.logo {
+            max-height: 50px; /* 이미지 높이 제한 */
+            border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
+            margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
+        }
+
+        /* 텍스트 스타일링 */
+        header h1 {/*텍스트 크기에따라 여백 조절*/
+            margin: 0; /* 기본 마진 제거 */
+        }
+        #top-p {/*나중에 지울거 아니 가운데 처박히라고 ㅅㅂ*/
+            text-align: center;
+        }
+
+        /* 3등분 영역 스타일링 */
+        .content {
+            display: flex;
+            flex: 1;
+        }
+
+        /*두번째 섹년 세로나열*/
+        .section {
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* 세로로 나열 */
+        }
+
+        .subsection {/*나중에 지울거*/
+            flex: 1;
+            margin: 10px; /* 간격 조절 */
+        }
+
+        /* 추가 스타일링 *//*나중에 지울거*/
+        .section:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* 첫 번째 섹션 박스 스타일링 */
+        .full-box {
+            flex: 0.8 ; /* 가로 넓이 조절 */
+            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin: 0px; /* 간격 조절 */
+            border-radius: 15px; /* 모서리를 깍는 속성 */
+            border: 0.1px solid rgb(184, 183, 183);
+        }
+
+        /* 두 번째 섹션 박스 스타일링 */
+        .second-section {
+            flex: 3; /* 가로 넓이 조절 */
+            display: flex;
+        }
+        .second-box-top{
+            flex: 0.1;
+            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin-right: 20px; /* 간격 조절 */
+            margin-left: 20px; /* 간격 조절 */
+        }
+        .second-box {
+            flex: 1;
+            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin: 20px; /* 간격 조절 */
+            margin-top: 10px; /* 간격 조절 */
+            border-top: 1px solid rgb(184, 183, 183);
+        }
+        
+
+        /* 세 번째 섹션 박스 스타일링 */
+        .third-section {
+            flex: 0.6; /* 가로 넓이 조절 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .third-box{
+            flex: 1;
+            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin: 10px; /* 간격 조절 */
+            border-radius: 15px; /* 모서리를 깍는 속성 */
+            border: 0.1px solid rgb(184, 183, 183);
+        }
