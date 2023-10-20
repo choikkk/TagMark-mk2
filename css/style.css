@@ -1,4 +1,5 @@
  /* 친절히 주석 다 박겠습니다!! */
+ /*추후 삭제 해야하거나 수정할 부분은 "나중에 고칠거 등등 박아놨으니 컨+f로 "나중에"로 찾아보세요!!"*/
  /* 주석봐도 모르겠으면 CHAT GPT한테 물어보세요!! */
  /* 전체 페이지 스타일링을 위한 스타일 */
         body {
@@ -29,10 +30,9 @@
         /* 텍스트 스타일링 */
         header h1 {/*텍스트 크기에따라 여백 조절*/
             margin: 0; /* 기본 마진 제거 */
+            margin-right: auto; /*나중에 고칠거 ?? 이거 왜 되는거지? ㅅㅂ ㅋㅋㅋㅋㅋㅋ / inline도 되긴하는데..*/
         }
-        #top-p {/*나중에 지울거 아니 가운데 처박히라고 ㅅㅂ*/
-            text-align: center;
-        }
+       
 
         /* 3등분 영역 스타일링 */
         .content {
@@ -72,14 +72,14 @@
             display: flex;
         }
         .second-box-top{
-            flex: 0.1;
-            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
+            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin-right: 20px; /* 간격 조절 */
             margin-left: 20px; /* 간격 조절 */
         }
         .second-box {
-            flex: 1;
-            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
+            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin: 20px; /* 간격 조절 */
             margin-top: 10px; /* 간격 조절 */
             border-top: 1px solid rgb(184, 183, 183);
@@ -100,3 +100,18 @@
             border-radius: 15px; /* 모서리를 깍는 속성 */
             border: 0.1px solid rgb(184, 183, 183);
         }
+
+        #InputText {/* 서치바 테스트 */
+            width: 60%;
+            height: 25px;
+            flex-shrink: 0;
+            background: #F5F5F5;
+            border: 1px solid rgba(0, 0, 0, 0.30);
+            border-radius: 5px;
+            color: rgba(0, 0, 0, 0.50);
+            font-size: 20px;
+            font-weight: bold;
+            line-height: normal;
+            font-style: normal;
+            
+          }
