@@ -1,5 +1,6 @@
  /* 친절히 주석 다 박겠습니다!! */
- /*추후 삭제 해야하거나 수정할 부분은 "나중에 고칠거 등등 박아놨으니 컨+f로 "나중에"로 찾아보세요!!"*/
+ /*추후 삭제 해야하거나 수정할 부분은 "나중에" 박아놨으니 컨+f로 "나중에"로 찾아보세요!!*/
+ /*그리고 아무설명 없이 "나중에 지울거" 만 적혀있는건 내비두세요!! 테스트할려고 넣은거니 나중에 지울게요!!*/
  /* 주석봐도 모르겠으면 CHAT GPT한테 물어보세요!! */
  /* 전체 페이지 스타일링을 위한 스타일 */
  /*수정됐나? 23.10.20 PM-03:03*/
@@ -77,6 +78,9 @@
             background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin-right: 20px; /* 간격 조절 */
             margin-left: 20px; /* 간격 조절 */
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+            
         }
         .second-box {
             flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
@@ -86,7 +90,6 @@
             border-top: 1px solid rgb(184, 183, 183);
         }
         
-
         /* 세 번째 섹션 박스 스타일링 */
         .third-section {
             flex: 0.6; /* 가로 넓이 조절 */
@@ -102,8 +105,9 @@
             border: 0.1px solid rgb(184, 183, 183);
         }
 
-        #InputText {/* 서치바 테스트 */
-            width: 60%;
+        /* 서치바 테스트 */
+        #InputText {
+            width: 30vw;/*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
             height: 25px;
             flex-shrink: 0;
             background: #F5F5F5;
@@ -114,5 +118,32 @@
             font-weight: bold;
             line-height: normal;
             font-style: normal;
-            
           }
+          /*북마크 정렬 버튼*/
+          .sectop-button {
+            flex: 1;
+            margin: 10px;
+            padding: 8px;
+            background-color: #F5F5F5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            color: #000000;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.30);
+            cursor: pointer;
+            }
+            .sectop-button:last-child {/*마지막 버튼 노란색*/
+                background-color: #F7E600; /* 노란색으로 변경 ㅋ */
+            }
+
+            /*카테고리 추가 버튼*/
+            .full-box .sectop-button {
+            margin: 5px;
+            padding: 5px;
+            flex: 0.01; /* 가로 넓이 조절 */
+            background-color: #ffffff;
+            color: rgba(0, 0, 0, 0.50);
+                
+            }
