@@ -7,26 +7,25 @@
     <title>modal</title>
 </head>
 <body>
-    <button id="openModalBtn">Add Bookmark</button>
+<!-- 모달 열기 버튼 -->
+<button id="openModalBtn">모달 열기</button>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <div id="modalHeader">
-                Add BookMark
-                <span class="close">&times;</span>
-            </div>
-            <label for="urlInput"></label>
-            <textarea id="textInput" placeholder="URL 입력"></textarea>
-            
-            <label for="textInput"></label>
-            <input type="text" id="urlInput" placeholder="tag">
-
-            <div class="buttons">
-                <button id="confirmBtn">확인</button>
-                <button id="cancelBtn">취소</button>
-            </div>
-        </div>
+<!-- 모달 -->
+<div id="myModal" class="modal">
+  <!-- 모달 콘텐츠 -->
+  <div class="modal-content">
+    <!-- 상단 영역 -->
+    <div class="modal-header">
+      <span class="close" id="closeModalBtn">&times;</span>
+      <h2>상단</h2>
     </div>
+    <!-- 하단 영역 -->
+    <div class="modal-footer">
+      <button id="confirmBtn">확인</button>
+      <button id="cancelBtn">취소</button>
+    </div>
+  </div>
+</div>
 
 <script src="js/script.js"></script>
 </body>

@@ -1,11 +1,23 @@
-document.getElementById('openModalBtn').onclick = function() {
-    document.getElementById('myModal').style.display = 'block';
+// 모달 열기 버튼과 모달 닫기 버튼 참조
+var openModalBtn = document.getElementById('openModalBtn');
+var closeModalBtn = document.getElementById('closeModalBtn');
+
+// 모달 참조
+var modal = document.getElementById('myModal');
+
+// 모달 열기 이벤트
+openModalBtn.onclick = function() {
+    modal.style.display = 'block';
 }
 
-document.getElementsByClassName('close')[0].onclick = function() {
-    document.getElementById('myModal').style.display = 'none';
+// 모달 닫기 이벤트
+closeModalBtn.onclick = function() {
+    modal.style.display = 'none';
 }
 
-document.getElementById('cancelBtn').onclick = function() {
-    document.getElementById('myModal').style.display = 'none';
+// 모달 외부 클릭 시 닫기
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
 }
