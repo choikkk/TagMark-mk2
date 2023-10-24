@@ -147,3 +147,28 @@
             color: rgba(0, 0, 0, 0.50);
                 
             }
+
+            /*북마크 상자*/
+            .additional-box {
+                flex: 1;
+                background-color: #ffffff; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+                border-bottom: 1px solid rgb(184, 183, 183);
+                align-items: center; /* 수직 가운데 정렬 */
+                
+            }
+            /*노란원 태그*/
+            .yellow-circle {
+                width: 15px;
+                height: 15px;
+                background-color: #F7E600;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            /*노란원과 텍스트 정렬*/
+            .additional-box-tag{
+                flex: 1;
+                display: flex;
+                justify-content: flex; /* 오른쪽 정렬을 위한 스타일 */
+                align-items: center; /* 수직 가운데 정렬 */
+                margin-right: 10px; /* 오른쪽 여백 */
+            }

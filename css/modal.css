@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* 전체 너비로 설정 */
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 33%;
+    position: relative;
+    border-radius: 35px;
+
+}
+textarea {
+    width: 80%;
+    height: 20px; /* 높이를 조절하세요 */
+    resize: none; /* 사용자 크기 조절 금지 */
+    margin-bottom: 10px;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 버튼 및 입력란 스타일 */
+.buttons {
+    margin-top: 20px;
+    text-align: right; /* 확인 취소 우측박기 */
+}
+
+button {
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    width: 70px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px;   
+}
+
+#urlInput {
+    width: 80%;
+}
+
+/* 모달 헤더 스타일 */
+#modalHeader {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+#modalHeader span {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
