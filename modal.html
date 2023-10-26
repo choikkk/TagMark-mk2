@@ -16,13 +16,23 @@
   <div class="modal-content">
     <!-- 상단 영역 -->
     <div class="modal-header">
-      <span class="close" id="closeModalBtn">&times;</span>
-      <h2>상단</h2>
+      <span class="close">&times;</span>
+      <h2 id="htext">Add BookMark</h2>
     </div>
     <!-- 하단 영역 -->
+    <div class="divTitle">
+      <input type="text" id="bookmarkTitle" placeholder="제목을 입력하세요">
+      <!-- URL 입력란 -->
+      <input type="url" id="urlInput" placeholder="URL을 입력하세요 ">
+      <!-- 태그 작성란 -->
+      <input id="tagTextarea" placeholder="태그를 작성하세요" contenteditable="true"></input>
+    </div>
+  
     <div class="modal-footer">
-      <button id="confirmBtn">확인</button>
-      <button id="cancelBtn">취소</button>
+        <!-- 확인 버튼 -->
+        <button>확인</button>
+        <!-- 취소 버튼 -->
+        <button>취소</button>                    
     </div>
   </div>
 </div>

@@ -1,3 +1,5 @@
+/*모달창 띄우기 테스트 할려고 넣은거라 지워도 상관없음*/
+
 // 모달 열기 버튼과 모달 닫기 버튼 참조
 var openModalBtn = document.getElementById('openModalBtn');
 var closeModalBtn = document.getElementById('closeModalBtn');
@@ -21,3 +23,4 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+

@@ -8,12 +8,15 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* 투명한 검은 배경 */
   }
-  
+  #htext{
+    font-size: 18px;
+    margin-left: 10px;
+  }
 .modal-content {
     background-color: #fefefe;
     border: 1px solid #888;
     margin: 15% auto; /* 모달이 화면 중앙에 위치하도록 마진 설정 */
-    width: 36%; /* 모달 너비 조절 */
+    width: 40%; /* 모달 너비 조절 */
     margin: 15% auto;
     border-radius: 30px;
     border: 1px solid #000000; /* 모달창 테두리 선 */
@@ -31,30 +34,69 @@
   
   /* 하단 영역 스타일 */
   .modal-footer {
-    padding: 15px;
-    text-align: center;
-    border-top: 1px solid #ddd; /* 위쪽 테두리 */
+    padding: 0px 35px 10px 0px; /*여백 위 오른쪽 아래 왼쪽*/
+    text-align: right; /* 텍스트를 오른쪽으로 정렬 */
+    /* border-top: 1px solid #ddd; /*나중에 지울거 버튼 위쪽 테두리 선*/
+    
   }
-  
-  /* 확인, 취소 버튼 스타일 */
+  /*모달 확인 취소 버튼 스타일*/
   .modal-footer button {
-    padding: 10px 20px;
-    margin: 0 10px;
+    height: 20px;
+    padding: 20px;
+    margin-left: 10px; /* 확인 버튼과 취소 버튼 사이의 간격 조절 */
     cursor: pointer;
-  }
+    background-color: #F5F5F5; 
+    color: #000000;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    line-height: 0px; /* 텍스트 수직 가운데 정렬 */
+}
   
   /* 모달 닫기 버튼 스타일 */
   .close {
+    margin-right: 10px;
+    margin-top: 10px;
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
   }
-  
   .close:hover,
   .close:focus {
     color: #bbb;
     text-decoration: none;
+  }
+
+  /*입력창 전체 여백 조절*/
+  .divTitle{
+    margin: 20px;
+  }
+  
+  /*제목 입력*/
+  #bookmarkTitle{
+    width: 95%;
+    height: 3em;
+    border: none; /* 기존 테두리선 제거 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
+  }
+  
+  /*URL 입력*/
+  #urlInput{
+    margin-top: 15px; /*입력 사이 여백 조절*/
+    width: 95%;
+    height: 2em;
+    border: none; /* 기존 테두리선 제거 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
+  }
+  
+  /*태그 입력*/
+  #tagTextarea{
+    margin-top: 15px; /*입력 사이 여백 조절*/
+    width: 95%;
+    height: 3em;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
   }
   

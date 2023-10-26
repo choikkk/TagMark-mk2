@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TagMark</title>
     
@@ -15,8 +16,7 @@
         <h1>TagMark</h1>
         <p>Team Project  /  TagMark</p>
         <h1>지랄</h1>
-        
-        
+
     </header>
     <!-- 상단 영역 끝 -->
 
@@ -34,10 +34,10 @@
                 <!--서치바-->
                 <h2><textarea id="InputText" placeholder="Search your bookmark or tag..."></textarea></h2>
                 <!-- 버튼 추가 -->
-                <div class="sectop-button">ALL</div>
+                <div class="sectop-button" >ALL</div>
                 <div class="sectop-button">Latest</div>
                 <div class="sectop-button">Old</div>
-                <div class="sectop-button">New</div>
+                <div class="sectop-button" id="openModalBtn">New</div>
             </div>
             <div class="second-box">
                  <!--북마크1-->
@@ -78,6 +78,34 @@
         </div>
     </div>
     <!-- 3등분 영역 끝 -->
+
+    <!-- 북마크 추가 모달 창 -->
+    <!-- 모달 -->
+    <div id="myModal" class="modal">
+    <!-- 모달 콘텐츠 -->
+        <div class="modal-content">
+            <!-- 상단 영역 -->
+            <div class="modal-header">
+                <span class="close" id = closeModalBtn>&times;</span>
+                <h2 id="htext">Add BookMark</h2>
+            </div>
+            <!-- 하단 영역 -->
+            <div class="divTitle">
+                <input type="text" id="bookmarkTitle" placeholder="제목을 입력하세요">
+                <!-- URL 입력란 -->
+                <input type="url" id="urlInput" placeholder="URL을 입력하세요 ">
+                <!-- 태그 작성란 -->
+                <input id="tagTextarea" placeholder="태그를 작성하세요" contenteditable="true"></input>
+            </div>
+            
+            <div class="modal-footer">
+                <!-- 확인 버튼 -->
+                <button>확인</button>
+                <!-- 취소 버튼 -->
+                <button>취소</button>                    
+            </div>
+        </div>
+    </div>
 
 <script src="js/script.js"></script>
 </body>
