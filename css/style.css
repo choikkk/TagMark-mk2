@@ -18,8 +18,33 @@
             background-color: #333;
             color: #fff;
             padding: 10px;
-            display: flex;
             align-items: center; /* 수직 가운데 정렬 */
+        }
+        
+        /*header 섹션 가로 나열*/
+        .section-header-wrapper {
+            display: flex;
+        }
+        
+        .section-header1{
+            display: flex;
+            flex: 1;
+
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+        .section-header2{
+            display: flex;
+            flex: 1;
+
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: center; /* 수평 가운데 정렬 */
+        }
+        .section-header3{
+            /*flex-direction: row-reverse; 나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
+            flex: 1;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: flex-end;
+            text-align: right;
         }
 
         /* 로고 스타일링 */
