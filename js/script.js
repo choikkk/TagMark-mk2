@@ -5,7 +5,7 @@ var openModalBtn = document.getElementById('openModalBtn');
 var closeModalBtn = document.getElementById('closeModalBtn');
 
 // 모달 참조
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('newModal');
 
 // 모달 열기 이벤트
 openModalBtn.onclick = function() {
