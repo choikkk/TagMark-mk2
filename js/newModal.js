@@ -10,10 +10,7 @@ const tagTextarea = document.getElementById("tagTextarea");
 cancelBtn.onclick = function() {
 	newModal.style.display = "none";
 
-	let urlInput = document.getElementById("urlInput");
-	let tagTextarea = document.getElementById("tagTextarea");
-
-	titleInputValue = ""; // 제목 입력 필드 초기화
+	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
 }
@@ -22,6 +19,7 @@ cancelBtn.onclick = function() {
 
 // 확인(저장)버튼
 saveBtn.onclick= function() {
+
 	let titleInputValue = document.getElementById("bookmarkTitle").value;
 	let urlInputValue= document.getElementById("urlInput").value.trim();
 	let tagTextareaValue= document.getElementById("tagTextarea").value.split(' ');
@@ -32,10 +30,7 @@ saveBtn.onclick= function() {
 
 	newModal.style.display = "none";
 
-	let urlInput = document.getElementById("urlInput");
-	let tagTextarea = document.getElementById("tagTextarea");
-
-	titleInputValue = ""; // 제목 입력 필드 초기화
+	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
 }
