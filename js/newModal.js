@@ -38,26 +38,31 @@ saveBtn.onclick= function() {
 	additionalBoxDiv.appendChild(h2Element);
 
 	// URL 상자
-	let pElement = document.createElement("p");
-	pElement.textContent = urlInputValue;
-	additionalBoxDiv.appendChild(pElement);
+	let aElementUrl = document.createElement("a");
+	aElementUrl.textContent = urlInputValue;
+	aElementUrl.href = urlInputValue;
+	aElementUrl.target = "_blank"; // 새창에서 링크 열기
+	additionalBoxDiv.appendChild(aElementUrl);
 
 	// 태그 상자
-	let additionalBoxTagDiv = document.createElement("div");
-	additionalBoxTagDiv.classList.add("additional-box-tag");
-	additionalBoxDiv.appendChild(additionalBoxTagDiv);
+	let BmAdditionalBoxTagDiv = document.createElement("div");
+	BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
+	additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
 
 
-	// 태그 받고 생성해주는 for문
+	// 북마크 박스에 태그 받고 생성해주는 for문
 	for (let i = 0; i < tagTextareaValue.length; i++) {
 		let yellowCircleDiv = document.createElement("div");
 		yellowCircleDiv.classList.add("yellow-circle");
-		additionalBoxTagDiv.appendChild(yellowCircleDiv);
+		BmAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
 	  
 		let pElement = document.createElement("p");
 		pElement.textContent = tagTextareaValue[i];
-		additionalBoxTagDiv.appendChild(pElement);
+		BmAdditionalBoxTagDiv.appendChild(pElement);
 	}
+
+
+	//최근 추가 태그
 
 	
 	// 요소를 추가할 위치를 찾아서 추가
