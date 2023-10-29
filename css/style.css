@@ -40,7 +40,7 @@
             justify-content: center; /* 수평 가운데 정렬 */
         }
         .section-header3{
-            /*flex-direction: row-reverse; 나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
+            /*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
             flex: 1;
             align-items: center; /* 수직 가운데 정렬 */
             justify-content: flex-end;
@@ -52,6 +52,14 @@
             max-height: 50px; /* 이미지 높이 제한 */
             border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
             margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
+        }
+
+        /*버튼 이미지 스타일링*/
+        .BImages{
+            width: 20px; /* 이미지를 부모 요소에 꽉 차게 만듭니다. */
+            height: 20px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
+            margin-left: 10px;
+            
         }
 
         /* 텍스트 스타일링 */
@@ -130,6 +138,10 @@
             border: 0.1px solid rgb(184, 183, 183);
         }
 
+        #sradius{
+            border-bottom: 1px solid rgb(184, 183, 183);
+        }
+
         /* 서치바 테스트 */
         #InputText {
             width: 30vw;/*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
@@ -161,6 +173,8 @@
             }
             .sectop-button:last-child {/*마지막 버튼 노란색*/
                 background-color: #F7E600; /* 노란색으로 변경 ㅋ */
+                padding-top: 0%; /* 이 비율을 조절하여 이미지의 세로 비율을 유지 */
+                 
             }
 
             /*카테고리 추가 버튼*/
@@ -188,7 +202,9 @@
                 background-color: #F7E600;
                 border-radius: 50%;
                 margin-right: 10px;
+                margin-left: 10px;
             }
+
             /*노란원과 텍스트 정렬*/
             .additional-box-tag{
                 flex: 1;
@@ -196,4 +212,13 @@
                 justify-content: flex; /* 오른쪽 정렬을 위한 스타일 */
                 align-items: center; /* 수직 가운데 정렬 */
                 margin-right: 10px; /* 오른쪽 여백 */
+            }
+
+            /*북마크 버튼*/
+            .SImages{
+            flex: 1;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: flex-end;
+            text-align: right;
+            
             }

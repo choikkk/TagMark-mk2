@@ -31,21 +31,26 @@
     <!-- 3등분 영역 시작 -->
     <div class="content">
         <div class="section full-box">
-            <h2>첫 번째 섹션 전체 상자</h2>
+            <h2>Categories</h2>
             <!--카테고리 버튼-->
-            <div class="sectop-button">Add Category</div>
+            <div class="sectop-button">
+            <img class="BImages" src="Images/add ca.png">
+                
+                Add Category</div>
             <p>여기에 내용 추가</p>
             <p>선 추가 찾아보기</p>
         </div>
         <div class="section second-section">
             <div class="second-box-top">
                 <!--서치바-->
-                <h2><textarea id="InputText" placeholder="Search your bookmark or tag..."></textarea></h2>
+                <h2><textarea id="InputText" placeholder=" 🔍 Search your bookmark or tag..."></textarea></h2>
                 <!-- 버튼 추가 -->
                 <div class="sectop-button" >ALL</div>
                 <div class="sectop-button">Latest</div>
                 <div class="sectop-button">Old</div>
-                <div class="sectop-button" id="openModalBtn">New</div>
+                <div class="sectop-button" id="openModalBtn">
+                    <img class="BImages" src="Images/add bookmark.png">
+                New</div>
             </div>
             <div class="second-box">
                  <!--북마크1-->
@@ -54,11 +59,17 @@
                     <p>링크 박을곳</p>
                     <div class="additional-box-tag">
                         <div class="yellow-circle"></div>
-                        <p>HTML&nbsp;&nbsp;</p>
+                        <p>HTML</p>
                         <div class="yellow-circle"></div>
-                        <p>JS&nbsp;&nbsp;</p>
+                        <p>JS</p>
                         <div class="yellow-circle"></div>
-                        <p>CSS&nbsp;&nbsp;</p>
+                        <p>CSS</p>
+
+                        <div class="SImages"> 
+                            <img class="BImages" src="Images/pencil.png">
+                            <img class="BImages" src="Images/trash.png">
+                        </div>
+
                     </div>
                 </div>
                 <!--북마크2-->
@@ -67,25 +78,33 @@
                     <p>링크 박을곳</p>
                     <div class="additional-box-tag">
                         <div class="yellow-circle"></div>
-                        <p>HTML&nbsp;&nbsp;</p>
+                        <p>HTML</p>
                         <div class="yellow-circle"></div>
-                        <p>JS&nbsp;&nbsp;</p>
+                        <p>JS</p>
+
+                        <div class="SImages"> 
+                        <img class="BImages" src="Images/pencil.png">
+                         <img class="BImages" src="Images/trash.png">
+                        </div>
+                   
                     </div>
                 </div>
             </div>
         </div>
         <div class="section third-section">
             <div class="third-box">
-                <h2>세 번째 섹션 박스</h2>
-                <p><div class="additional-box-tag">
+                <h2 id="sradius">최근 추가 태그</h2>
+                <div class="additional-box-tag">
                     <div class="yellow-circle"></div>
-                    <p>HTML&nbsp;&nbsp;</p>
+                    <p>HTML</p>
+                </div>
+                <div class="additional-box-tag">
                     <div class="yellow-circle"></div>
-                    <p>JS&nbsp;&nbsp;</p>
-                </div></p>
+                    <p>JS</p>
+                </div>
             </div>
             <div class="third-box">
-                <h2>세 번째 섹션 박스</h2>
+                <h2 id="sradius">전체 태그 목록</h2>
                 <p>여기에 내용 추가</p>
             </div>
         </div>
@@ -109,7 +128,7 @@
                 <!-- URL 입력란 -->
                 <input type="url" id="urlInput" placeholder="URL을 입력하세요 ">
                 <!-- 태그 작성란 -->
-                <input id="tagTextarea" placeholder="태그를 작성하세요" contenteditable="true"></input>
+                <input id="tagTextarea" placeholder="태그를 작성하세요" contenteditable="true">
             </div>
             
             <div class="modal-footer">
