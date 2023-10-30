@@ -22,7 +22,7 @@
         </div>
         <div class="section-header3">
             <img class="logo" src="Images/darkmode.png">
-            <img class="logo" src="Images/logo.png">
+            <img class="logo" src="Images/logo.png" alt="구글 로그인 박을곳">
         </div>
     </div>
     </header>
@@ -44,14 +44,14 @@
         <div class="section second-section">
             <div class="second-box-top">
                 <!--서치바-->
-                <h2><textarea id="InputText" placeholder=" 🔍 Search your bookmark or tag..."></textarea></h2>
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="🔍 Search your bookmark or tag..." onkeydown="if(event.keyCode==13) alert('검색어: ' + this.value)">
+                  </div>
                 <!-- 버튼 추가 -->
                 <div class="sectop-button" >ALL</div>
                 <div class="sectop-button">Latest</div>
                 <div class="sectop-button">Old</div>
-                <div class="sectop-button" id="openModalBtn">
-                    <img class="BImages" src="Images/add bookmark.png">
-                New</div>
+                <div class="sectop-button" id="openModalBtn">New</div>
             </div>
 
             <div class="second-box"></div>
@@ -59,11 +59,11 @@
 
         <div class="section third-section">
             <div class="third-box">
-                <h2 id="sradius">최근 추가 태그</h2>
+                <h2 id="sradius"><img class="BImages" src="Images/add bookmark.png">최근 추가 태그</h2>
                 <div id="currentTaglist"></div>
             </div>
             <div class="third-box">
-                <h2 id="sradius">전체 태그 목록</h2>
+                <h2 id="sradius"><img class="BImages" src="Images/add bookmark.png">전체 태그 목록</h2>
                 <div id="allTaglist"></div>
             </div>
         </div>
