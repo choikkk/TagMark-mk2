@@ -5,9 +5,9 @@ const titleInput = document.getElementById("bookmarkTitle"); // 제목
 const urlInput = document.getElementById("urlInput"); // URL
 const tagTextarea = document.getElementById("tagTextarea"); // 태그 부분
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트
+const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트
 
 let AllTagList = []; // 전체 태그 배열
-let CurrentTagList = []; // 최근 추가 태그 배열
 
 
 // 취소 버튼
@@ -18,7 +18,6 @@ cancelBtn.onclick = function() {
 	urlInput.value = ""; // URL 입력 필드 초기화
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
 }
-
 
 
 // 확인(저장)버튼
@@ -89,10 +88,13 @@ saveBtn.onclick= function() {
 		AllTagList.push(v.toLowerCase());
 	});
 
+	// AllTagList 배열 중복 제거
 	AllTagList = [...new Set(AllTagList)];
 
+	// 해당 공간 html요소 초기화
 	allTagArea.innerHTML = '';
 
+	// 태그 추가
 	for (let i = 0; i < AllTagList.length; i++) {
 
 		let AllAdditionalBoxTagDiv = document.createElement("div");
@@ -111,12 +113,30 @@ saveBtn.onclick= function() {
 
 	
 	// 최근 추가 태그 목록
+	let CurrentTagList = []; // 최근 추가 태그 배열
+
 	tagTextareaValue.forEach(v => {
 		CurrentTagList.push(v);
-		if(CurrentTagList.length > 10){
-			CurrentTagList.shift();
-		}
 	});
+
+	// 해당 공간 html요소 초기화
+	currentTagArea.innerHTML = '';
+
+	// 태그 추가
+	for (let i = 0; i < CurrentTagList.length; i++) {
+
+		let CurAdditionalBoxTagDiv = document.createElement("div");
+		CurAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		currentTagArea.appendChild(CurAdditionalBoxTagDiv);
+
+		let yellowCircleDiv = document.createElement("div");
+		yellowCircleDiv.classList.add("yellow-circle");
+		CurAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+
+		let pElement = document.createElement("p");
+		pElement.textContent = CurrentTagList[i];
+		CurAdditionalBoxTagDiv.appendChild(pElement);
+	}
 
 
 	
