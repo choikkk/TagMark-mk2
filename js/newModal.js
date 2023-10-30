@@ -1,9 +1,13 @@
-const newModal = document.getElementById("newModal");
-const saveBtn = document.getElementById("saveBtn");
-const cancelBtn = document.getElementById("cancelBtn");
-const titleInput = document.getElementById("bookmarkTitle");
-const urlInput = document.getElementById("urlInput");
-const tagTextarea = document.getElementById("tagTextarea");
+const newModal = document.getElementById("newModal"); // 북마크 생성 모달
+const saveBtn = document.getElementById("saveBtn"); // 확인 버튼
+const cancelBtn = document.getElementById("cancelBtn"); // 취소 버튼
+const titleInput = document.getElementById("bookmarkTitle"); // 제목
+const urlInput = document.getElementById("urlInput"); // URL
+const tagTextarea = document.getElementById("tagTextarea"); // 태그 부분
+const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트
+
+let AllTagList = []; // 전체 태그 배열
+let CurrentTagList = []; // 최근 추가 태그 배열
 
 
 // 취소 버튼
@@ -28,7 +32,7 @@ saveBtn.onclick= function() {
 	console.log("URL:", urlInputValue);
 	console.log("태그:", tagTextareaValue);
 
-	// HTML 요소 생성
+	// HTML Div요소 생성
 	let additionalBoxDiv = document.createElement("div");
 	additionalBoxDiv.classList.add("additional-box");
 
@@ -44,10 +48,11 @@ saveBtn.onclick= function() {
 	aElementUrl.target = "_blank"; // 새창에서 링크 열기
 	additionalBoxDiv.appendChild(aElementUrl);
 
-	// 태그 상자
+	// 북마크쪽 아래 태그 Div
 	let BmAdditionalBoxTagDiv = document.createElement("div");
 	BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
 	additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
+	
 
 
 	// 북마크 박스에 태그 받고 생성해주는 for문
@@ -60,9 +65,59 @@ saveBtn.onclick= function() {
 		pElement.textContent = tagTextareaValue[i];
 		BmAdditionalBoxTagDiv.appendChild(pElement);
 	}
+	
+
+	// 북마크 박스 태그 Div 아이콘 추가
+	let SImageDiv = document.createElement("div");
+	SImageDiv.classList.add("SImages");
+	BmAdditionalBoxTagDiv.appendChild(SImageDiv);
+
+	let BmEditIcon = document.createElement("img");
+	BmEditIcon.classList.add("BImages");
+	BmEditIcon.src = "Images/pencil.png";
+	SImageDiv.appendChild(BmEditIcon);
+
+	let BmDeleteIcon = document.createElement("img");
+	BmDeleteIcon.classList.add("BImages");
+	BmDeleteIcon.src = "Images/trash.png";
+	SImageDiv.appendChild(BmDeleteIcon);
 
 
-	//최근 추가 태그
+
+	// 전체 태그 목록에 추가
+	tagTextareaValue.forEach(v =>{
+		AllTagList.push(v.toLowerCase());
+	});
+
+	AllTagList = [...new Set(AllTagList)];
+
+	allTagArea.innerHTML = '';
+
+	for (let i = 0; i < AllTagList.length; i++) {
+
+		let AllAdditionalBoxTagDiv = document.createElement("div");
+		AllAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		allTagArea.appendChild(AllAdditionalBoxTagDiv);
+
+		let yellowCircleDiv = document.createElement("div");
+		yellowCircleDiv.classList.add("yellow-circle");
+		AllAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+
+		let pElement = document.createElement("p");
+		pElement.textContent = AllTagList[i];
+		AllAdditionalBoxTagDiv.appendChild(pElement);
+	}
+
+
+	
+	// 최근 추가 태그 목록
+	tagTextareaValue.forEach(v => {
+		CurrentTagList.push(v);
+		if(CurrentTagList.length > 10){
+			CurrentTagList.shift();
+		}
+	});
+
 
 	
 	// 요소를 추가할 위치를 찾아서 추가

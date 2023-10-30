@@ -116,6 +116,7 @@
             
         }
         .second-box {
+            overflow: auto;
             flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
             background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin: 20px; /* 간격 조절 */
@@ -131,6 +132,7 @@
         }
 
         .third-box{
+            overflow: auto;
             flex: 1;
             background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
             margin: 10px; /* 간격 조절 */
