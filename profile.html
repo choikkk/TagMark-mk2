@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="dropdown.css">
+    <link rel="stylesheet" href="css/dropdown.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TagMark</title>
     <br/>
@@ -27,7 +27,8 @@
         </div>
         <div class="section-header3">
             <img class="logo" src="Images/darkmode.png">
-            <img class="logo" src="Images/logo.png" onclick="signIn()" alt="드롭다운 이미지" id="profile_image">
+            <img class="logo" src="Images/logo.png" alt="드롭다운 이미지" id="profile_image">
+                
 
         </div>
     </div>
@@ -202,20 +203,21 @@
             </div>
         </div>
     </div>
+
     <!-- 드롭다운 로그인 파트 -->
-        <div class="dropdown-menu" id="dropdown-menu">
-            <div class="menu-content">
-                <p id="profileName">안녕하세요, </p>
-                <img id="innerProfileImage" class="logo">
-                <button id="logout-button" onclick="logout()">로그아웃</button>
-                <button id="close-button" class="close-button">X</button>
-            </div>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <div class="menu-content">
+            <p id="profileName">안녕하세요, </p>
+            <img id="innerProfileImage" class="logo">
+            <button id="logout-button" onclick="logout()">로그아웃</button>
+            <button id="close-button" class="close-button">X</button>
         </div>
+    </div>
 
     <script src="js/defaultModal.js"></script>
     <script src="js/newModal.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="dropdown.js"></script>
-    <script src="login.js">  </script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/login.js">  </script>
 </body>
 </html>

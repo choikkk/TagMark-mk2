@@ -41,7 +41,7 @@ function logout(){
         }
     })
     .then((data) => {
-        location.href = "http://www.tagmark.kr"
-        // location.href = "http://127.0.0.1:5500/index.html"
+        // location.href = "http://www.tagmark.kr"
+        location.href = "http://127.0.0.1:5502/index.html"
     })
 }

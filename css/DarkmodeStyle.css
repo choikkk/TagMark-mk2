@@ -35,7 +35,6 @@
         .section-header2{
             display: flex;
             flex: 1;
-
             align-items: center; /* 수직 가운데 정렬 */
             justify-content: center; /* 수평 가운데 정렬 */
         }
@@ -52,7 +51,6 @@
             max-height: 50px; /* 이미지 높이 제한 */
             border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
             margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
-            cursor: pointer
         }
 
         /*버튼 이미지 스타일링*/
@@ -74,13 +72,17 @@
         .content {
             display: flex;
             flex: 1;
+            background-color: #35363A; /* 첫번째 섹션 모서리 틈 배경 */
+
         }
 
         /*두번째 섹년 세로나열*/
         .section {
             padding: 20px;
             display: flex;
+            background-color: #35363A; /* 두번째와 세번째 섹션 배경 */
             flex-direction: column; /* 세로로 나열 */
+            color: #fff; /*body 전체 폰트색*/
         }
 
         .subsection {/*나중에 지울거*/
@@ -88,18 +90,18 @@
             margin: 10px; /* 간격 조절 */
         }
 
-        /* 추가 스타일링 *//*나중에 지울거*/
+        /* 추가 스타일링 두번째 섹션 배경*//*나중에 지울거*/
         .section:nth-child(even) {
-            background-color: #ffffff;
+            background-color: #35363A;
         }
 
         /* 첫 번째 섹션 박스 스타일링 */
         .full-box {
             flex: 0.8 ; /* 가로 넓이 조절 */
-            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            background-color: #2C2C2C; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
             margin: 0px; /* 간격 조절 */
             border-radius: 15px; /* 모서리를 깍는 속성 */
-            border: 0.1px solid rgb(184, 183, 183);
+            border: 0.1px solid #2C2C2C;
         }
 
         /* 두 번째 섹션 박스 스타일링 */
@@ -109,20 +111,20 @@
         }
         .second-box-top{
             flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
-            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            background-color: #35363A; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin-right: 20px; /* 간격 조절 */
             margin-left: 20px; /* 간격 조절 */
             display: flex;
             align-items: center; /* 수직 가운데 정렬 */
-            
+
         }
         .second-box {
             overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
             flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
-            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            background-color: #35363A; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin: 20px; /* 간격 조절 */
             margin-top: 10px; /* 간격 조절 */
-            border-top: 1px solid rgb(184, 183, 183);
+            border-top: 1px solid #fff;
         }
         
         /* 세 번째 섹션 박스 스타일링 */
@@ -135,22 +137,22 @@
         .third-box{
             overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
             flex: 1;
-            background-color: #F8F8F8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            background-color: #2C2C2C; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
             margin: 10px; /* 간격 조절 */
             border-radius: 15px; /* 모서리를 깍는 속성 */
-            border: 0.1px solid rgb(184, 183, 183);
+            border: 0.1px solid #2C2C2C;
         }
 
         /*세번째 섹션 상단 영역 스타일링*/
         #sradius{
             margin: 10px; /*3번째 섹션 상자 밑줄 길이*/
-            border-bottom: 1px solid rgb(184, 183, 183);
+            border-bottom: 1px solid #fff;
             font-size: 20px;
             text-align: center;
             align-items: center; /* 수직 가운데 정렬 */
         }
 
-        /* 서치바 테스트 */
+        /* 서치바*/
         .search-container {
             display: flex;
             justify-content: center;
@@ -168,7 +170,13 @@
             line-height: normal;
             font-style: normal;
             flex-shrink: 0;
-            background: #F5F5F5;
+            background: #616161;
+            color: #fff;
+          }
+
+          /*search-bar placeholder 글자색*/
+          .search-bar::placeholder {
+            color: #ffffff80; /* 원하는 플레이스홀더 텍스트 색상으로 변경 */
           }
           
           /*북마크 정렬 버튼*/
@@ -176,8 +184,8 @@
             flex: 1;
             margin: 10px;
             padding: 8px;
-            background-color: #F5F5F5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-            color: #000000;
+            background-color: #616161; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            color: #fff;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -189,7 +197,7 @@
             .sectop-button:last-child {/*마지막 버튼 노란색*/
                 background-color: #F7E600; /* 노란색으로 변경 ㅋ */
                 /*padding-top: 0%; /* 나중에 지울거 이 비율을 조절하여 이미지의 세로 비율을 유지 */
-                 
+                color: #000000; /*노란 버튼 글자색*/
             }
 
             /*카테고리 추가 버튼*/
@@ -197,16 +205,16 @@
             margin: 5px;
             padding: 5px;
             flex: 0.01; /* 가로 넓이 조절 */
-            background-color: #ffffff;
-            color: rgba(0, 0, 0, 0.50);
+            background-color: #616161;
+            color: #ffffff80;
                 
             }
 
             /*북마크 상자*/
             .additional-box {
                 flex: 1;
-                background-color: #ffffff; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-                border-bottom: 1px solid rgb(184, 183, 183);
+                background-color: #35363A; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+                border-bottom: 1px solid #fff;
                 align-items: center; /* 수직 가운데 정렬 */
                 
             }

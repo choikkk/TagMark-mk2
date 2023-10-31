@@ -7,8 +7,8 @@ function signIn(){
 
     let params = {
         "client_id":"448053121888-ho4bfjqhksohojjnhgq1172mdfgeqtpj.apps.googleusercontent.com",
-        "redirect_uri":"http://www.tagmark.kr/profile.html",
-        // "redirect_uri":"http://127.0.0.1:5500/profile.html",
+        // "redirect_uri":"http://www.tagmark.kr/profile.html",
+        "redirect_uri":"http://127.0.0.1:5502/profile.html",
         "response_type":"token",
         "scope":"https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/youtube.readonly",
         "include_granted_scopes":'true',
