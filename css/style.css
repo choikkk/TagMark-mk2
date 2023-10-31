@@ -55,12 +55,6 @@
             cursor: pointer
         }
 
-        header img.login {
-            max-height: 50px; /* 이미지 높이 제한 */
-            border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
-            margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
-            cursor: pointer
-        }
 
         /*버튼 이미지 스타일링*/
         .BImages{
