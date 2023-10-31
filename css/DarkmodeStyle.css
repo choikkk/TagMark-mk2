@@ -1,0 +1,247 @@
+ /* 친절히 주석 다 박겠습니다!! */
+ /*추후 삭제 해야하거나 수정할 부분은 "나중에" 박아놨으니 컨+f로 "나중에"로 찾아보세요!!*/
+ /*그리고 아무설명 없이 "나중에 지울거" 만 적혀있는건 내비두세요!! 테스트할려고 넣은거니 나중에 지울게요!!*/
+ /* 주석봐도 모르겠으면 CHAT GPT한테 물어보세요!! */
+ /* 전체 페이지 스타일링을 위한 스타일 */
+ /*수정됐나? 23.10.27 PM-03:03*/
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /*나중에 글꼴추가*/
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* 화면 전체 높이만큼 설정/높이 계속 늘어남*/
+        }
+
+        /* 상단 영역 스타일링 */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+        
+        /*header 섹션 가로 나열*/
+        .section-header-wrapper {
+            display: flex;
+        }
+        
+        .section-header1{
+            display: flex;
+            flex: 1;
+
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+        .section-header2{
+            display: flex;
+            flex: 1;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: center; /* 수평 가운데 정렬 */
+        }
+        .section-header3{
+            /*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
+            flex: 1;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        /* 로고 스타일링 */
+        header img.logo {
+            max-height: 50px; /* 이미지 높이 제한 */
+            border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
+            margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
+        }
+
+        /*버튼 이미지 스타일링*/
+        .BImages{
+            width: 20px; /* 이미지를 부모 요소에 꽉 차게 만듭니다. */
+            height: 20px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
+            margin-right: 10px;
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+
+        /* 텍스트 스타일링 */
+        header h1 {/*텍스트 크기에따라 여백 조절*/
+            margin: 0; /* 기본 마진 제거 */
+            margin-right: auto; /*나중에 고칠거 ?? 이거 왜 되는거지? ㅅㅂ ㅋㅋㅋㅋㅋㅋ / inline도 되긴하는데..*/
+        }
+       
+
+        /* 3등분 영역 스타일링 */
+        .content {
+            display: flex;
+            flex: 1;
+            background-color: #35363A; /* 첫번째 섹션 모서리 틈 배경 */
+
+        }
+
+        /*두번째 섹년 세로나열*/
+        .section {
+            padding: 20px;
+            display: flex;
+            background-color: #35363A; /* 두번째와 세번째 섹션 배경 */
+            flex-direction: column; /* 세로로 나열 */
+            color: #fff; /*body 전체 폰트색*/
+        }
+
+        .subsection {/*나중에 지울거*/
+            flex: 1;
+            margin: 10px; /* 간격 조절 */
+        }
+
+        /* 추가 스타일링 두번째 섹션 배경*//*나중에 지울거*/
+        .section:nth-child(even) {
+            background-color: #35363A;
+        }
+
+        /* 첫 번째 섹션 박스 스타일링 */
+        .full-box {
+            flex: 0.8 ; /* 가로 넓이 조절 */
+            background-color: #2C2C2C; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin: 0px; /* 간격 조절 */
+            border-radius: 15px; /* 모서리를 깍는 속성 */
+            border: 0.1px solid #2C2C2C;
+        }
+
+        /* 두 번째 섹션 박스 스타일링 */
+        .second-section {
+            flex: 3; /* 가로 넓이 조절 */
+            display: flex;
+        }
+        .second-box-top{
+            flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
+            background-color: #35363A; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            margin-right: 20px; /* 간격 조절 */
+            margin-left: 20px; /* 간격 조절 */
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+
+        }
+        .second-box {
+            overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
+            flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
+            background-color: #35363A; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            margin: 20px; /* 간격 조절 */
+            margin-top: 10px; /* 간격 조절 */
+            border-top: 1px solid #fff;
+        }
+        
+        /* 세 번째 섹션 박스 스타일링 */
+        .third-section {
+            flex: 0.6; /* 가로 넓이 조절 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .third-box{
+            overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
+            flex: 1;
+            background-color: #2C2C2C; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            margin: 10px; /* 간격 조절 */
+            border-radius: 15px; /* 모서리를 깍는 속성 */
+            border: 0.1px solid #2C2C2C;
+        }
+
+        /*세번째 섹션 상단 영역 스타일링*/
+        #sradius{
+            margin: 10px; /*3번째 섹션 상자 밑줄 길이*/
+            border-bottom: 1px solid #fff;
+            font-size: 20px;
+            text-align: center;
+            align-items: center; /* 수직 가운데 정렬 */
+        }
+
+        /* 서치바*/
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .search-bar {
+            padding: 10px;
+            border: 2px solid #888; /* 회색 테두리 */
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.30);
+            font-size: 20px;
+            outline: none;
+            width: 33vw;/*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
+            height: 15px;
+            line-height: normal;
+            font-style: normal;
+            flex-shrink: 0;
+            background: #616161;
+            color: #fff;
+          }
+
+          /*search-bar placeholder 글자색*/
+          .search-bar::placeholder {
+            color: #ffffff80; /* 원하는 플레이스홀더 텍스트 색상으로 변경 */
+          }
+          
+          /*북마크 정렬 버튼*/
+          .sectop-button {
+            flex: 1;
+            margin: 10px;
+            padding: 8px;
+            background-color: #616161; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.30);
+            cursor: pointer;
+            }
+            .sectop-button:last-child {/*마지막 버튼 노란색*/
+                background-color: #F7E600; /* 노란색으로 변경 ㅋ */
+                /*padding-top: 0%; /* 나중에 지울거 이 비율을 조절하여 이미지의 세로 비율을 유지 */
+                color: #000000; /*노란 버튼 글자색*/
+            }
+
+            /*카테고리 추가 버튼*/
+            .full-box .sectop-button {
+            margin: 5px;
+            padding: 5px;
+            flex: 0.01; /* 가로 넓이 조절 */
+            background-color: #616161;
+            color: #ffffff80;
+                
+            }
+
+            /*북마크 상자*/
+            .additional-box {
+                flex: 1;
+                background-color: #35363A; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+                border-bottom: 1px solid #fff;
+                align-items: center; /* 수직 가운데 정렬 */
+                
+            }
+            /*노란원 태그*/
+            .yellow-circle {
+                width: 15px;
+                height: 15px;
+                background-color: #F7E600;
+                border-radius: 50%;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            /*노란원과 텍스트 정렬*/
+            .additional-box-tag{
+                flex: 1;
+                display: flex;
+                justify-content: flex; /* 오른쪽 정렬을 위한 스타일 */
+                align-items: center; /* 수직 가운데 정렬 */
+                margin-right: 10px; /* 오른쪽 여백 */
+            }
+
+            /*북마크 버튼*/
+            .SImages{
+            flex: 1;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: flex-end;
+            text-align: right;
+            
+            }
