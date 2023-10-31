@@ -108,7 +108,7 @@
         }
         .second-box-top{
             flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
-            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            background-color: #fff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin-right: 20px; /* 간격 조절 */
             margin-left: 20px; /* 간격 조절 */
             display: flex;
@@ -118,7 +118,7 @@
         .second-box {
             overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
             flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
-            background-color: #F8F8F8; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+            background-color: #fff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
             margin: 20px; /* 간격 조절 */
             margin-top: 10px; /* 간격 조절 */
             border-top: 1px solid rgb(184, 183, 183);
