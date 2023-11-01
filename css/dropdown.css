@@ -1,0 +1,51 @@
+/*드롭다운을 위한 css입니당 구글 로그인 프로필 눌렀을때 반응하게 하는 드롭다운입니당*/
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 240px; /* 드롭다운 메뉴의 너비를 조정 */
+    position: fixed;
+    right: 0;
+    margin: 10px;
+    top: 190px; /*헤더 바로 아래위치 / 헤더 높이를 따로 지정하진 않았는데 190px인가 보네요~ */
+    transform: translate(0, -50%);
+    background-color: #E9EEF6;
+}
+
+.menu-content {
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+#logout-button {
+    display: block;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+#logout-button:hover {
+    background-color: #c0392b;
+}
+
+#innerProfileImage{
+    border-radius: 50%; /*로그인 프로필사진 원모양 만들기~*/
+}
