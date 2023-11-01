@@ -1,11 +1,11 @@
 const newModal = document.getElementById("newModal"); // 북마크 생성 모달
 const saveBtn = document.getElementById("saveBtn"); // 확인 버튼
 const cancelBtn = document.getElementById("cancelBtn"); // 취소 버튼
-const titleInput = document.getElementById("bookmarkTitle"); // 제목
-const urlInput = document.getElementById("urlInput"); // URL
-const tagTextarea = document.getElementById("tagTextarea"); // 태그 부분
-const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트
-const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트
+const titleInput = document.getElementById("bookmarkTitle"); // 제목 받아오는 공간
+const urlInput = document.getElementById("urlInput"); // URL 받아오는 공간
+const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오는 공간
+const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
+const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
 
 let AllTagList = []; // 전체 태그 배열
 
@@ -31,7 +31,7 @@ saveBtn.onclick= function() {
 	console.log("URL:", urlInputValue);
 	console.log("태그:", tagTextareaValue);
 
-	// HTML Div요소 생성
+	// 북마크 Div요소 생성
 	let additionalBoxDiv = document.createElement("div");
 	additionalBoxDiv.classList.add("additional-box");
 
@@ -122,7 +122,7 @@ saveBtn.onclick= function() {
 	// 해당 공간 html요소 초기화
 	currentTagArea.innerHTML = '';
 
-	// 태그 추가
+	// 최근 추가 태그 공간 태그 추가
 	for (let i = 0; i < CurrentTagList.length; i++) {
 
 		let CurAdditionalBoxTagDiv = document.createElement("div");
