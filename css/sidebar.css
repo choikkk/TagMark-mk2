@@ -46,7 +46,7 @@
 	border-bottom: 1px solid #2a2b3c
 }
 
-.sidebar .sidebar-header h5 a {
+.sidebar .sidebar-header h5 span{
 	color: var(--dk-gray-300)
 }
 
@@ -61,30 +61,30 @@
 	top: 22px;
 }
 
-.sidebar > ul > li {
-	padding: .7rem 1.75rem; /*카테고리 목록에 텍스트와 아이콘 일정한 여백??*/
+.sidebar > ul > div {
+	padding: .7rem 0rem; /*카테고리 목록에 텍스트와 아이콘 일정한 여백??/ 1.75rem */
 }
 
-.sidebar ul > li > a {
+.sidebar ul > div > span{
 	color: var(--dk-gray-400); /*카테고리 목록 텍스트 색상 / 위 색상 목록(400)에서 수정가능*/
 	text-decoration: none; /*카테고리 텍스트 밑줄 제거*/
 }
 
 /* Start numbers */
-.sidebar ul > li > a > .num {
+.sidebar ul > div > span> .num {
 	line-height: 0;
 	border-radius: 3px;
 	font-size: 14px;
 	padding: 0px 5px
 }
 
-.sidebar ul > li > i { /*아이콘과 텍스트 높이 조절*/
+.sidebar ul > div > i { /*아이콘과 텍스트 높이 조절*/
 	font-size: 18px;
 	margin-right: .7rem;
 	color: var(--dk-gray-500);
 }
 
-.sidebar ul > li.has-dropdown > a:after {
+.sidebar ul > div.has-dropdown > span:after {
 	content: '\276F'; /*카테고리 아이콘 / css 특수문자*/
 	font-family: unicons-line;
 	font-size: 1rem;
@@ -108,7 +108,7 @@
 	display: block;
 }
 
-.sidebar ul .sidebar-dropdown > li > a {/*태그 목록 일정한 간격과 폰트 크기*/
+.sidebar ul .sidebar-dropdown > div > span{/*태그 목록 일정한 간격과 폰트 크기*/
   font-size: .85rem;
 	padding: .5rem 0;
 	display: block;
