@@ -94,7 +94,7 @@
 	transition: all .3s ease-in-out;
 }
 
-.sidebar ul .opened > a:after {
+.sidebar ul .opened > span:after {
 	transform: rotate(90deg); /*카테고리 오픈시 각도 회전*/
 }
 
