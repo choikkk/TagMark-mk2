@@ -6,21 +6,9 @@ const urlInput = document.getElementById("urlInput"); // URL 받아오는 공간
 const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오는 공간
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
 const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
-<<<<<<< HEAD
 const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
 
 let AllTagList = []; // 전체 태그 배열
-=======
-<<<<<<< HEAD
-const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL");
-
-let AllTagList = []; // 전체 태그 배열
-let UnClassifiedTagList = [];
-=======
-const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
-
-let AllTagList = []; // 전체 태그 배열
->>>>>>> lee
 let AllBookMarkList = []; // 전체 북마크 배열
 let SortBookMarkList = []; // 정렬된 북마크 배열
 
@@ -61,11 +49,6 @@ function compareTitles(title1, title2) {
   
 	return title1.length - title2.length;
   }
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> lee
-
 
 // 취소 버튼
 cancelBtn.onclick = function() {
