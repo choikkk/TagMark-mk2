@@ -7,10 +7,15 @@ const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오�
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
 const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
 const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
+const LatestButton = document.getElementById("latestBtn"); //최신 정렬 버튼
+const OldButton = document.getElementById("oldBtn"); //오래된 정렬 버튼
+
 
 let AllTagList = []; // 전체 태그 배열
 let AllBookMarkList = []; // 전체 북마크 배열
-let SortBookMarkList = []; // 정렬된 북마크 배열
+let SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
+let LatestSortBookMarkList = []; // 최신 순서 정렬된 북마크 배열
+let OldSortBookMarkList = []; // 오래된 순서 정렬된 북마크 배열
 
 
 // 정렬 함수
@@ -72,8 +77,8 @@ saveBtn.onclick= function() {
 	// 전체 북마크 리스트에 요소들 추가 / 북마크 리스트 요소들 정렬된 배열에 추가
 	AllBookMarkList.push(ElementBookMark);
 	SortBookMarkList.push(ElementBookMark);
-
-
+	LatestSortBookMarkList.push(ElementBookMark);
+	OldSortBookMarkList.unshift(ElementBookMark);
 	// console.log("제목:", titleInputValue);
 	// console.log("URL:", urlInputValue);
 	// console.log("태그:", tagTextareaValue);
@@ -263,4 +268,120 @@ AllButton.onclick= function() {
 	console.log("전체 북마크 리스트 : " ,AllBookMarkList);
 	console.log("정렬된 북마크 리스트 : " , SortBookMarkList);
 	console.log("////////////////")
+}
+
+// 최신 순서 정렬 버튼 기능
+LatestButton.onclick = function () {
+	// 요소를 추가할 위치를 찾아서 추가
+	let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
+	// 해당 공간 html요소 초기화
+	SecondBoxDiv.innerHTML = '';
+
+	for(let i=0; i<LatestSortBookMarkList.length; i++){
+		// 북마크 Div요소 생성
+		let additionalBoxDiv = document.createElement("div");
+		additionalBoxDiv.classList.add("additional-box");
+
+		// 제목 상자
+		let h2Element = document.createElement("h2");
+		h2Element.textContent = LatestSortBookMarkList[i][0];
+		additionalBoxDiv.appendChild(h2Element);
+
+		// URL 상자
+		let aElementUrl = document.createElement("a");
+		aElementUrl.textContent = LatestSortBookMarkList[i][1];
+		aElementUrl.href = LatestSortBookMarkList[i][1];
+		aElementUrl.target = "_blank"; // 새창에서 링크 열기
+		additionalBoxDiv.appendChild(aElementUrl);
+
+		// 북마크쪽 아래 태그 Div
+		let BmAdditionalBoxTagDiv = document.createElement("div");
+		BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
+		for(let j = 0; j < LatestSortBookMarkList[i][2].length; j++){
+			let yellowCircleDiv = document.createElement("div");
+				yellowCircleDiv.classList.add("yellow-circle");
+				BmAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+			
+				let pElement = document.createElement("p");
+				pElement.textContent = LatestSortBookMarkList[i][2][j];
+				BmAdditionalBoxTagDiv.appendChild(pElement);
+			
+		}
+		// 북마크 박스 태그 Div 아이콘 추가
+		let SImageDiv = document.createElement("div");
+		SImageDiv.classList.add("SImages");
+		BmAdditionalBoxTagDiv.appendChild(SImageDiv);
+	
+		let BmEditIcon = document.createElement("img");
+		BmEditIcon.classList.add("BImages");
+		BmEditIcon.src = "Images/pencil.png";
+		SImageDiv.appendChild(BmEditIcon);
+	
+		let BmDeleteIcon = document.createElement("img");
+		BmDeleteIcon.classList.add("BImages");
+		BmDeleteIcon.src = "Images/trash.png";
+		SImageDiv.appendChild(BmDeleteIcon);
+
+		SecondBoxDiv.appendChild(additionalBoxDiv);
+		
+	}
+}
+
+// 오래된 버튼 순서
+OldButton.onclick = function () {
+	// 요소를 추가할 위치를 찾아서 추가
+	let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
+	// 해당 공간 html요소 초기화
+	SecondBoxDiv.innerHTML = '';
+
+	for(let i=0; i<OldSortBookMarkList.length; i++){
+		// 북마크 Div요소 생성
+		let additionalBoxDiv = document.createElement("div");
+		additionalBoxDiv.classList.add("additional-box");
+
+		// 제목 상자
+		let h2Element = document.createElement("h2");
+		h2Element.textContent = OldSortBookMarkList[i][0];
+		additionalBoxDiv.appendChild(h2Element);
+
+		// URL 상자
+		let aElementUrl = document.createElement("a");
+		aElementUrl.textContent = OldSortBookMarkList[i][1];
+		aElementUrl.href = OldSortBookMarkList[i][1];
+		aElementUrl.target = "_blank"; // 새창에서 링크 열기
+		additionalBoxDiv.appendChild(aElementUrl);
+
+		// 북마크쪽 아래 태그 Div
+		let BmAdditionalBoxTagDiv = document.createElement("div");
+		BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
+		for(let j = 0; j < OldSortBookMarkList[i][2].length; j++){
+			let yellowCircleDiv = document.createElement("div");
+				yellowCircleDiv.classList.add("yellow-circle");
+				BmAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+			
+				let pElement = document.createElement("p");
+				pElement.textContent = OldSortBookMarkList[i][2][j];
+				BmAdditionalBoxTagDiv.appendChild(pElement);
+			
+		}
+		// 북마크 박스 태그 Div 아이콘 추가
+		let SImageDiv = document.createElement("div");
+		SImageDiv.classList.add("SImages");
+		BmAdditionalBoxTagDiv.appendChild(SImageDiv);
+	
+		let BmEditIcon = document.createElement("img");
+		BmEditIcon.classList.add("BImages");
+		BmEditIcon.src = "Images/pencil.png";
+		SImageDiv.appendChild(BmEditIcon);
+	
+		let BmDeleteIcon = document.createElement("img");
+		BmDeleteIcon.classList.add("BImages");
+		BmDeleteIcon.src = "Images/trash.png";
+		SImageDiv.appendChild(BmDeleteIcon);
+
+		SecondBoxDiv.appendChild(additionalBoxDiv);
+		
+	}
 }
