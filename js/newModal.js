@@ -7,8 +7,13 @@ const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오�
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
 const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
 const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
+const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // 사이드바 UnClassified 공간
+
 
 let AllTagList = []; // 전체 태그 배열
+let UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
+
+
 let AllBookMarkList = []; // 전체 북마크 배열
 let SortBookMarkList = []; // 정렬된 북마크 배열
 
