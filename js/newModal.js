@@ -6,10 +6,56 @@ const urlInput = document.getElementById("urlInput"); // URL 받아오는 공간
 const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오는 공간
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
 const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
+<<<<<<< HEAD
 const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL");
 
 let AllTagList = []; // 전체 태그 배열
 let UnClassifiedTagList = [];
+=======
+const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
+
+let AllTagList = []; // 전체 태그 배열
+let AllBookMarkList = []; // 전체 북마크 배열
+let SortBookMarkList = []; // 정렬된 북마크 배열
+
+
+// 정렬 함수
+function SortAll(arr) {
+	arr.sort((a, b) => {
+	  const title1 = a[0];
+	  const title2 = b[0];
+	  return compareTitles(title1, title2);
+	});
+  }
+
+  // 배열의 첫 번째 요소를 기준으로 비교하는 함수
+function compareTitles(title1, title2) {
+	const regex = /[!-/:-@\[-`{-~0-9A-Za-z가-힣]/g; // 특수문자, 숫자, 영어, 한글을 검색하는 정규식
+  
+	function getCharType(char) {
+	  if (/[!-/:-@\[-`{-~]/.test(char)) return 0; // 특수문자
+	  if (/[0-9]/.test(char)) return 1; // 숫자
+	  if (/[A-Za-z]/.test(char)) return 2; // 영어
+	  if (/[가-힣]/.test(char)) return 3; // 한글
+	  return 4; // 기타 (비교 기준 이외의 문자)
+	}
+  
+	for (let i = 0; i < title1.length && i < title2.length; i++) {
+	  const char1 = title1.charAt(i);
+	  const char2 = title2.charAt(i);
+	  const type1 = getCharType(char1);
+	  const type2 = getCharType(char2);
+  
+	  if (type1 !== type2) {
+		return type1 - type2;
+	  } else if (char1 !== char2) {
+		return char1.localeCompare(char2, 'en', { sensitivity: 'base' });
+	  }
+	}
+  
+	return title1.length - title2.length;
+  }
+>>>>>>> master
 
 
 // 취소 버튼
@@ -29,9 +75,19 @@ saveBtn.onclick= function() {
 	let urlInputValue= document.getElementById("urlInput").value.trim();
 	let tagTextareaValue= document.getElementById("tagTextarea").value.split(' ');
 
-	console.log("제목:", titleInputValue);
-	console.log("URL:", urlInputValue);
-	console.log("태그:", tagTextareaValue);
+	let ElementBookMark = [titleInputValue, urlInputValue, tagTextareaValue]; // 북마크 요소 저장 배열
+	// 전체 북마크 리스트에 요소들 추가 / 북마크 리스트 요소들 정렬된 배열에 추가
+	AllBookMarkList.push(ElementBookMark);
+	SortBookMarkList.push(ElementBookMark);
+
+
+	// console.log("제목:", titleInputValue);
+	// console.log("URL:", urlInputValue);
+	// console.log("태그:", tagTextareaValue);
+	// console.log("북마크 요소들 : " ,ElementBookMark);
+
+
+	
 
 	// 북마크 Div요소 생성
 	let additionalBoxDiv = document.createElement("div");
@@ -179,4 +235,66 @@ saveBtn.onclick= function() {
 	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
+}
+
+// 전체 정렬 버튼
+AllButton.onclick= function() {
+	// 요소를 추가할 위치를 찾아서 추가
+	let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
+	// 해당 공간 html요소 초기화
+	SecondBoxDiv.innerHTML = '';
+
+	SortAll(SortBookMarkList); // 북마크 정렬 알고리즘
+	for(let i=0; i<SortBookMarkList.length; i++){
+		// 북마크 Div요소 생성
+		let additionalBoxDiv = document.createElement("div");
+		additionalBoxDiv.classList.add("additional-box");
+
+		// 제목 상자
+		let h2Element = document.createElement("h2");
+		h2Element.textContent = SortBookMarkList[i][0];
+		additionalBoxDiv.appendChild(h2Element);
+
+		// URL 상자
+		let aElementUrl = document.createElement("a");
+		aElementUrl.textContent = SortBookMarkList[i][1];
+		aElementUrl.href = SortBookMarkList[i][1];
+		aElementUrl.target = "_blank"; // 새창에서 링크 열기
+		additionalBoxDiv.appendChild(aElementUrl);
+
+		// 북마크쪽 아래 태그 Div
+		let BmAdditionalBoxTagDiv = document.createElement("div");
+		BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
+		for(let j = 0; j < SortBookMarkList[i][2].length; j++){
+			let yellowCircleDiv = document.createElement("div");
+				yellowCircleDiv.classList.add("yellow-circle");
+				BmAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+			
+				let pElement = document.createElement("p");
+				pElement.textContent = SortBookMarkList[i][2][j];
+				BmAdditionalBoxTagDiv.appendChild(pElement);
+			
+		}
+		// 북마크 박스 태그 Div 아이콘 추가
+		let SImageDiv = document.createElement("div");
+		SImageDiv.classList.add("SImages");
+		BmAdditionalBoxTagDiv.appendChild(SImageDiv);
+	
+		let BmEditIcon = document.createElement("img");
+		BmEditIcon.classList.add("BImages");
+		BmEditIcon.src = "Images/pencil.png";
+		SImageDiv.appendChild(BmEditIcon);
+	
+		let BmDeleteIcon = document.createElement("img");
+		BmDeleteIcon.classList.add("BImages");
+		BmDeleteIcon.src = "Images/trash.png";
+		SImageDiv.appendChild(BmDeleteIcon);
+
+		SecondBoxDiv.appendChild(additionalBoxDiv);
+		
+	}
+	console.log("전체 북마크 리스트 : " ,AllBookMarkList);
+	console.log("정렬된 북마크 리스트 : " , SortBookMarkList);
+	console.log("////////////////")
 }
