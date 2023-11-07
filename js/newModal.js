@@ -6,8 +6,10 @@ const urlInput = document.getElementById("urlInput"); // URL 받아오는 공간
 const tagTextarea = document.getElementById("tagTextarea"); // 태그 받아오는 공간
 const allTagArea = document.getElementById("allTaglist"); // 모든 태그 리스트 공간
 const currentTagArea = document.getElementById("currentTaglist"); // 최근 태그 리스트 공간
+const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL");
 
 let AllTagList = []; // 전체 태그 배열
+let UnClassifiedTagList = [];
 
 
 // 취소 버튼
@@ -136,6 +138,33 @@ saveBtn.onclick= function() {
 		let pElement = document.createElement("p");
 		pElement.textContent = CurrentTagList[i];
 		CurAdditionalBoxTagDiv.appendChild(pElement);
+	}
+	
+
+	// 사이드바 UnClassified 태그 추가 부분
+
+	// UnClassified html 부분 초기화
+	UnClassifiedSidebarArea.innerHTML = '';
+
+	// UnClassifiedTagList 배열 생성후 태그 받아오기
+	tagTextareaValue.forEach(v =>{
+		UnClassifiedTagList.push(v.toLowerCase());
+	});
+
+	// UnClassifiedTagList 배열 중복 제거
+	UnClassifiedTagList = [...new Set(UnClassifiedTagList)];
+	console.log(UnClassifiedTagList);
+
+
+	for (let j = 0; j < UnClassifiedTagList.length; j++) {
+		let UnclassifiedDiv = document.createElement('div');
+		let UnclassifiedSpan = document.createElement('span');
+
+		UnclassifiedSpan.innerText = UnClassifiedTagList[j];
+
+		UnclassifiedSpan.setAttribute('herf', '#');
+		UnclassifiedDiv.appendChild(UnclassifiedSpan);
+		UnClassifiedSidebarArea.appendChild(UnclassifiedDiv);
 	}
 
 
