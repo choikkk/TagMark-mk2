@@ -20,6 +20,8 @@
     margin: 15% auto;
     border-radius: 30px;
     border: 1px solid #000000; /* 모달창 테두리 선 */
+    max-width: 650px; /* 최대화시 모달창 최대 넓이 */
+    min-width: 650px; /* 최소화시 모달창 최소 넓이 */
   }
   
   /* 상단 영역 스타일 */

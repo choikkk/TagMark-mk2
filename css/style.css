@@ -30,11 +30,14 @@ header {
   color: #fff;
   padding: 10px;
   align-items: center; /* 수직 가운데 정렬 */
+  max-width: 300vh; /* 최대화시 최대 넓이 */
+  min-width: 180vh; /* 최소화시 최소 넓이 */
 }
 
 /*header 섹션 가로 나열*/
 .section-header-wrapper {
   display: flex;
+  
 }
 
 .section-header1 {
@@ -72,6 +75,7 @@ header img.logo {
   height: 20px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
   margin-right: 10px;
   align-items: center; /* 수직 가운데 정렬 */
+  
 }
 
 /* 텍스트 스타일링 */
@@ -96,12 +100,14 @@ header h1 {
     background-color: #ffffff; /* 두번째와 세번째 섹션 배경 */
     flex-direction: column; /* 세로로 나열 */
     color: #000000; /*body 전체 폰트색*/
+    
 }
 
 .subsection {
   /*나중에 지울거*/
   flex: 1;
   margin: 10px; /* 간격 조절 */
+  
 }
 
 /* 추가 스타일링 */ /*나중에 지울거*/
@@ -116,12 +122,16 @@ header h1 {
   margin: 0px; /* 간격 조절 */
   border-radius: 15px; /* 모서리를 깍는 속성 */
   border: 0.1px solid rgb(184, 183, 183);
+  max-width: 300px; /* 최대화시 최대 넓이 */
+  min-width: 300px; /* 최소화시 최소 넓이 */
 }
+
 
 /* 두 번째 섹션 박스 스타일링 */
 .second-section {
   flex: 3; /* 가로 넓이 조절 */
   display: flex;
+  align-items: center; /* 세로 중앙 배치 */
 }
 .second-box-top {/*:root*/
   flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
@@ -130,6 +140,8 @@ header h1 {
   margin-left: 20px; /* 간격 조절 */
   display: flex;
   align-items: center; /* 수직 가운데 정렬 */
+  max-width: 1000px; /* 최대화시 최대 넓이 */
+  min-width: 1000px; /* 최소화시 최소 넓이 */
 }
 .second-box {/*:root*/
   overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
@@ -138,6 +150,9 @@ header h1 {
   margin: 20px; /* 간격 조절 */
   margin-top: 10px; /* 간격 조절 */
   border-top: 1px solid rgb(184, 183, 183);
+  max-width: 1000px; /* 최대화시 최대 넓이 */
+  min-width: 1000px; /* 최소화시 최소 넓이 */
+  
 }
 
 /* 세 번째 섹션 박스 스타일링 */
@@ -145,6 +160,8 @@ header h1 {
   flex: 0.6; /* 가로 넓이 조절 */
   display: flex;
   flex-direction: column;
+  max-width: 200px; /* 최대화시 최대 넓이 */
+  min-width: 200px; /* 최소화시 최소 넓이 */
 }
 
 .third-box {/*:root*/
@@ -154,6 +171,9 @@ header h1 {
   margin: 10px; /* 간격 조절 */
   border-radius: 15px; /* 모서리를 깍는 속성 */
   border: 0.1px solid rgb(184, 183, 183);
+  max-width: 200px; /* 최대화시 최대 넓이 */
+  min-width: 200px; /* 최소화시 최소 넓이 */
+  
 }
 
 /*세번째 섹션 상단 영역 스타일링*/
@@ -177,13 +197,15 @@ header h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 20px;
-  outline: none;
+
   width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
   height: 15px;
   line-height: normal;
   font-style: normal;
   flex-shrink: 0;
   background: #f5f5f5;
+  max-width: 550px; /* 최대화시 최대 넓이 */
+  min-width: 550px; /* 최소화시 최소 넓이 */
 }
 
 /*북마크 정렬 버튼*/
@@ -200,6 +222,7 @@ header h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
+
 }
 .sectop-button:last-child {/*:root*/
   /*마지막 버튼 노란색*/
