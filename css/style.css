@@ -30,7 +30,7 @@ header {
   color: #fff;
   padding: 10px;
   align-items: center; /* 수직 가운데 정렬 */
-  max-width: 300vh; /* 최대화시 최대 넓이 */
+  max-width: 3000vh; /* 최대화시 최대 넓이 */
   min-width: 180vh; /* 최소화시 최소 넓이 */
 }
 
