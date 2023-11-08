@@ -50,8 +50,8 @@
 
   <ul class="categories list-unstyled">
     <div class="has-dropdown">
-      <i class="uil-estate fa-fw"></i><span href="#"> Dashboard</span>
-      <ul class="sidebar-dropdown list-unstyled">
+      <i class="uil-estate fa-fw"></i><span href="#"> Unclassified</span>
+      <ul class="sidebar-dropdown list-unstyled" id="UnclassifiedUL">
         <div><span href="#">Lorem ipsum</span></div>
         <div><span href="#">ipsum dolor</span></div>
         <div><span href="#">dolor ipsum</span></div>
@@ -147,16 +147,16 @@
             <div class="second-box-top">
                 <!--서치바-->
                 <div class="search-container">
-                    <input type="text" class="search-bar" placeholder="🔍 Search your bookmark or tag..." onkeydown="if(event.keyCode==13) alert('검색어: ' + this.value)">
+                    <input type="text" class="search-bar" id="searchInput" placeholder="Search your bookmark or tag...">
                   </div>
                 <!-- 버튼 추가 -->
-                <div class="sectop-button" >ALL</div>
-                <div class="sectop-button">Latest</div>
-                <div class="sectop-button">Old</div>
+                <div class="sectop-button" id="allBtn">ALL</div>
+                <div class="sectop-button" id="oldBtn">Latest</div>
+                <div class="sectop-button" id="latestBtn">Old</div>
                 <div class="sectop-button" id="openModalBtn">New</div>
             </div>
 
-            <div class="second-box"></div>
+            <div class="second-box" id="searchResults" ></div>
         </div>
 
         <div class="section third-section">
@@ -212,10 +212,11 @@
     </div>
 
     <script src="js/defaultModal.js"></script>
-    <script src="js/newModal.js"></script>
+    <script src="js/Button.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/dropdown.js"></script>
     <script src="js/login.js">  </script>
     <script src="js/modeChange.js"></script>
+    <script src="js/searchBar.js"></script>
 </body>
 </html>

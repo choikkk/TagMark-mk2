@@ -16,7 +16,7 @@ let AllTagList = []; // 전체 태그 배열
 let UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
 
 
-let AllBookMarkList = []; // 전체 북마크 배열
+var AllBookMarkList = []; // 전체 북마크 배열
 let SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
 let LatestSortBookMarkList = []; // 최신 순서 정렬된 북마크 배열
 let OldSortBookMarkList = []; // 오래된 순서 정렬된 북마크 배열
@@ -201,7 +201,7 @@ saveBtn.onclick= function() {
 	// 사이드바 UnClassified 태그 추가 부분
 
 	// UnClassified html 부분 초기화
-	UnClassifiedSidebarArea.innerHTML = '';
+	UnClassifiedSidebarArea.innerHTML = "";
 
 	// UnClassifiedTagList 배열 생성후 태그 받아오기
 	tagTextareaValue.forEach(v =>{

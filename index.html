@@ -135,16 +135,24 @@
             <div class="second-box-top">
                 <!--서치바-->
                 <div class="search-container">
-                    <input type="text" class="search-bar" placeholder="🔍 Search your bookmark or tag..." onkeydown="if(event.keyCode==13) alert('검색어: ' + this.value)">
+                    <input type="text" class="search-bar" id="searchInput"  placeholder="Search your bookmark or tag..." >
+                    <!-- onkeydown="
+                      if(event.keyCode==13){
+                        if(this.value.length < 2) {
+                          alert('2글자 이상을 검색해주세요.')
+                        }else{
+                          alert('검색어: ' + this.value)  
+                        } 
+                      }" -->
                   </div>
                 <!-- 버튼 추가 -->
                 <div class="sectop-button" id="allBtn">ALL</div>
-                <div class="sectop-button" id="latestBtn">Latest</div>
-                <div class="sectop-button" id="oldBtn">Old</div>
+                <div class="sectop-button" id="oldBtn">Latest</div>
+                <div class="sectop-button" id="latestBtn">Old</div>
                 <div class="sectop-button" id="openModalBtn">New</div>
             </div>
 
-            <div class="second-box"></div>
+            <div class="second-box" id="searchResults" ></div>
         </div>
 
         <div class="section third-section">
@@ -194,6 +202,8 @@
 <script src="js/sidebar.js"></script>
 <script src="js/signin.js">  </script>
 <script src="js/modeChange.js"></script>
+<script src="js/searchBar.js"></script>
+
 
 </body>
 </html>
