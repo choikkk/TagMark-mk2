@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/CModal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TagMark</title>
   </head>
@@ -52,10 +53,7 @@
         <!--카테고리 버튼-->
         <div class="catetop-button">
           <img class="BImages addCate-btn" src="Images/addCa.png" />
-          <div class="addCate-btn">
-            Add Category
-          </div>
-          
+          <div class="addCate-btn">Add Category</div>
         </div>
 
         <!--사이드바-->
@@ -156,7 +154,7 @@
               <div class="has-dropdown">
                 <i class="uil-envelope-download fa-fw"></i
                 ><span href="#">
-                  Mailbox<img class="category  c2dep" src="Images/category.png"
+                  Mailbox<img class="category c2dep" src="Images/category.png"
                 /></span>
                 <ul class="sidebar-dropdown list-unstyled">
                   <div>
@@ -199,7 +197,9 @@
               <div class="has-dropdown">
                 <i class="uil-shopping-cart-alt"></i
                 ><span href="#">
-                  Ecommerce<img class="category  c2dep" src="Images/category.png"
+                  Ecommerce<img
+                    class="category c2dep"
+                    src="Images/category.png"
                 /></span>
                 <ul class="sidebar-dropdown list-unstyled">
                   <div>
@@ -242,7 +242,7 @@
               <div class="has-dropdown">
                 <i class="uil-bag"></i
                 ><span href="#">
-                  Projects<img class="category  c2dep" src="Images/category.png"
+                  Projects<img class="category c2dep" src="Images/category.png"
                 /></span>
                 <ul class="sidebar-dropdown list-unstyled">
                   <div>
@@ -285,7 +285,9 @@
               <div class="has-dropdown">
                 <i class="uil-chart-pie-alt"></i
                 ><span href="#">
-                  Components<img class="category  c2dep" src="Images/category.png"
+                  Components<img
+                    class="category c2dep"
+                    src="Images/category.png"
                 /></span>
                 <ul class="sidebar-dropdown list-unstyled">
                   <div>
@@ -328,7 +330,7 @@
               <div class="has-dropdown">
                 <i class="uil-panel-add"></i
                 ><span href="#">
-                  Charts<img class="category  c2dep" src="Images/category.png"
+                  Charts<img class="category c2dep" src="Images/category.png"
                 /></span>
                 <ul class="sidebar-dropdown list-unstyled">
                   <div>
@@ -403,7 +405,12 @@
           <div class="sectop-button" id="allBtn">ALL</div>
           <div class="sectop-button" id="oldBtn">Latest</div>
           <div class="sectop-button" id="latestBtn">Old</div>
-          <div class="sectop-button" id="openModalBtn"><img class="BImages addbookBtn" src="Images/addbookmarkBtn.png" />New</div>
+          <div class="sectop-button" id="openModalBtn">
+            <img
+              class="BImages addbookBtn"
+              src="Images/addbookmarkBtn.png"
+            />New
+          </div>
         </div>
 
         <div class="second-box" id="searchResults"></div>
@@ -427,7 +434,6 @@
     <!-- 3등분 영역 끝 -->
 
     <!-- 북마크 추가 모달 창 -->
-    <!-- 모달 -->
     <div id="newModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -470,7 +476,7 @@
         <!-- 상단 영역 -->
         <div class="modal-header">
           <span class="close" id="closeModalBtn">&times;</span>
-          <h2 id="htext">Add BookMark</h2>
+          <h2 id="htext">Add Category</h2>
         </div>
 
         <!-- 하단 영역 -->
@@ -514,6 +520,27 @@
       </div>
     </div>
 
+    <!-- 카테고리 작은 모달 / 규문 여기도~ 퇴근시간이라 아직 수정중 -->
+    <!--<button id="openModalBtn">모달 열기</button>-->
+    <div id="myModal" class="cmodal">
+      <div class="cmodal-content">
+        <div class="cmodal-header">
+          <h2>카테고리 이름 변경 <img src="Images/pencil.png"></h2>
+        </div>
+        <div class="cmodal-footer">
+          <h2>카테고리 삭제 <img src="Images/trash.png"></h2>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--script-->
     <script src="js/defaultModal.js"></script>
     <script src="js/Button.js"></script>
     <script src="js/sidebar.js"></script>
