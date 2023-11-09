@@ -234,6 +234,60 @@
       </div>
     </div>
 
+
+     <!-- add category 모달 / 규문 여기서 id나 class 고쳐줭~-->
+     <div id="newModal" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2 id="htext">Add BookMark</h2>
+        </div>
+  
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <input
+            type="text"
+            id="addCategory"
+            placeholder="추가할 카테고리를 입력해주세요."
+          />
+        </div>
+  
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 북마크 삭제 모달 / 규문 여기도~ -->
+ <div id="newModal" class="modal">
+  <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+          <!-- 상단 영역 -->
+          <div class="modal-header">
+              <span class="close" id = closeModalBtn>&times;</span>
+              <h2 id="htext">Delete BookMark</h2>
+          </div>
+          <!-- 하단 영역 -->
+          <div class="divTitle">
+            <p>정말로 해당 북마크를 삭제하시겠습니까?</p>
+          </div>
+          
+          <div class="modal-footer">
+              <!-- 확인 버튼 -->
+              <button id="saveBtn">확인</button>
+              <!-- 취소 버튼 -->
+              <button id="cancelBtn">취소</button>                    
+          </div>
+      </div>
+  </div>
+
+
+
 <script src="js/defaultModal.js"></script>
 <script src="js/Button.js"></script>
 <script src="js/sidebar.js"></script>
