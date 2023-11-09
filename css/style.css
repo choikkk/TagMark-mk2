@@ -30,28 +30,30 @@ header {
   color: #fff;
   padding: 10px;
   align-items: center; /* 수직 가운데 정렬 */
-  max-width: 3000vh; /* 최대화시 최대 넓이 */
-  min-width: 180vh; /* 최소화시 최소 넓이 */
+  max-width: 100%; /* 최대화시 최대 넓이 */
+  min-width: 1650px; /* 최소화시 최소 넓이 */
+  
 }
 
 /*header 섹션 가로 나열*/
 .section-header-wrapper {
   display: flex;
+  min-height: 50px;
+  max-height: 50px;
   
 }
 
 .section-header1 {
   display: flex;
   flex: 1;
-
   align-items: center; /* 수직 가운데 정렬 */
 }
 .section-header2 {
   display: flex;
   flex: 1;
-
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
+  
 }
 .section-header3 {
   /*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
