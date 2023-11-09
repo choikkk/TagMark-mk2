@@ -217,12 +217,14 @@ header h1 {
   color: #000000;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
+  justify-content: center; /* 가로 정렬을 위한 추가 */
+  align-items: center; /* 세로 정렬을 위한 추가 */
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
-
+  max-height: 18px;
 }
 .sectop-button:last-child {/*:root*/
   /*마지막 버튼 노란색*/
@@ -272,4 +274,20 @@ header h1 {
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: flex-end;
   text-align: right;
+}
+
+/*상단 카테고리 텍스트 위아래 여백*/
+#cate-top{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/*카테고리 추가 버튼 배치*/
+.addCate-btn {
+  float: left;
+}
+
+.addbookBtn{
+  width: 15px;
+  height: 20px;
 }

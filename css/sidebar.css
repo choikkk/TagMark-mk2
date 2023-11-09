@@ -122,6 +122,7 @@
   cursor: pointer;
 }
 
+/*사이드바 카테고리 이미지 스타일링*/
 .category {
   width: 20px; /* 이미지를 부모 요소에 꽉 차게 만듭니다. */
   height: 15px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
@@ -129,7 +130,6 @@
   align-items: center; /* 수직 가운데 정렬 */
   float: right;
 }
-
-.c2dep {
+.c2dep {/*2deps 여백*/
 	margin-right: 30px;
 }
