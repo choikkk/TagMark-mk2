@@ -121,6 +121,9 @@
 .sidemargin * {
   cursor: pointer;
 }
+.sidemargin{
+	margin-top: 20px;
+}
 
 /*사이드바 카테고리 이미지 스타일링*/
 .category {

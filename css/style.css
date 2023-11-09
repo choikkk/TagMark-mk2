@@ -233,8 +233,23 @@ header h1 {
   color: #000000;
 }
 
+.catetop-button {/*:root*/
+  flex: 1;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  color: #000000;
+  text-align: center;  
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  max-height: 18px;
+  
+}
+
 /*카테고리 추가 버튼*/
-.full-box .sectop-button {/*:root*/
+.full-box .catetop-button {/*:root*/
   margin: 5px;
   padding: 5px;
   flex: 0.01; /* 가로 넓이 조절 */
@@ -287,6 +302,7 @@ header h1 {
   float: left;
 }
 
+/*북마크 추가 이미지 비율*/
 .addbookBtn{
   width: 15px;
   height: 20px;
