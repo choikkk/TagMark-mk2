@@ -12,11 +12,11 @@ const OldButton = document.getElementById("oldBtn"); //오래된 정렬 버튼
 const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // 사이드바 UnClassified 공간
 
 
-let AllTagList = []; // 전체 태그 배열
-let UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
-
-
+var AllTagList = []; // 전체 태그 배열
+var UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
 var AllBookMarkList = []; // 전체 북마크 배열
+
+// 정렬에 필요한 변수
 let SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
 let LatestSortBookMarkList = []; // 최신 순서 정렬된 북마크 배열
 let OldSortBookMarkList = []; // 오래된 순서 정렬된 북마크 배열
@@ -124,23 +124,63 @@ saveBtn.onclick= function() {
 		BmAdditionalBoxTagDiv.appendChild(pElement);
 	}
 	
+// 북마크 버튼 기능 나눔선 -------------------------------------------
 
 	// 북마크 박스 태그 Div 아이콘 추가
 	let SImageDiv = document.createElement("div");
 	SImageDiv.classList.add("SImages");
 	BmAdditionalBoxTagDiv.appendChild(SImageDiv);
 
+	// 북마크 수정 버튼 기능 구현
 	let BmEditIcon = document.createElement("img");
 	BmEditIcon.classList.add("BImages");
 	BmEditIcon.src = "Images/pencil.png";
+	BmEditIcon.id = "onBookModify"
 	SImageDiv.appendChild(BmEditIcon);
 
-	let BmDeleteIcon = document.createElement("img");
+	BmEditIcon.addEventListener('click', function() {
+		console.log('전체 태그 리스트 >>> ' + AllTagList);
+		console.log('현재 태그 리스트 >>> ' + tagTextareaValue)
+	});
+
+	// 마우스를 올렸을 때 스타일 변경
+	BmEditIcon.addEventListener('mouseover', function() {
+		BmEditIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
+		BmEditIcon.style.opacity = '0.7';   // 원하는 스타일 변경
+	});
+
+	// 마우스가 벗어났을 때 스타일 원래대로 변경
+	BmEditIcon.addEventListener('mouseout', function() {
+		BmEditIcon.style.cursor = 'default'; // 마우스 커서를 기본값으로 변경
+		BmEditIcon.style.opacity = '1';      // 원래 스타일로 변경
+	});
+
+// 북마크 버튼 기능 나눔선 -------------------------------------------
+
+	// 북마크 삭제 버튼 기능 구현
+	var BmDeleteIcon = document.createElement("img");
 	BmDeleteIcon.classList.add("BImages");
+	BmDeleteIcon.id = "onBookDelete";
 	BmDeleteIcon.src = "Images/trash.png";
 	SImageDiv.appendChild(BmDeleteIcon);
 
+	BmDeleteIcon.addEventListener('click', function() {
+		console.log('삭제 클릭 >>> ');
+	});
 
+	// 마우스를 올렸을 때 스타일 변경
+	BmDeleteIcon.addEventListener('mouseover', function() {
+		BmDeleteIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
+		BmDeleteIcon.style.opacity = '0.7';   // 원하는 스타일 변경
+	});
+
+	// 마우스가 벗어났을 때 스타일 원래대로 변경
+	BmDeleteIcon.addEventListener('mouseout', function() {
+		BmDeleteIcon.style.cursor = 'default'; // 마우스 커서를 기본값으로 변경
+		BmDeleteIcon.style.opacity = '1';      // 원래 스타일로 변경
+	});
+
+// 북마크 버튼 기능 나눔선 -------------------------------------------
 
 	// 전체 태그 목록에 추가
 	tagTextareaValue.forEach(v =>{
@@ -236,7 +276,13 @@ saveBtn.onclick= function() {
 	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
+	console.log("전체 태그 리스트 : " + AllTagList)
+	
+	console.log("정의 안된 태그 리스트 : " + UnClassifiedTagList)
+
 }
+
+
 
 // 전체 정렬 버튼
 AllButton.onclick= function() {
@@ -295,8 +341,9 @@ AllButton.onclick= function() {
 		SecondBoxDiv.appendChild(additionalBoxDiv);
 		
 	}
-	console.log("전체 북마크 리스트 : " ,AllBookMarkList);
-	console.log("정렬된 북마크 리스트 : " , SortBookMarkList);
+	// console.log("전체 북마크 리스트 : " ,AllBookMarkList);
+	// console.log("정렬된 북마크 리스트 : " , SortBookMarkList);
+	// console.log("////////////////")
 	console.log("////////////////")
 }
 
