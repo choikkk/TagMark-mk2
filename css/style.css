@@ -66,10 +66,19 @@ header {
 /* 로고 스타일링 */
 header img.logo {
   max-height: 50px; /* 이미지 높이 제한 */
-  border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
+  border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
   margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
   cursor: pointer;
 }
+
+/*다크모드 이미지 스타일링*/
+#chdarkmode{
+  transform: rotate(180deg); /*각도 회전 ㅋㅋ*/
+  transition: transform 1s ease-in-out;
+  background-color: #ffffff;
+}
+
+
 
 /*버튼 이미지 스타일링*/
 .BImages {
@@ -177,7 +186,7 @@ header h1 {
   min-width: 200px; /* 최소화시 최소 넓이 */
   max-height: 375px; /* 최대화시 최대 넓이 */
   min-height: 375px;  /* 최소화시 최소 넓이 */
-  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 
 /*세번째 섹션 상단 영역 스타일링*/
@@ -251,7 +260,8 @@ header h1 {
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   max-height: 21px;
-  
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+
 }
 
 /*카테고리 추가 버튼*/
