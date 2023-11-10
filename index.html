@@ -22,7 +22,8 @@
           <h1>TagMark</h1>
         </div>
         <div class="section-header2">
-          <p>Team Project / TagMark</p>
+          <p style="color: rgba(255, 255, 255, 0.5);">Team Project&nbsp;&nbsp;/</p>
+          <p>&nbsp;&nbsp;TagMark</p>
         </div>
         <div class="section-header3">
           <img class="logo" id="chdarkmode" src="Images/darkmode.jpg" />
@@ -381,6 +382,7 @@
           </a>
         </div>
       </div>
+      <!--두번째 섹션-->
       <div class="section second-section">
         <div class="second-box-top">
           <!--서치바-->
@@ -469,6 +471,42 @@
       </div>
     </div>
 
+    <!-- 북마크 수정 모달 창 -->
+    <div id="newModal" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2 id="htext">Modify BookMark</h2>
+        </div>
+
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <input
+            type="text"
+            id="bookmarkTitle"
+            placeholder="제목을 입력하세요"
+          />
+          <!-- URL 입력란 -->
+          <input type="url" id="urlInput" placeholder="URL을 입력하세요 " />
+          <!-- 태그 작성란 -->
+          <input
+            id="tagTextarea"
+            placeholder="태그를 작성하세요"
+            contenteditable="true"
+          />
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
     <!-- add category 모달 / 규문 여기서 id나 class 고쳐줭~-->
     <div id="newModal" class="modal">
       <!-- 모달 콘텐츠 -->
@@ -509,6 +547,80 @@
         <!-- 하단 영역 -->
         <div class="divTitle">
           <p>정말로 해당 북마크를 삭제하시겠습니까?</p>
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 태그 삭제 모달 / 규문 여기도~ -->
+    <div id="newModal" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2 id="htext">Delete Tag</h2>
+        </div>
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <p>정말로 해당 태그를 삭제하시겠습니까?</p>
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카테고리 삭제 모달 / 규문 여기도~ -->
+    <div id="newModal" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2 id="htext">Delete Category</h2>
+        </div>
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <p>정말로 해당 카테고리를 삭제하시겠습니까?</p>
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+     <!-- change category 모달 / 규문 여기서 id나 class 고쳐줭~-->
+     <div id="newModal" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeModalBtn">&times;</span>
+          <h2 id="htext">Change Category</h2>
+        </div>
+
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <input
+            type="text"
+            id="addCategory"
+            placeholder="변경하는 카테고리를 선택해주세요."
+          />
         </div>
 
         <div class="modal-footer">

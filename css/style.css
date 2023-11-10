@@ -177,6 +177,7 @@ header h1 {
   min-width: 200px; /* 최소화시 최소 넓이 */
   max-height: 375px; /* 최대화시 최대 넓이 */
   min-height: 375px;  /* 최소화시 최소 넓이 */
+  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 
 /*세번째 섹션 상단 영역 스타일링*/
@@ -193,6 +194,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 .search-bar {/*:root*/
   padding: 10px;
@@ -200,7 +202,7 @@ header h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 20px;
-
+  
   width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
   height: 15px;
   line-height: normal;
@@ -228,6 +230,7 @@ header h1 {
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   max-height: 18px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 .sectop-button:last-child {/*:root*/
   /*마지막 버튼 노란색*/
