@@ -76,7 +76,7 @@ header img.logo {
 #chdarkmode{
   transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
   transition: transform 1s ease-in-out;
-  background-color: #ffffff;
+  background-color: #949393;
 }
 
 
