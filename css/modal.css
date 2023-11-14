@@ -22,7 +22,6 @@
     border: 1px solid #000000; /* 모달창 테두리 선 */
     max-width: 650px; /* 최대화시 모달창 최대 넓이 */
     min-width: 650px; /* 최소화시 모달창 최소 넓이 */
-    animation: modalAnimation 1s;
   }
 
   @keyframes modalAnimation {/* 모달창 애니매이션/ 아 애니매이션 ㅋㅋ*/
@@ -34,6 +33,10 @@
       margin-top: 1;
       opacity: 1;
     }
+  }
+  
+  #newModal .modal-content {
+    animation: modalAnimation 1s;
   }
   
   /* 상단 영역 스타일 */
