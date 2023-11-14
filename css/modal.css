@@ -26,7 +26,7 @@
 
   @keyframes modalAnimation {
     from {
-      transform: scale(0.8); /* 처음에는 0으로 시작하여 아무것도 안 보이게 함 */
+      transform: scale(0.7); /* 처음에는 0으로 시작하여 아무것도 안 보이게 함 */
       opacity: 0;
     }
     to {
@@ -35,8 +35,23 @@
     }
   }
   
+  @keyframes modalCloseAnimation {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+  }
+
   #newModal .modal-content {
-    animation: modalAnimation 1s;
+    animation: modalAnimation 0.5s;
+  }
+
+  #newModal.closing .modal-content {
+    animation: modalCloseAnimation 0.5s;
   }
   
   /* 상단 영역 스타일 */
