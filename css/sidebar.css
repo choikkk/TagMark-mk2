@@ -59,9 +59,7 @@
 }
 
 .sidebar ul > div > span {
-  color: var(
-    --dk-gray-400
-  ); /*카테고리 목록 텍스트 색상 / 위 색상 목록(400)에서 수정가능*/
+  color: var(--dk-gray-400); /*카테고리 목록 텍스트 색상 / 위 색상 목록(400)에서 수정가능*/
   text-decoration: none; /*카테고리 텍스트 밑줄 제거*/
 }
 

@@ -1,18 +1,10 @@
 /*!글거온거라 약간식 수정중!*/
 
 :root {
-	--dk-gray-100: #F3F4F6;
-	--dk-gray-200: #E5E7EB;
+	--dk-gray-200: #fff;
 	--dk-gray-300: hwb(216 82% 14%);
-	--dk-gray-400: #9CA3AF; /*카테고리 폰트색상*/
-	--dk-gray-500: #6B7280; /*아이콘 색상*/
-	--dk-gray-600: #4B5563;
-	--dk-gray-700: #374151;
-	--dk-gray-800: #1F2937;
-	--dk-gray-900: #111827;
-	--dk-dark-bg: #313348;
-	--dk-darker-bg: #2a2b3d;
-	--navbar-bg-color: #6f6486;
+	--dk-gray-400: #fff; /*카테고리 폰트색상*/
+	--dk-gray-500: #fff; /*아이콘 색상*/
 	/*--sidebar-bg-color: #F8F8F8; /*사이드바 색 / 활성화시 북마크 추가 버튼 클릭시 모달창과 같이 뜸!!*/
 	--sidebar-width: 100%;
 }
@@ -31,7 +23,9 @@
 	width: var(--sidebar-width);
 	transition: all .3s ease-in-out;
 	transform: translateX(0);
-	z-index: 9999999
+	z-index: 9999999;
+	border-top: solid 1px var(--dk-gray-200);
+  	border-bottom: solid 1px var(--dk-gray-200);
 }
 
 .sidebar .close-aside {
@@ -63,6 +57,8 @@
 
 .sidebar > ul > div {
 	padding: .7rem 0rem; /*카테고리 목록에 텍스트와 아이콘 일정한 여백??/ 1.75rem */
+	border-top: solid 1px var(--dk-gray-200);
+  	border-bottom: solid 1px var(--dk-gray-200);
 }
 
 .sidebar ul > div > span{
@@ -101,7 +97,7 @@
 /* Start dropdown menu / 태그목록 여백과 숨김*/
 .sidebar ul .sidebar-dropdown {
 	padding-top: 10px;
-	padding-left: 30px;
+	padding-left: 40px;
 	display: none;
 }
 .sidebar ul .sidebar-dropdown.active {/*카테고리 클릭시 태그목록 띄움*/
@@ -109,11 +105,36 @@
 }
 
 .sidebar ul .sidebar-dropdown > div > span{/*태그 목록 일정한 간격과 폰트 크기*/
-  font-size: .85rem;
-	padding: .5rem 0;
+  font-size: 0.85rem;
+	padding: 0.5rem 0;
 	display: block;
 }
 
+/*이 시발 ㅈ같은거 / 사이드바 좌측 꼬라 박기 */
+.sidemargin * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  .sidemargin * {
+	cursor: pointer;
+  }
+  .sidemargin{
+	  margin-top: 20px;
+  }
+  
+  /*사이드바 카테고리 이미지 스타일링*/
+  .category {
+	width: 20px; 
+	height: 15px; 
+	margin-right: 10px;
+	align-items: center; /* 수직 가운데 정렬 */
+	margin-top: 1px;
+	float: right;
+  }
+  .c2dep {/*2deps 여백*/
+	  margin-right: 30px;
+  }
 
 
 

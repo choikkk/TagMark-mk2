@@ -104,7 +104,7 @@ header h1 {
 
 }
 
-/*두번째 섹년 세로나열*/
+/*두번째 섹션 세로나열*/
 .section {/*:root*/
     padding: 20px;
     display: flex;
@@ -232,6 +232,7 @@ header h1 {
   text-align: center;
   text-decoration: none;
   display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
+
   justify-content: center; /* 가로 정렬을 위한 추가 */
   align-items: center; /* 세로 정렬을 위한 추가 */
   font-size: 16px;
