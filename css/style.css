@@ -30,28 +30,30 @@ header {
   color: #fff;
   padding: 10px;
   align-items: center; /* 수직 가운데 정렬 */
-  max-width: 3000vh; /* 최대화시 최대 넓이 */
-  min-width: 180vh; /* 최소화시 최소 넓이 */
+  max-width: 100%; /* 최대화시 최대 넓이 */
+  min-width: 1650px; /* 최소화시 최소 넓이 */
+  
 }
 
 /*header 섹션 가로 나열*/
 .section-header-wrapper {
   display: flex;
+  min-height: 50px;
+  max-height: 50px;
   
 }
 
 .section-header1 {
   display: flex;
   flex: 1;
-
   align-items: center; /* 수직 가운데 정렬 */
 }
 .section-header2 {
   display: flex;
   flex: 1;
-
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
+  
 }
 .section-header3 {
   /*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
@@ -64,10 +66,19 @@ header {
 /* 로고 스타일링 */
 header img.logo {
   max-height: 50px; /* 이미지 높이 제한 */
-  border-radius: 50%; /* 이미지를 원형으로 만들기 위한 속성 */
+  border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
   margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
   cursor: pointer;
 }
+
+/*다크모드 이미지 스타일링*/
+#chdarkmode{
+  transform: rotate(180deg); /*각도 회전 ㅋㅋ*/
+  transition: transform 1s ease-in-out;
+  background-color: #ffffff;
+}
+
+
 
 /*버튼 이미지 스타일링*/
 .BImages {
@@ -173,7 +184,9 @@ header h1 {
   border: 0.1px solid rgb(184, 183, 183);
   max-width: 200px; /* 최대화시 최대 넓이 */
   min-width: 200px; /* 최소화시 최소 넓이 */
-  
+  max-height: 375px; /* 최대화시 최대 넓이 */
+  min-height: 375px;  /* 최소화시 최소 넓이 */
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 
 /*세번째 섹션 상단 영역 스타일링*/
@@ -190,6 +203,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 .search-bar {/*:root*/
   padding: 10px;
@@ -197,7 +211,7 @@ header h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 20px;
-
+  
   width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
   height: 15px;
   line-height: normal;
@@ -217,12 +231,15 @@ header h1 {
   color: #000000;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
+  justify-content: center; /* 가로 정렬을 위한 추가 */
+  align-items: center; /* 세로 정렬을 위한 추가 */
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
-
+  max-height: 18px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 .sectop-button:last-child {/*:root*/
   /*마지막 버튼 노란색*/
@@ -231,8 +248,24 @@ header h1 {
   color: #000000;
 }
 
+.catetop-button {/*:root*/
+  flex: 1;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  color: #000000;
+  text-align: center;  
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  max-height: 21px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+
+}
+
 /*카테고리 추가 버튼*/
-.full-box .sectop-button {/*:root*/
+.full-box .catetop-button {/*:root*/
   margin: 5px;
   padding: 5px;
   flex: 0.01; /* 가로 넓이 조절 */
@@ -272,4 +305,21 @@ header h1 {
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: flex-end;
   text-align: right;
+}
+
+/*상단 카테고리 텍스트 위아래 여백*/
+#cate-top{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/*카테고리 추가 버튼 배치*/
+.addCate-btn {
+  float: left;
+}
+
+/*북마크 추가 이미지 비율*/
+.addbookBtn{
+  width: 15px;
+  height: 20px;
 }

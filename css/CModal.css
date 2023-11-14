@@ -1,0 +1,41 @@
+.cmodal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 160px;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    border-radius: 15px;
+    font-size: 10px; /* 폰트 크기 설정 */
+  }
+  
+  .cmodal-content {
+    margin: 0;
+  }
+  
+  .cmodal-header {
+    padding-bottom: 8px;
+    border-bottom: 1px solid grey;
+    
+  }
+  
+  .cmodal-header h2 {
+    margin: 0;
+  }
+  
+  .cmodal-footer {
+    text-align: left;
+    max-height: 16px;
+  }
+
+  .cmodal img{
+    float: right;
+    width: 20px;
+  }
+  
