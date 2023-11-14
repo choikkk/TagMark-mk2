@@ -24,13 +24,13 @@
     min-width: 650px; /* 최소화시 모달창 최소 넓이 */
   }
 
-  @keyframes modalAnimation {/* 모달창 애니매이션/ 아 애니매이션 ㅋㅋ*/
+  @keyframes modalAnimation {
     from {
-      margin-top: -500px;
+      transform: scale(0.8); /* 처음에는 0으로 시작하여 아무것도 안 보이게 함 */
       opacity: 0;
     }
     to {
-      margin-top: 1;
+      transform: scale(1); /* 최종적으로 1배 크기로 확대 */
       opacity: 1;
     }
   }
