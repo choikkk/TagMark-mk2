@@ -36,6 +36,10 @@ header {
   
 }
 
+a {
+  color: #c4c4c4;
+}
+
 /*header 섹션 가로 나열*/
 .section-header-wrapper {
   display: flex;
