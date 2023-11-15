@@ -24,6 +24,7 @@
     min-width: 650px; /* 최소화시 모달창 최소 넓이 */
   }
 
+  /*모달창 애니메이션*/
   @keyframes modalAnimation {
     from {
       transform: scale(0.7); /* 처음에는 0으로 시작하여 아무것도 안 보이게 함 */
@@ -34,7 +35,6 @@
       opacity: 1;
     }
   }
-  
   @keyframes modalCloseAnimation {
     from {
       transform: scale(1);

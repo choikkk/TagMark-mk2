@@ -23,4 +23,15 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
     }
   }
   isChanged = !isChanged;  // CSS 파일 이름 변경 상태를 반전
+
+  //다크모드 전환시 애니메이면
+   // 추가된 부분: 애니메이션 클래스 추가
+   document.body.classList.add('theme-transition');
+   // 애니메이션 끝나면 클래스 제거
+   document.body.addEventListener('animationend', function() {
+     document.body.classList.remove('theme-transition');
+   });
 });
+
+
+

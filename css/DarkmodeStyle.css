@@ -12,8 +12,8 @@
     --gray-color-5: #ffffff80;
 
     --shadow--box: rgba(255, 255, 255, 0.123);
-}
 
+}
 
 body {
   margin: 0;
@@ -333,4 +333,18 @@ header h1 {
 .addbookBtn{
   width: 15px;
   height: 20px;
+}
+
+/*다크모드 전환시 애니메이션*/
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* 초기 투명도 0으로 설정 */
+  }
+  to {
+    opacity: 1; /* 최종 투명도 1으로 설정 */
+  }
+}
+
+.theme-transition {
+  animation: fadeInAnimation 0.5s ease-in-out;
 }

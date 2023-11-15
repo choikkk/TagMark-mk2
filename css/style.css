@@ -6,14 +6,8 @@
 /*root 색 변수 지정 / 다크모드 css수정하기 힘들어서 */
 :root{
     --body-color: #fff;
+  
 }
-
-
-
-
-
-
-
 
 body {
   margin: 0;
@@ -323,4 +317,18 @@ header h1 {
 .addbookBtn{
   width: 15px;
   height: 20px;
+}
+
+/*다크모드 전환시 애니메이션*/
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* 초기 투명도 0으로 설정 */
+  }
+  to {
+    opacity: 1; /* 최종 투명도 1으로 설정 */
+  }
+}
+
+.theme-transition {
+  animation: fadeInAnimation 0.5s ease-in-out;
 }
