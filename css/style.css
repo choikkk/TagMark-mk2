@@ -330,5 +330,5 @@ header h1 {
 }
 
 .theme-transition {
-  animation: fadeInAnimation 1s ease-in-out;
+  animation: fadeInAnimation 1s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
 }
