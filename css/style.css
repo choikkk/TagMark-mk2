@@ -67,7 +67,7 @@ header img.logo {
 
 /*다크모드 이미지 스타일링*/
 #chdarkmode{
-  transform: rotate(180deg); /*각도 회전 ㅋㅋ*/
+  transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
   transition: transform 0.5s ease-in-out;
   background-color: #ffffff;
 }
@@ -330,5 +330,5 @@ header h1 {
 }
 
 .theme-transition {
-  animation: fadeInAnimation 0.5s ease-in-out;
+  animation: fadeInAnimation 1s ease-in-out;
 }
