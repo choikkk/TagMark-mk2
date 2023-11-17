@@ -31,11 +31,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
    document.body.addEventListener('animationend', function() {
      document.body.classList.remove('theme-transition');
    });
-<<<<<<< HEAD
-});
-=======
+
 });
 
 
-
->>>>>>> master

@@ -5,13 +5,7 @@
 /* 전체 페이지 스타일링을 위한 스타일 */
 /*root 색 변수 지정 / 다크모드 css수정하기 힘들어서 */
 :root{
-<<<<<<< HEAD
   --body-color: #fff;
-
-=======
-    --body-color: #fff;
-  
->>>>>>> master
 }
 
 body {
@@ -72,15 +66,9 @@ cursor: pointer;
 
 /*다크모드 이미지 스타일링*/
 #chdarkmode{
-<<<<<<< HEAD
 transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
 transition: transform 0.5s ease-in-out;
 background-color: #ffffff;
-=======
-  transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
-  transition: transform 0.5s ease-in-out;
-  background-color: #ffffff;
->>>>>>> master
 }
 
 
@@ -229,7 +217,6 @@ min-width: 550px; /* 최소화시 최소 넓이 */
 
 /*북마크 정렬 버튼*/
 .sectop-button {/*:root*/
-<<<<<<< HEAD
 flex: 1;
 margin: 10px;
 padding: 8px;
@@ -247,25 +234,6 @@ border: 1px solid rgba(0, 0, 0, 0.3);
 cursor: pointer;
 max-height: 18px;
 box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
-=======
-  flex: 1;
-  margin: 10px;
-  padding: 8px;
-  background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-  color: #000000;
-  text-align: center;
-  text-decoration: none;
-  display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
-
-  justify-content: center; /* 가로 정렬을 위한 추가 */
-  align-items: center; /* 세로 정렬을 위한 추가 */
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  max-height: 18px;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
->>>>>>> master
 }
 .sectop-button:last-child {/*:root*/
 /*마지막 버튼 노란색*/
@@ -346,18 +314,12 @@ float: left;
 
 /*북마크 추가 이미지 비율*/
 .addbookBtn{
-<<<<<<< HEAD
 width: 15px;
 height: 20px;
-=======
-  width: 15px;
-  height: 20px;
->>>>>>> master
 }
 
 /*다크모드 전환시 애니메이션*/
 @keyframes fadeInAnimation {
-<<<<<<< HEAD
 0% {
   transform: scale(1);
   opacity: 0; /* 최종 투명도 1으로 설정 */
@@ -374,22 +336,4 @@ height: 20px;
 
 .theme-transition {
 animation: fadeInAnimation 0.5s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
-=======
-  0% {
-    transform: scale(1);
-    opacity: 0; /* 최종 투명도 1으로 설정 */
-  }
-  50% {
-    transform: scale(0.995);
-    opacity: 0.5; /* 초기 투명도 0으로 설정 */
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1; /* 최종 투명도 1으로 설정 */
-  }
-}
-
-.theme-transition {
-  animation: fadeInAnimation 0.5s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
->>>>>>> master
 }
