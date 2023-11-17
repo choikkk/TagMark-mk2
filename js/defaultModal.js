@@ -18,10 +18,22 @@ closeModalBtn.onclick = function() {
       modal.style.display = 'none';
       modal.classList.remove('closing'); // 새로운 클래스 제거
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  modal.classList.add('closing'); // 새로운 클래스 추가
+  setTimeout(function() {
+      modal.style.display = 'none';
+      modal.classList.remove('closing'); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 }
 
 // 모달 외부 클릭 시 닫기
 window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.classList.add('closing'); // 새로운 클래스 추가
+      setTimeout(function() {
+          modal.style.display = 'none';
+          modal.classList.remove('closing'); // 새로운 클래스 제거
+      }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  }
   if (event.target == modal) {
       modal.classList.add('closing'); // 새로운 클래스 추가
       setTimeout(function() {
