@@ -11,11 +11,12 @@ const LatestButton = document.getElementById("latestBtn"); //최신 정렬 버�
 const OldButton = document.getElementById("oldBtn"); //오래된 정렬 버튼
 const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // 사이드바 UnClassified 공간
 
+var AllRecnetlyTag = []; // 북마크 한개의 최근 추가 태그 리스트 배열
 
 var AllTagList = []; // 전체 태그 배열
-var SetTagList = []; // 중복 제거 태그
 var UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
 var AllBookMarkList = []; // 전체 북마크 배열
+var SetTagList = []; // 최근 추가 태그 관련 배열
 
 // 정렬에 필요한 변수
 let SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
@@ -69,8 +70,6 @@ cancelBtn.onclick = function() {
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
 }
 
-
-
 // 확인(저장)버튼
 saveBtn.onclick= function() {
 
@@ -88,9 +87,12 @@ saveBtn.onclick= function() {
 	// console.log("URL:", urlInputValue);
 	// console.log("태그:", tagTextareaValue);
 	// console.log("북마크 요소들 : " ,ElementBookMark);
-
-
 	
+	
+	AllRecnetlyTag.push(tagTextareaValue);
+	var RecnetlyTag = AllRecnetlyTag[AllRecnetlyTag.length-1]
+	
+	console.log("최근 추가 태그 리스트 >>> " + RecnetlyTag)
 
 	// 북마크 Div요소 생성
 	let additionalBoxDiv = document.createElement("div");
@@ -190,6 +192,7 @@ saveBtn.onclick= function() {
 		console.log('삭제 버튼 클릭>>> ' + AllBookMarkList);
 	});
 	
+	
 	// 태그 리스트 업데이트
 	function updateTagLists(deletedTags) {
 		// 삭제된 태그를 모든 태그 목록과 현재 태그 목록에서 찾아 제거
@@ -198,16 +201,11 @@ saveBtn.onclick= function() {
 			if (allTagIndex !== -1) {
 				AllTagList.splice(allTagIndex, 1);
 			}
-	
-			const currentTagIndex = SetTagList.indexOf(deletedTag.toLowerCase());
-			if (currentTagIndex !== -1) {
-				SetTagList.splice(currentTagIndex, 1);
-			}
 		});
 	
 		// 해당 공간 html 요소 초기화
 		allTagArea.innerHTML = '';
-		currentTagArea.innerHTML = '';
+		// currentTagArea.innerHTML = '';
 	
 		// 태그 추가
 		for (let i = 0; i < AllTagList.length; i++) {
@@ -228,19 +226,33 @@ saveBtn.onclick= function() {
 		let CurrentTagList = SetTagList; // 현재 추가 태그 배열
 	
 		// 최근 추가 태그 공간 태그 추가
-		for (let i = 0; i < CurrentTagList.length; i++) {
-			let CurAdditionalBoxTagDiv = document.createElement("div");
-			CurAdditionalBoxTagDiv.classList.add("additional-box-tag");
-			currentTagArea.appendChild(CurAdditionalBoxTagDiv);
+		// for (let i = 0; i < CurrentTagList.length; i++) {
+		// 	let CurAdditionalBoxTagDiv = document.createElement("div");
+		// 	CurAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		// 	currentTagArea.appendChild(CurAdditionalBoxTagDiv);
 	
-			let yellowCircleDiv = document.createElement("div");
-			yellowCircleDiv.classList.add("yellow-circle");
-			CurAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+		// 	let yellowCircleDiv = document.createElement("div");
+		// 	yellowCircleDiv.classList.add("yellow-circle");
+		// 	CurAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
 	
-			let pElement = document.createElement("p");
-			pElement.textContent = CurrentTagList[i];
-			CurAdditionalBoxTagDiv.appendChild(pElement);
-		}
+		// 	let pElement = document.createElement("p");
+		// 	pElement.textContent = CurrentTagList[i];
+		// 	CurAdditionalBoxTagDiv.appendChild(pElement);
+		// }
+		// 최근 추가 태그 공간 태그 추가
+		// for (let i = 0; i < RecnetlyTag.length; i++) {
+		// let CurAdditionalBoxTagDiv = document.createElement("div");
+		// CurAdditionalBoxTagDiv.classList.add("additional-box-tag");
+		// currentTagArea.appendChild(CurAdditionalBoxTagDiv);
+
+		// let yellowCircleDiv = document.createElement("div");
+		// yellowCircleDiv.classList.add("yellow-circle");
+		// CurAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+
+		// let pElement = document.createElement("p");
+		// pElement.textContent = RecnetlyTag[i];
+		// CurAdditionalBoxTagDiv.appendChild(pElement);
+		// }
 	}
 	
 	// UnClassifiedTagList 업데이트
@@ -341,12 +353,12 @@ saveBtn.onclick= function() {
 	tagTextareaValue.forEach(v => {
 		CurrentTagList.push(v);
 	});
-
+ 
 	// 해당 공간 html요소 초기화
 	currentTagArea.innerHTML = '';
 
 	// 최근 추가 태그 공간 태그 추가
-	for (let i = 0; i < CurrentTagList.length; i++) {
+	for (let i = 0; i < RecnetlyTag.length; i++) {
 
 		let CurAdditionalBoxTagDiv = document.createElement("div");
 		CurAdditionalBoxTagDiv.classList.add("additional-box-tag");
@@ -357,7 +369,7 @@ saveBtn.onclick= function() {
 		CurAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
 
 		let pElement = document.createElement("p");
-		pElement.textContent = CurrentTagList[i];
+		pElement.textContent = RecnetlyTag[i];
 		CurAdditionalBoxTagDiv.appendChild(pElement);
 	}
 	
@@ -400,10 +412,10 @@ saveBtn.onclick= function() {
 	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화s
 	tagTextarea.value = ""; // 태그 입력 필드 초기화
-	console.log("중복 태그 목록 >>>")
-	console.log(AllTagList)
-	console.log("전체 태그 목록 >>>")
-	console.log(SetTagList)
+	// console.log("중복 태그 목록 >>>")
+	// console.log(AllTagList)
+	// console.log("전체 태그 목록 >>>")
+	// console.log(SetTagList)
 }
 
 
