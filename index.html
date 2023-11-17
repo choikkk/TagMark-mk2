@@ -52,7 +52,7 @@
       <div class="section full-box">
         <h2 id="cate-top">Categories</h2>
         <!--카테고리 버튼-->
-        <div class="catetop-button">
+        <div class="catetop-button" id="openCategoryModalBtn">
           <img class="BImages addCate-btn" src="Images/addCa.png" />
           <div class="addCate-btn">Add Category</div>
         </div>
@@ -508,12 +508,12 @@
     </div>
 
     <!-- add category 모달 / 규문 여기서 id나 class 고쳐줭~-->
-    <div id="newModal" class="modal">
+    <div id="newCategoryModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeCategoryModalBtn">&times;</span>
           <h2 id="htext">Add Category</h2>
         </div>
 
