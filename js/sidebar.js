@@ -1,9 +1,3 @@
-// Other important pens.
-// Map: https://codepen.io/themustafaomar/pen/ZEGJeZq
-// Navbar: https://codepen.io/themustafaomar/pen/VKbQyZ
-
-'use strict'
-
 function $(selector) {
   return document.querySelector(selector)
 }

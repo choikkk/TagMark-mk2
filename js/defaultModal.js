@@ -18,22 +18,10 @@ closeModalBtn.onclick = function() {
       modal.style.display = 'none';
       modal.classList.remove('closing'); // 새로운 클래스 제거
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
-  modal.classList.add('closing'); // 새로운 클래스 추가
-  setTimeout(function() {
-      modal.style.display = 'none';
-      modal.classList.remove('closing'); // 새로운 클래스 제거
-  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 }
 
 // 모달 외부 클릭 시 닫기
 window.onclick = function(event) {
-  if (event.target == modal) {
-      modal.classList.add('closing'); // 새로운 클래스 추가
-      setTimeout(function() {
-          modal.style.display = 'none';
-          modal.classList.remove('closing'); // 새로운 클래스 제거
-      }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
-  }
   if (event.target == modal) {
       modal.classList.add('closing'); // 새로운 클래스 추가
       setTimeout(function() {
@@ -59,6 +47,19 @@ closeCategoryModalBtn.onclick = function() {
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 }
 
+// 카테고리 작은 모달
+var openCTModalBtn = document.getElementById('openCTModalBtn');
+
+// 모달 참조
+var myCTModal = document.getElementById('myCTModal');
+
+// 모달 열기 이벤트
+openCTModalBtn.onclick = function() {
+  myCTModal.classList.remove('closing'); // 새로운 클래스 추가
+  myCTModal.style.display = 'block';
+}
+
+// 윈도우 밖 클릭시 반응형 이벤트 추가
 window.addEventListener('click', function (event) {
   if (event.target == categoryModal) {
     categoryModal.classList.add('closing'); // 새로운 클래스 추가
@@ -66,5 +67,12 @@ window.addEventListener('click', function (event) {
       categoryModal.style.display = 'none';
       categoryModal.classList.remove('closing'); // 새로운 클래스 제거
     }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  }
+  else if (event.target == myCTModal) {
+    myCTModal.classList.add('closing'); // 새로운 클래스 추가
+    setTimeout(function() {
+        myCTModal.style.display = 'none';
+        myCTModal.classList.remove('closing'); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 }
 });
