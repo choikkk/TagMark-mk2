@@ -19,56 +19,19 @@
   transition: all 0.3s ease-in-out;
   transform: translateX(0);
   z-index: 9999999;
-  border-top: solid 1px var(--dk-gray-200);
-  border-bottom: solid 1px var(--dk-gray-200);
-}
+  border-top: solid 2px var(--dk-gray-200);
 
-/*나중에 지울거?*/
-.sidebar .close-aside {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  cursor: pointer;
-  color: #eee;
-}
-
-/*나중에 지울거?*/
-.sidebar .sidebar-header {
-  border-bottom: 1px solid #2a2b3c;
-}
-/*나중에 지울거?*/
-.sidebar .sidebar-header h5 span {
-  color: var(--dk-gray-300);
-}
-/*나중에 지울거?*/
-.sidebar .sidebar-header p {
-  color: var(--dk-gray-400);
-  font-size: 0.825rem;
-}
-
-.sidebar .search .form-control ~ i {
-  color: #2b2f3a;
-  right: 40px;
-  top: 22px;
 }
 
 .sidebar > ul > div {
   padding: 0.7rem 0rem; /*카테고리 목록에 텍스트와 아이콘 일정한 여백??/ 1.75rem */
-  border-top: solid 1px var(--dk-gray-200);
-  border-bottom: solid 1px var(--dk-gray-200);
+
+  border-bottom: solid 2px var(--dk-gray-200);
 }
 
 .sidebar ul > div > span {
   color: var(--dk-gray-400); /*카테고리 목록 텍스트 색상 / 위 색상 목록(400)에서 수정가능*/
   text-decoration: none; /*카테고리 텍스트 밑줄 제거*/
-}
-
-/* Start numbers 나중에 지울거?*/
-.sidebar ul > div > span > .num {
-  line-height: 0;
-  border-radius: 3px;
-  font-size: 14px;
-  padding: 0px 5px;
 }
 
 .sidebar ul > div > i {
