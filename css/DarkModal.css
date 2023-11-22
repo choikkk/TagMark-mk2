@@ -161,4 +161,5 @@
   border: none; /* 기존 테두리선 제거 */
   border-bottom: 1px solid #ffffff; /* 아래쪽에만 선 추가 */
   background-color: #35363A;
+  color: #ffffff;
 }
