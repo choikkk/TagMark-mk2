@@ -11,14 +11,14 @@
 
 .cmodal-content {
   background-color: #fff;
-  margin: 15%;
+
   max-width: 160px;
   padding: 8px;
   text-align: left;
   border-radius: 15px;
   border: 1px solid grey;
   font-size: 10px; /* 폰트 크기 설정 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cmodal-header {
@@ -42,7 +42,7 @@
 }
 
 /*모달창 애니메이션*/
-@keyframes modalAnimation {
+@keyframes CmodalAnimation {
   0% {
     transform: scale(0.7);
     opacity: 0;
@@ -56,7 +56,7 @@
     opacity: 1;
   }
 }
-@keyframes modalCloseAnimation {
+@keyframes CmodalCloseAnimation {
   from {
     transform: scale(1); /* 최종적으로 1배 크기로 확대 */
     transform: scale(1.2, 1.2);
@@ -71,9 +71,9 @@
 }
 
 #myCTModal .cmodal-content {
-  animation: modalAnimation 0.5s ease-in-out;
+  animation: CmodalAnimation 0.5s ease-in-out;
 }
 
 #myCTModal.closing .cmodal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
+  animation: CmodalCloseAnimation 0.5s ease-in-out;
 }
