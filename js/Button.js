@@ -385,8 +385,10 @@ saveBtn.onclick= function() {
 
 		SortAll(SortBookMarkList); // 북마크 정렬 알고리즘
 		for(let i=0; i<SortBookMarkList.length; i++){
+			
 			// 클로저를 사용하여 ElementBookMark 변수를 유지
 			let ElementBookMark = SortBookMarkList[i];
+
 			// 북마크 Div요소 생성
 			let additionalBoxDiv = document.createElement("div");
 			additionalBoxDiv.classList.add("additional-box");
