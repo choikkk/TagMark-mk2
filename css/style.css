@@ -65,6 +65,10 @@ cursor: pointer;
 transition: transform 0.5s ease-in-out;
 }
 
+.logo:hover{
+  transform: rotateY( 360deg );
+}
+
 /*다크모드 이미지 스타일링*/
 #chdarkmode{
 transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
@@ -72,7 +76,9 @@ transition: transform 0.5s ease-in-out;
 background-color: #ffffff;
 }
 
-
+#chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
+  transform: rotate( 360deg );
+}
 
 /*버튼 이미지 스타일링*/
 .BImages {
@@ -346,14 +352,5 @@ height: 20px;
 
 .theme-transition {
 animation: fadeInAnimation 0.5s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
-
-}
-
-#chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
-  transform: rotate( 360deg );
-}
-
-.logo:hover{
-  transform: rotate( 360deg );
 
 }
