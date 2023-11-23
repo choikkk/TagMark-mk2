@@ -74,6 +74,7 @@ header img.logo {
   border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
   margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
 /*다크모드 이미지 스타일링*/
@@ -251,12 +252,17 @@ header h1 {
   cursor: pointer;
   max-height: 18px;
   box-shadow: 0 8px 8px var(--shadow--box);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  transition: all 0.2s linear;
 }
 .sectop-button:last-child {/*:root*/
   /*마지막 버튼 노란색*/
   background-color: #f7e600; /* 노란색으로 변경 ㅋ */
   /*padding-top: 0%; /* 나중에 지울거 이 비율을 조절하여 이미지의 세로 비율을 유지 */
   color: #000000;
+}
+
+.sectop-button:hover {/*마우스 올릴때 상단 이동 애니메이션 */
+  transform: translate( 0px, -20% )
 }
 
 .catetop-button {/*:root*/
@@ -272,7 +278,11 @@ header h1 {
   cursor: pointer;
   max-height: 21px;
   box-shadow: 0 8px 8px var(--shadow--box);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  transition: all 0.2s linear;
+}
 
+.catetop-button:hover {/*카테고리 추가 버튼 애니메이션*/
+  transform: translate( 0px, -10% )
 }
 
 /*카테고리 추가 버튼*/
@@ -353,4 +363,13 @@ header h1 {
 
 .theme-transition {
   animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+#chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
+  transform: rotate( 540deg );
+}
+
+.logo:hover{
+  transform: rotate( 360deg );
+
 }

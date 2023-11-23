@@ -59,7 +59,7 @@
 @keyframes CmodalCloseAnimation {
   from {
     transform: scale(1); /* 최종적으로 1배 크기로 확대 */
-    transform: scale(1.2, 1.2);
+
 
     opacity: 1; /*투명도*/
   }
