@@ -10,6 +10,10 @@ const AllButton = document.getElementById("allBtn"); // 전체 정렬 버튼
 const LatestButton = document.getElementById("latestBtn"); //최신 정렬 버튼
 const OldButton = document.getElementById("oldBtn"); //오래된 정렬 버튼
 const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // 사이드바 UnClassified 공간
+const DeleteSaveBtn = document.getElementById("DeleteSaveBtn"); // 북마크 삭제 확인 버튼
+const DeleteCancelBtn = document.getElementById("DeleteCancelBtn"); // 북마크 삭제 취소 버튼
+
+
 
 var AllRecnetlyTag = []; // 북마크 한개의 최근 추가 태그 리스트 배열
 var AllTagList = []; // 전체 태그 배열
@@ -62,7 +66,7 @@ function compareTitles(title1, title2) {
 
 // 취소 버튼
 cancelBtn.onclick = function() {
-	newModal.style.display = "none";
+	newModal.style.display = "none"; // 북마크 추가 모달 취소버튼
 
 	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
@@ -82,10 +86,6 @@ saveBtn.onclick= function() {
 	SortBookMarkList.push(ElementBookMark);
 	LatestSortBookMarkList.push(ElementBookMark);
 	OldSortBookMarkList.unshift(ElementBookMark);
-	// console.log("제목:", titleInputValue);
-	// console.log("URL:", urlInputValue);
-	// console.log("태그:", tagTextareaValue);
-	// console.log("북마크 요소들 : " ,ElementBookMark);
 	
 	
 	AllRecnetlyTag.push(tagTextareaValue);
@@ -172,27 +172,31 @@ saveBtn.onclick= function() {
 	BmDeleteIcon.addEventListener('click', function() {
 		//defaultModal.js 삭제 북마크 모달 오픈 
 		BDmodal.style.display = "block";
-		// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
-		const index = findBookmarkIndex(ElementBookMark);
-	
-		// AllBookMarkList 배열에서 북마크 제거
-		if (index !== -1) {
-			const deletedBookmark = AllBookMarkList.splice(index, 1)[0];
-	
-			// 태그 목록 업데이트
-			updateTagLists(deletedBookmark[2]);
-	
-			// UnClassifiedTagList 업데이트
-			updateUnClassifiedTagList(deletedBookmark[2]);
-	
-			// 정렬된 배열에서 북마크 제거
-			removeFromSortedArrays(deletedBookmark);
+				
+		// 취소 버튼
+		DeleteSaveBtn.onclick = function() { 
+			// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
+			const index = findBookmarkIndex(ElementBookMark);
+		
+			// AllBookMarkList 배열에서 북마크 제거
+			if (index !== -1) {
+				const deletedBookmark = AllBookMarkList.splice(index, 1)[0];
+		
+				// 태그 목록 업데이트
+				updateTagLists(deletedBookmark[2]);
+		
+				// UnClassifiedTagList 업데이트
+				updateUnClassifiedTagList(deletedBookmark[2]);
+		
+				// 정렬된 배열에서 북마크 제거
+				removeFromSortedArrays(deletedBookmark);
+			}
+		
+			// 북마크를 나타내는 HTML 요소를 DOM에서 제거
+			additionalBoxDiv.remove();
+			BDmodal.style.display = "none"
+			console.log('삭제 버튼 클릭>>> ' + AllBookMarkList);
 		}
-	
-		// 북마크를 나타내는 HTML 요소를 DOM에서 제거
-		additionalBoxDiv.remove();
-	
-		console.log('삭제 버튼 클릭>>> ' + AllBookMarkList);
 	});
 	
 	// 태그 리스트 업데이트

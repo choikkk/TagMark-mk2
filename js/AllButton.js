@@ -1,4 +1,3 @@
-
 AllButton.onclick= function() {
 	// 요소를 추가할 위치를 찾아서 추가
 	let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
