@@ -146,7 +146,9 @@ saveBtn.onclick= function() {
 	BmEditIcon.addEventListener('click', function() {
 		console.log('전체 태그 리스트 >>> ' + AllTagList);
 		console.log('현재 태그 리스트 >>> ' + tagTextareaValue)
-	});
+		//defaultModal.js 북마크 수정 모달창 오픈
+		MDmodal.style.display = "block";
+	  });
 
 	// 마우스를 올렸을 때 스타일 변경
 	BmEditIcon.addEventListener('mouseover', function() {
@@ -170,6 +172,8 @@ saveBtn.onclick= function() {
 	SImageDiv.appendChild(BmDeleteIcon);
 
 	BmDeleteIcon.addEventListener('click', function() {
+		//defaultModal.js 삭제 북마크 모달 오픈 
+		BDmodal.style.display = "block";
 		// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
 		const index = findBookmarkIndex(ElementBookMark);
 	
