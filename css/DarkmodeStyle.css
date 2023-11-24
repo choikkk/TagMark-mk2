@@ -223,7 +223,7 @@ header h1 {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 20px;
-  
+  color: #ffffff;
   width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
   height: 15px;
   line-height: normal;
