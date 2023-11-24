@@ -13,6 +13,8 @@ const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // �
 const DeleteSaveBtn = document.getElementById("DeleteSaveBtn"); // 북마크 삭제 확인 버튼
 const DeleteCancelBtn = document.getElementById("DeleteCancelBtn"); // 북마크 삭제 취소 버튼
 
+
+
 var AllRecnetlyTag = []; // 북마크 한개의 최근 추가 태그 리스트 배열
 var AllTagList = []; // 전체 태그 배열
 var UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
@@ -64,7 +66,7 @@ function compareTitles(title1, title2) {
 
 // 취소 버튼
 cancelBtn.onclick = function() {
-	newModal.style.display = "none";
+	newModal.style.display = "none"; // 북마크 추가 모달 취소버튼
 
 	titleInput.value = ""; // 제목 입력 필드 초기화
 	urlInput.value = ""; // URL 입력 필드 초기화
