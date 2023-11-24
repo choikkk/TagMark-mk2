@@ -268,7 +268,7 @@ header h1 {
 }
 
 .sectop-button:hover {/*마우스 올릴때 상단 이동 애니메이션 */
-  transform: translate( 0px, -20% )
+  transform: translate( 0px, -20% ) scale( 1.05 );
 }
 
 .catetop-button {/*:root*/
@@ -288,7 +288,7 @@ header h1 {
 }
 
 .catetop-button:hover {/*카테고리 추가 버튼 애니메이션*/
-  transform: translate( 0px, -10% )
+  transform: translate( 0px, -10% ) scale( 1.05 );
 }
 
 /*카테고리 추가 버튼*/
@@ -369,4 +369,12 @@ header h1 {
 
 .theme-transition {
   animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+#profile_image{
+  transition: all 0.2s ease-in-out;
+}
+
+#profile_image:hover{
+  transform: scale( 1.2 );
 }
