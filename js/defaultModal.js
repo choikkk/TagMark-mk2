@@ -1,4 +1,3 @@
-
 // #북마크 추가#
 // 모달 열기 버튼과 모달 닫기 버튼 참조
 const openModalBtn = document.getElementById("openModalBtn");
