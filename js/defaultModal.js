@@ -32,7 +32,7 @@ window.onclick = function (event) {
   }
 };
 
-// 카테고리 추가 모달
+// #카테고리 추가 모달
 const openCategoryModalBtn = document.getElementById("openCategoryModalBtn");
 const closeCategoryModalBtn = document.getElementById("closeCategoryModalBtn");
 
@@ -94,7 +94,21 @@ window.addEventListener("click", function (event) {
       DCmodal.style.display = "none";
       DCmodal.classList.remove("closing"); // 새로운 클래스 제거
     }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  }else if (event.target == MDmodal) {
+    MDmodal.classList.add("closing"); // 새로운 클래스 추가
+    setTimeout(function () {
+      MDmodal.style.display = "none";
+      MDmodal.classList.remove("closing"); // 새로운 클래스 제거
+    }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  }else if (event.target == BDmodal) {
+    BDmodal.classList.add("closing"); // 새로운 클래스 추가
+    setTimeout(function () {
+      BDmodal.style.display = "none";
+      BDmodal.classList.remove("closing"); // 새로운 클래스 제거
+    }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
   }
+  
+  
 });
 
 // #카테고리 변경 모달
@@ -155,3 +169,39 @@ closeDCModalBtn.onclick = function () {
     DCmodal.classList.remove("closing"); // 새로운 클래스 제거
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 };
+
+
+// #북마크 수정#
+// 모달 열기 버튼과 모달 닫기 버튼 참조
+const closeMDModalBtn = document.getElementById("closeMDModalBtn");
+
+// 모달 참조
+const MDmodal = document.getElementById("ModiModal");
+// SaveButton.js에서 모달 오픈
+
+// 모달 닫기 이벤트
+closeMDModalBtn.onclick = function () {
+  MDmodal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    MDmodal.style.display = "none";
+    MDmodal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+};
+
+// #북마크 삭제#
+// 모달 열기 버튼과 모달 닫기 버튼 참조
+const closeBDModalBtn = document.getElementById("closeBDModalBtn");
+
+// 모달 참조
+const BDmodal = document.getElementById("BDModal");
+// SaveButton.js에서 모달 오픈
+
+// 모달 닫기 이벤트
+closeBDModalBtn.onclick = function () {
+  BDmodal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    BDmodal.style.display = "none";
+    BDmodal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+};
+

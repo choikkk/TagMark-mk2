@@ -51,7 +51,6 @@
 #newModal .modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
-
 #newModal.closing .modal-content {
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
@@ -59,7 +58,6 @@
 #newCategoryModal .modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
-
 #newCategoryModal.closing .modal-content {
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
@@ -67,7 +65,6 @@
 #ChangeCT .modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
-
 #ChangeCT.closing .modal-content {
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
@@ -75,8 +72,21 @@
 #DeleteCT .modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
-
 #DeleteCT.closing .modal-content {
+  animation: modalCloseAnimation 0.5s ease-in-out;
+}
+
+#ModiModal .modal-content {
+  animation: modalAnimation 0.5s ease-in-out;
+}
+#ModiModal.closing .modal-content {
+  animation: modalCloseAnimation 0.5s ease-in-out;
+}
+
+#BDModal .modal-content {
+  animation: modalAnimation 0.5s ease-in-out;
+}
+#BDModal.closing .modal-content {
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
 
