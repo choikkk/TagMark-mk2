@@ -67,7 +67,7 @@
               <i class="fa fa-search position-absolute d-block fs-6"></i>
             </div>
 
-            <ul class="categories list-unstyled">
+            <ul class="categories list-unstyled" id="sidebarStart">
               <div class="has-dropdown">
                 <i class="uil-estate fa-fw"></i
                 ><span href="#"> Unclassified</span>
@@ -507,7 +507,7 @@
       </div>
     </div>
 
-    <!-- add category 모달 / 규문 여기서 id나 class 고쳐줭~-->
+    <!-- add category 모달 / -->
     <div id="newCategoryModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -522,15 +522,15 @@
           <input
             type="text"
             id="addCategory"
-            placeholder="추가할 카테고리를 입력해주세요."
+            placeholder="추가할 카테고리명을 입력해주세요."
           />
         </div>
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="saveCategoryBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="cancelCategoryBtn">취소</button>
         </div>
       </div>
     </div>
@@ -662,5 +662,6 @@
     <script src="js/AllButton.js"></script>
     <script src="js/LatestButton.js"></script>
     <script src="js/OldButton.js"></script>
+    <script src="js/categoryButton.js"></script>
   </body>
 </html>
