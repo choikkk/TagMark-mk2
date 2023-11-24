@@ -10,7 +10,9 @@ cancelCategoryBtn.onclick = function() {
     addCategoryText.value = "";
 }
 
-function createDropdownMenu() {
+///////////////////////////////////////////////////////////////
+// 함수화
+function createSidebarMenu() {
     // 부모 요소 생성
     const hasDropdownDiv = document.createElement('div');
     hasDropdownDiv.classList.add('has-dropdown');
@@ -64,12 +66,39 @@ function createDropdownMenu() {
     // 부모 요소에 자식 요소들 추가
     hasDropdownDiv.appendChild(calendarIcon);
     hasDropdownDiv.appendChild(menuSpan);
-    hasDropdownDiv.appendChild(sidebarDropdown);
+    // hasDropdownDiv.appendChild(sidebarDropdown);
   
-    // 문서의 어딘가에 추가
+    // 사이드바 시작지점.appendChild
     sidebarStart = document.getElementById("sidebarStart");
     sidebarStart.appendChild(hasDropdownDiv);
+
+
+    // 카테고리 작은 모달 추가 함수화
+    var myCTModal = document.getElementById("myCTModal");
+    var openCTModalBtn = document.getElementById("openCTModalBtn");
+
+    openCTModalBtn.onclick = function (e) {
+        myCTModal.classList.remove("closing"); // 새로운 클래스 추가
+        myCTModal.style.display = "block";
+      
+        // 클릭 이벤트의 마우스 위치
+        var mouseX = e.clientX;
+        var mouseY = e.clientY;
+      
+        // 모달 위치 설정
+        myCTModal.style.left = mouseX + "px";
+        myCTModal.style.top = mouseY + "px";
+      };
   }
   
+  ////////////////////////////////////////////////////////////////////
+
   // 함수 호출
-  // createDropdownMenu();
+  // createSidebarMenu();
+  saveCategoryBtn.addEventListener('click', function(){
+    createSidebarMenu();
+    newCategoryModal.style.display = "none";
+    addCategoryText.value = "";
+    
+  });
+  

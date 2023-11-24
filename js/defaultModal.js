@@ -49,25 +49,25 @@ closeCategoryModalBtn.onclick = function () {
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 };
 
-// #카테고리 작은 모달#
-var openCTModalBtn = document.getElementById("openCTModalBtn");
+// // #카테고리 작은 모달#
+// var openCTModalBtn = document.getElementById("openCTModalBtn");
 
-// 모달 참조
-var myCTModal = document.getElementById("myCTModal");
+// // 모달 참조
+// var myCTModal = document.getElementById("myCTModal");
 
-// 모달 열기 이벤트
-openCTModalBtn.onclick = function (e) {
-  myCTModal.classList.remove("closing"); // 새로운 클래스 추가
-  myCTModal.style.display = "block";
+// // 모달 열기 이벤트
+// openCTModalBtn.onclick = function (e) {
+//   myCTModal.classList.remove("closing"); // 새로운 클래스 추가
+//   myCTModal.style.display = "block";
 
-  // 클릭 이벤트의 마우스 위치
-  var mouseX = e.clientX;
-  var mouseY = e.clientY;
+//   // 클릭 이벤트의 마우스 위치
+//   var mouseX = e.clientX;
+//   var mouseY = e.clientY;
 
-  // 모달 위치 설정
-  myCTModal.style.left = mouseX + "px";
-  myCTModal.style.top = mouseY + "px";
-};
+//   // 모달 위치 설정
+//   myCTModal.style.left = mouseX + "px";
+//   myCTModal.style.top = mouseY + "px";
+// };
 
 // 윈도우 밖 클릭시 반응형 이벤트 추가
 window.addEventListener("click", function (event) {
