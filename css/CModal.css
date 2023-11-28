@@ -1,3 +1,15 @@
+:root {
+  --background-color-light: #fff;
+  --text-color-light: #333;
+  --border-color-light: grey;
+  --box-shadow-light: 0 8px 8px rgba(0, 0, 0, 0.2);
+
+  --background-color-dark: #35363A;
+  --text-color-dark: #fff;
+  --border-color-dark: #ffffff;
+  --box-shadow-dark: 0 8px 8px rgba(255, 255, 255, 0.1);
+}
+
 .cmodal {
   display: none;
   position: fixed;
@@ -6,49 +18,49 @@
   width: 100%;
   height: 100%;
   background-color: #ffffff00;
-
 }
 
 .cmodal-content {
-  background-color: #fff;
-
+  background-color: var(--background-color-light);
   max-width: 160px;
   padding: 8px;
   text-align: left;
   border-radius: 15px;
-  border: 1px solid grey;
-  font-size: 10px; /* 폰트 크기 설정 */
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color-light);
+  font-size: 10px;
+  box-shadow: var(--box-shadow-light);
+  transition: background-color 0.5s, border-color 0.5s, color 0.5s;
 }
 
 .cmodal-header {
   padding-bottom: 8px;
-  border-bottom: 1px solid grey;
-  
+  border-bottom: 1px solid var(--border-color-light);
 }
 
 .cmodal-header h2 {
   margin: 0;
+  color: var(--text-color-light);
 }
 
 .cmodal-footer {
   text-align: left;
   max-height: 16px;
+  color: var(--text-color-light);
 }
 
-.cmodal img{
+.cmodal img {
   float: right;
   width: 20px;
 }
 
-/*모달창 애니메이션*/
+/* 모달창 애니메이션 */
 @keyframes CmodalAnimation {
   0% {
     transform: scale(0.7);
     opacity: 0;
   }
   50% {
-    transform: scale(1.2); /* 중간 크기*/
+    transform: scale(1.2);
     opacity: 0.5;
   }
   100% {
@@ -56,16 +68,14 @@
     opacity: 1;
   }
 }
+
 @keyframes CmodalCloseAnimation {
   from {
-    transform: scale(1); /* 최종적으로 1배 크기로 확대 */
-
-
-    opacity: 1; /*투명도*/
+    transform: scale(1);
+    opacity: 1;
   }
   to {
-    transform: scale(0); /* 처음에는 0으로 시작하여 아무것도 안 보이게 함 */
-    
+    transform: scale(0);
     opacity: 0;
   }
 }
@@ -76,4 +86,21 @@
 
 #myCTModal.closing .cmodal-content {
   animation: CmodalCloseAnimation 0.5s ease-in-out;
+}
+
+/* Dark Mode 스타일 */
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode .cmodal-content {
+  background-color: var(--background-color-dark);
+  border-color: var(--border-color-dark);
+  box-shadow: var(--box-shadow-dark);
+}
+
+body.dark-mode .cmodal-header h2,
+body.dark-mode .cmodal-footer {
+  color: var(--text-color-dark);
 }

@@ -1,3 +1,10 @@
+
+
+//카테고리 작은 모달 다크모드
+document.getElementById('chdarkmode').addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode');
+});
+
 // #북마크 추가#
 // 모달 열기 버튼과 모달 닫기 버튼 참조
 const openModalBtn = document.getElementById("openModalBtn");
