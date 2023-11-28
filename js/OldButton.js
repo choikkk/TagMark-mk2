@@ -52,6 +52,21 @@
 				BmEditIcon.id = "onBookModify"
 				SImageDiv.appendChild(BmEditIcon);
 
+				// 북마크 수정 모달 생성
+				BmEditIcon.addEventListener('click', function() {
+					//defaultModal.js 북마크 수정 모달창 오픈
+					MDmodal.style.display = "block";
+
+					modifySaveBtn.onclick = function(){
+						MDmodal.style.display = "none";
+						
+					}
+					modifyCancelBtn.onclick = function(){
+						MDmodal.style.display = "none";
+						
+					}
+				});
+
 				// 마우스를 올렸을 때 스타일 변경
 				BmEditIcon.addEventListener('mouseover', function() {
 					BmEditIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
@@ -87,8 +102,11 @@
 			BmDeleteIcon.addEventListener('click', function() {
 				//defaultModal.js 삭제 북마크 모달 오픈 
 				BDmodal.style.display = "block";
-						
-				// 취소 버튼
+				// 삭제 취소 버튼
+				DeleteCancelBtn.onclick = function(){
+					BDmodal.style.display = "none";
+				}
+				// 삭제 확인 버튼
 				DeleteSaveBtn.onclick = function() { 
 					// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
 					const index = findBookmarkIndex(ElementBookMark);
@@ -244,6 +262,21 @@
 					BmEditIcon.id = "onBookModify"
 					SImageDiv.appendChild(BmEditIcon);
 
+					// 북마크 수정 모달 생성
+					BmEditIcon.addEventListener('click', function() {
+						//defaultModal.js 북마크 수정 모달창 오픈
+						MDmodal.style.display = "block";
+
+						modifySaveBtn.onclick = function(){
+							MDmodal.style.display = "none";
+							
+						}
+						modifyCancelBtn.onclick = function(){
+							MDmodal.style.display = "none";
+							
+						}
+					});
+
 					// 마우스를 올렸을 때 스타일 변경
 					BmEditIcon.addEventListener('mouseover', function() {
 						BmEditIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
@@ -279,8 +312,11 @@
 					BmDeleteIcon.addEventListener('click', function() {
 						//defaultModal.js 삭제 북마크 모달 오픈 
 						BDmodal.style.display = "block";
-								
-						// 취소 버튼
+						// 삭제 취소 버튼
+						DeleteCancelBtn.onclick = function(){
+							BDmodal.style.display = "none";
+						}
+						// 삭제 확인 버튼
 						DeleteSaveBtn.onclick = function() { 
 							// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
 							const index = findBookmarkIndex(ElementBookMark);
@@ -304,7 +340,6 @@
 							BDmodal.style.display = "none"
 						}
 					});
-
 						// 태그 리스트 업데이트
 					function updateTagLists(deletedTags) {
 						// 삭제된 태그를 모든 태그 목록과 현재 태그 목록에서 찾아 제거

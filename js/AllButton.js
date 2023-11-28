@@ -52,6 +52,22 @@ AllButton.onclick= function() {
 		BmEditIcon.src = "Images/pencil.png";
 		BmEditIcon.id = "onBookModify"
 		SImageDiv.appendChild(BmEditIcon);
+		
+		// 북마크 수정 모달 생성
+		BmEditIcon.addEventListener('click', function() {
+			//defaultModal.js 북마크 수정 모달창 오픈
+			MDmodal.style.display = "block";
+
+			modifySaveBtn.onclick = function(){
+				MDmodal.style.display = "none";
+				
+			}
+			modifyCancelBtn.onclick = function(){
+				MDmodal.style.display = "none";
+				
+			}
+		});
+
 
 		// 마우스를 올렸을 때 스타일 변경
 		BmEditIcon.addEventListener('mouseover', function() {
@@ -88,8 +104,11 @@ AllButton.onclick= function() {
 		BmDeleteIcon.addEventListener('click', function() {
 			//defaultModal.js 삭제 북마크 모달 오픈 
 			BDmodal.style.display = "block";
-					
-			// 취소 버튼
+			// 삭제 취소 버튼
+			DeleteCancelBtn.onclick = function(){
+				BDmodal.style.display = "none";
+			}
+			// 삭제 확인 버튼
 			DeleteSaveBtn.onclick = function() { 
 				// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
 				const index = findBookmarkIndex(ElementBookMark);

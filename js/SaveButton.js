@@ -12,8 +12,8 @@ const OldButton = document.getElementById("oldBtn"); //오래된 정렬 버튼
 const UnClassifiedSidebarArea = document.getElementById("UnclassifiedUL"); // 사이드바 UnClassified 공간
 const DeleteSaveBtn = document.getElementById("DeleteSaveBtn"); // 북마크 삭제 확인 버튼
 const DeleteCancelBtn = document.getElementById("DeleteCancelBtn"); // 북마크 삭제 취소 버튼
-
-
+const modifySaveBtn = document.getElementById("modifySaveBtn"); // 북마크 수정 확인 버튼
+const modifyCancelBtn = document.getElementById("modifyCancelBtn"); // 북마크 수정 취소 버튼
 
 var AllRecnetlyTag = []; // 북마크 한개의 최근 추가 태그 리스트 배열
 var AllTagList = []; // 전체 태그 배열
@@ -25,7 +25,6 @@ var AllBookMarkList = []; // 전체 북마크 배열
 var SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
 var LatestSortBookMarkList = []; // 최신 순서 정렬된 북마크 배열
 var OldSortBookMarkList = []; // 오래된 순서 정렬된 북마크 배열
-
 
 // 정렬 함수
 function SortAll(arr) {
@@ -136,11 +135,19 @@ saveBtn.onclick= function() {
 	BmEditIcon.id = "onBookModify"
 	SImageDiv.appendChild(BmEditIcon);
 
+	// 북마크 수정 모달 생성
 	BmEditIcon.addEventListener('click', function() {
-		console.log('전체 태그 리스트 >>> ' + AllTagList);
-		console.log('현재 태그 리스트 >>> ' + tagTextareaValue)
 		//defaultModal.js 북마크 수정 모달창 오픈
 		MDmodal.style.display = "block";
+
+		modifySaveBtn.onclick = function(){
+			MDmodal.style.display = "none";
+			
+		}
+		modifyCancelBtn.onclick = function(){
+			MDmodal.style.display = "none";
+			
+		}
 	  });
 
 	// 마우스를 올렸을 때 스타일 변경
@@ -167,8 +174,11 @@ saveBtn.onclick= function() {
 	BmDeleteIcon.addEventListener('click', function() {
 		//defaultModal.js 삭제 북마크 모달 오픈 
 		BDmodal.style.display = "block";
-				
-		// 취소 버튼
+		// 삭제 취소 버튼
+		DeleteCancelBtn.onclick = function(){
+			BDmodal.style.display = "none";
+		}
+		// 삭제 확인 버튼
 		DeleteSaveBtn.onclick = function() { 
 			// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
 			const index = findBookmarkIndex(ElementBookMark);
@@ -353,8 +363,6 @@ saveBtn.onclick= function() {
 
 	// UnClassifiedTagList 배열 중복 제거
 	UnClassifiedTagList = [...new Set(UnClassifiedTagList)];
-	// console.log(UnClassifiedTagList);
-
 
 	for (let j = 0; j < UnClassifiedTagList.length; j++) {
 		let UnclassifiedDiv = document.createElement('div');
