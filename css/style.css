@@ -71,13 +71,13 @@ transition: transform 0.5s ease-in-out;
 
 /*다크모드 이미지 스타일링*/
 #chdarkmode{
-transform: rotate(0deg); /*각도 회전 ㅋㅋ*/
+transform: rotate(180deg); /*각도 회전 다크모드 이미지 변경 적용 하면서 주석*/
 transition: transform 0.5s ease-in-out;
 background-color: #ffffff;
 }
 
 #chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
-  transform: rotate( 360deg );
+  transform: rotate( 0deg );
 }
 
 /*버튼 이미지 스타일링*/
