@@ -4,364 +4,369 @@
 /* 주석봐도 모르겠으면 CHAT GPT한테 물어보세요!! */
 /* 전체 페이지 스타일링을 위한 스타일 */
 /*root 색 변수 지정 / 다크모드 css수정하기 힘들어서 */
-:root{
+:root {
   --body-color: #fff;
 }
 
 body {
-margin: 0;
-padding: 0;
-font-family: Arial, sans-serif; /*나중에 글꼴추가*/
-display: flex;
-flex-direction: column;
-height: 100vh; /* 화면 전체 높이만큼 설정/높이 계속 늘어남*/
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /*나중에 글꼴추가*/
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 화면 전체 높이만큼 설정/높이 계속 늘어남*/
 }
 
 /* 상단 영역 스타일링 */
 header {
-background-color: #000000;
-color: #fff;
-padding: 10px;
-align-items: center; /* 수직 가운데 정렬 */
-max-width: 100%; /* 최대화시 최대 넓이 */
-min-width: 1650px; /* 최소화시 최소 넓이 */
-
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+  align-items: center; /* 수직 가운데 정렬 */
+  max-width: 100%; /* 최대화시 최대 넓이 */
+  min-width: 1650px; /* 최소화시 최소 넓이 */
 }
 
 /*header 섹션 가로 나열*/
 .section-header-wrapper {
-display: flex;
-min-height: 50px;
-max-height: 50px;
-
+  display: flex;
+  min-height: 50px;
+  max-height: 50px;
 }
 
 .section-header1 {
-display: flex;
-flex: 1;
-align-items: center; /* 수직 가운데 정렬 */
+  display: flex;
+  flex: 1;
+  align-items: center; /* 수직 가운데 정렬 */
 }
 .section-header2 {
-display: flex;
-flex: 1;
-align-items: center; /* 수직 가운데 정렬 */
-justify-content: center; /* 수평 가운데 정렬 */
-
+  display: flex;
+  flex: 1;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
 }
 .section-header3 {
-/*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
-flex: 1;
-align-items: center; /* 수직 가운데 정렬 */
-justify-content: flex-end;
-text-align: right;
+  /*flex-direction: row-reverse; /*나중에 지울거 구글 로그인 적용했을때 오류나면 해볼거 */
+  flex: 1;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: flex-end;
+  text-align: right;
 }
 
 /* 로고 스타일링 */
 header img.logo {
-max-height: 50px; /* 이미지 높이 제한 */
-border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
-margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
-cursor: pointer;
-transition: transform 0.5s ease-in-out;
+  max-height: 50px; /* 이미지 높이 제한 */
+  border-radius: 100%; /* 이미지를 원형으로 만들기 위한 속성 */
+  margin-right: 10px; /* 이미지와 텍스트 사이 간격 조절 */
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
-.logo:hover{
-  transform: rotateY( 360deg );
+.logo:hover {
+  transform: rotateY(360deg);
 }
 
 /*다크모드 이미지 스타일링*/
-#chdarkmode{
-transform: rotate(180deg); /*각도 회전 다크모드 이미지 변경 적용 하면서 주석*/
-transition: transform 0.5s ease-in-out;
-background-color: #ffffff;
+#chdarkmode {
+  transform: rotate(180deg); /*각도 회전 다크모드 이미지 변경 적용 하면서 주석*/
+  transition: transform 0.5s ease-in-out;
+  background-color: #ffffff;
 }
 
-#chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
-  transform: rotate( 0deg );
+#chdarkmode:hover {
+  /*마우스 올렸을 때 각도 회전*/
+  transform: rotate(0deg);
 }
 
 /*버튼 이미지 스타일링*/
 .BImages {
-width: 20px; /* 이미지를 부모 요소에 꽉 차게 만듭니다. */
-height: 20px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
-margin-right: 10px;
-align-items: center; /* 수직 가운데 정렬 */
-
+  width: 20px; /* 이미지를 부모 요소에 꽉 차게 만듭니다. */
+  height: 20px; /* 가로 세로 비율을 유지하면서 크기를 조절합니다. */
+  margin-right: 10px;
+  align-items: center; /* 수직 가운데 정렬 */
 }
 
 /* 텍스트 스타일링 */
 header h1 {
-/*텍스트 크기에따라 여백 조절*/
-margin: 0; /* 기본 마진 제거 */
-margin-right: auto; /*나중에 고칠거 ?? 이거 왜 되는거지? ㅅㅂ ㅋㅋㅋㅋㅋㅋ / inline도 되긴하는데..*/
+  /*텍스트 크기에따라 여백 조절*/
+  margin: 0; /* 기본 마진 제거 */
+  margin-right: auto; /*나중에 고칠거 ?? 이거 왜 되는거지? ㅅㅂ ㅋㅋㅋㅋㅋㅋ / inline도 되긴하는데..*/
 }
 
 /* 3등분 영역 스타일링 */
-.content {/*:root*/
-display: flex;
-flex: 1;
-background-color: #ffffff; /* 첫번째 섹션 모서리 틈 배경 */
-
+.content {
+  /*:root*/
+  display: flex;
+  flex: 1;
+  background-color: #ffffff; /* 첫번째 섹션 모서리 틈 배경 */
 }
 
 /*두번째 섹션 세로나열*/
-.section {/*:root*/
+.section {
+  /*:root*/
   padding: 20px;
   display: flex;
   background-color: #ffffff; /* 두번째와 세번째 섹션 배경 */
   flex-direction: column; /* 세로로 나열 */
   color: #000000; /*body 전체 폰트색*/
-  
 }
 
 .subsection {
-/*나중에 지울거*/
-flex: 1;
-margin: 10px; /* 간격 조절 */
-
+  /*나중에 지울거*/
+  flex: 1;
+  margin: 10px; /* 간격 조절 */
 }
 
 /* 추가 스타일링 */ /*나중에 지울거*/
-.section:nth-child(even) {/*:root*/
-background-color: #ffffff;
+.section:nth-child(even) {
+  /*:root*/
+  background-color: #ffffff;
 }
 
 /* 첫 번째 섹션 박스 스타일링 */
-.full-box {/*:root*/
-flex: 0.8; /* 가로 넓이 조절 */
-background-color: #f8f8f8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-margin: 0px; /* 간격 조절 */
-border-radius: 15px; /* 모서리를 깍는 속성 */
-border: 0.1px solid rgb(184, 183, 183);
-max-width: 300px; /* 최대화시 최대 넓이 */
-min-width: 300px; /* 최소화시 최소 넓이 */
+.full-box {
+  /*:root*/
+  flex: 0.8; /* 가로 넓이 조절 */
+  background-color: #f8f8f8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  margin: 0px; /* 간격 조절 */
+  border-radius: 15px; /* 모서리를 깍는 속성 */
+  border: 0.1px solid rgb(184, 183, 183);
+  max-width: 300px; /* 최대화시 최대 넓이 */
+  min-width: 300px; /* 최소화시 최소 넓이 */
 }
-
 
 /* 두 번째 섹션 박스 스타일링 */
 .second-section {
-flex: 3; /* 가로 넓이 조절 */
-display: flex;
-align-items: center; /* 세로 중앙 배치 */
+  flex: 3; /* 가로 넓이 조절 */
+  display: flex;
+  align-items: center; /* 세로 중앙 배치 */
 }
-.second-box-top {/*:root*/
-flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
-background-color: #ffffff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
-margin-right: 20px; /* 간격 조절 */
-margin-left: 20px; /* 간격 조절 */
-display: flex;
-align-items: center; /* 수직 가운데 정렬 */
-max-width: 1000px; /* 최대화시 최대 넓이 */
-min-width: 1000px; /* 최소화시 최소 넓이 */
+.second-box-top {
+  /*:root*/
+  flex: 0.1; /* 두번째 섹션 상단 세로 크기 조절 */
+  background-color: #ffffff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+  margin-right: 20px; /* 간격 조절 */
+  margin-left: 20px; /* 간격 조절 */
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  max-width: 1000px; /* 최대화시 최대 넓이 */
+  min-width: 1000px; /* 최소화시 최소 넓이 */
 }
-.second-box {/*:root*/
-overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
-flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
-background-color: #ffffff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
-margin: 20px; /* 간격 조절 */
-margin-top: 10px; /* 간격 조절 */
-border-top: 1px solid rgb(184, 183, 183);
-max-width: 1000px; /* 최대화시 최대 넓이 */
-min-width: 1000px; /* 최소화시 최소 넓이 */
-
+.second-box {
+  /*:root*/
+  overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
+  flex: 1; /* 두번째 섹션 하단 세로 크기 조절 */
+  background-color: #ffffff; /* 나중에 지울거 섹션 확인하려고 넣은거 */
+  margin: 20px; /* 간격 조절 */
+  margin-top: 10px; /* 간격 조절 */
+  border-top: 1px solid rgb(184, 183, 183);
+  max-width: 1000px; /* 최대화시 최대 넓이 */
+  min-width: 1000px; /* 최소화시 최소 넓이 */
 }
 
 /* 세 번째 섹션 박스 스타일링 */
 .third-section {
-flex: 0.6; /* 가로 넓이 조절 */
-display: flex;
-flex-direction: column;
-max-width: 200px; /* 최대화시 최대 넓이 */
-min-width: 200px; /* 최소화시 최소 넓이 */
+  flex: 0.6; /* 가로 넓이 조절 */
+  display: flex;
+  flex-direction: column;
+  max-width: 200px; /* 최대화시 최대 넓이 */
+  min-width: 200px; /* 최소화시 최소 넓이 */
 }
 
-.third-box {/*:root*/
-overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
-flex: 1;
-background-color: #f8f8f8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-margin: 10px; /* 간격 조절 */
-border-radius: 15px; /* 모서리를 깍는 속성 */
-border: 0.1px solid rgb(184, 183, 183);
-max-width: 200px; /* 최대화시 최대 넓이 */
-min-width: 200px; /* 최소화시 최소 넓이 */
-max-height: 375px; /* 최대화시 최대 넓이 */
-min-height: 375px;  /* 최소화시 최소 넓이 */
-box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+.third-box {
+  /*:root*/
+  overflow: auto; /*해당 상자 안을 넘어갈시 스크롤바 생성 ㅋ*/
+  flex: 1;
+  background-color: #f8f8f8; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  margin: 10px; /* 간격 조절 */
+  border-radius: 15px; /* 모서리를 깍는 속성 */
+  border: 0.1px solid rgb(184, 183, 183);
+  max-width: 200px; /* 최대화시 최대 넓이 */
+  min-width: 200px; /* 최소화시 최소 넓이 */
+  max-height: 375px; /* 최대화시 최대 넓이 */
+  min-height: 375px; /* 최소화시 최소 넓이 */
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2); /*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
 
 /*세번째 섹션 상단 영역 스타일링*/
-#sradius {/*:root*/
-margin: 10px; /*3번째 섹션 상자 밑줄 길이*/
-border-bottom: 1px solid rgb(184, 183, 183);
-font-size: 20px;
-text-align: center;
-align-items: center; /* 수직 가운데 정렬 */
+#sradius {
+  /*:root*/
+  margin: 10px; /*3번째 섹션 상자 밑줄 길이*/
+  border-bottom: 1px solid rgb(184, 183, 183);
+  font-size: 20px;
+  text-align: center;
+  align-items: center; /* 수직 가운데 정렬 */
 }
 
 /* 서치바 테스트 */
 .search-container {
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
 }
-.search-bar {/*:root*/
-padding: 10px;
-border: 2px solid #888; /* 회색 테두리 */
-border-radius: 5px;
-border: 1px solid rgba(0, 0, 0, 0.3);
-font-size: 20px;
+.search-bar {
+  /*:root*/
+  padding: 10px;
+  border: 2px solid #888; /* 회색 테두리 */
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 20px;
 
-width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
-height: 15px;
-line-height: normal;
-font-style: normal;
-flex-shrink: 0;
-background: #f5f5f5;
-max-width: 550px; /* 최대화시 최대 넓이 */
-min-width: 550px; /* 최소화시 최소 넓이 */
+  width: 33vw; /*나중에 수정 / flex박으니까 %로 크기정하면 좆만해져요 ㅠㅠ*/
+  height: 15px;
+  line-height: normal;
+  font-style: normal;
+  flex-shrink: 0;
+  background: #f5f5f5;
+  max-width: 550px; /* 최대화시 최대 넓이 */
+  min-width: 550px; /* 최소화시 최소 넓이 */
 }
 
 /*북마크 정렬 버튼*/
-.sectop-button {/*:root*/
-flex: 1;
-margin: 10px;
-padding: 8px;
-background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-color: #000000;
-text-align: center;
-text-decoration: none;
-display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
+.sectop-button {
+  /*:root*/
+  flex: 1;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex; /* 이미지와 텍스트 줄 맞춤*/
 
-justify-content: center; /* 가로 정렬을 위한 추가 */
-align-items: center; /* 세로 정렬을 위한 추가 */
-font-size: 16px;
-border-radius: 5px;
-border: 1px solid rgba(0, 0, 0, 0.3);
-cursor: pointer;
-max-height: 18px;
-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
-transition: all 0.2s linear;
+  justify-content: center; /* 가로 정렬을 위한 추가 */
+  align-items: center; /* 세로 정렬을 위한 추가 */
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  max-height: 18px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  transition: all 0.2s linear;
 }
-.sectop-button:last-child {/*:root*/
-/*마지막 버튼 노란색*/
-background-color: #f7e600; /* 노란색으로 변경 ㅋ */
-/*padding-top: 0%; /* 나중에 지울거 이 비율을 조절하여 이미지의 세로 비율을 유지 */
-color: #000000;
-}
-
-.sectop-button:hover {/*마우스 올릴때 상단 이동 애니메이션 */
-  transform: translate( 0px, -20% ) scale( 1.05 );
+.sectop-button:last-child {
+  /*:root*/
+  /*마지막 버튼 노란색*/
+  background-color: #f7e600; /* 노란색으로 변경 ㅋ */
+  /*padding-top: 0%; /* 나중에 지울거 이 비율을 조절하여 이미지의 세로 비율을 유지 */
+  color: #000000;
 }
 
-.catetop-button {/*:root*/
-flex: 1;
-margin: 10px;
-padding: 8px;
-background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-color: #000000;
-text-align: center;  
-font-size: 18px;
-border-radius: 5px;
-border: 1px solid rgba(0, 0, 0, 0.3);
-cursor: pointer;
-max-height: 21px;
-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);/*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
-transition: all 0.2s linear;/*카테고리 추가 버튼 애니메이션*/
+.sectop-button:hover {
+  /*마우스 올릴때 상단 이동 애니메이션 */
+  transform: translate(0px, -20%) scale(1.05);
 }
 
-.catetop-button:hover {/*카테고리 추가 버튼 애니메이션*/
-  transform: translate( 0px, -10% ) scale( 1.05 );
+.catetop-button {
+  /*:root*/
+  flex: 1;
+  margin: 10px;
+  padding: 8px;
+  background-color: #f5f5f5; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  color: #000000;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  max-height: 21px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /*박스 그림자 / [수평거리] [수직거리] [흐림정도] [색깔]*/
+  transition: all 0.2s linear; /*카테고리 추가 버튼 애니메이션*/
+}
+
+.catetop-button:hover {
+  /*카테고리 추가 버튼 애니메이션*/
+  transform: translate(0px, -10%) scale(1.05);
 }
 
 /*카테고리 추가 버튼*/
-.full-box .catetop-button {/*:root*/
-margin: 5px;
-padding: 5px;
-flex: 0.01; /* 가로 넓이 조절 */
-background-color: #ffffff;
-color: rgba(0, 0, 0, 0.5);
+.full-box .catetop-button {
+  /*:root*/
+  margin: 5px;
+  padding: 5px;
+  flex: 0.01; /* 가로 넓이 조절 */
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /*북마크 상자*/
-.additional-box {/*:root*/
-flex: 1;
-background-color: #ffffff; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
-border-bottom: 1px solid rgb(184, 183, 183);
-align-items: center; /* 수직 가운데 정렬 */
+.additional-box {
+  /*:root*/
+  flex: 1;
+  background-color: #ffffff; /* 예시로 색상 지정, 원하는 색상으로 변경 가능 */
+  border-bottom: 1px solid rgb(184, 183, 183);
+  align-items: center; /* 수직 가운데 정렬 */
 }
 /*노란원 태그*/
-.yellow-circle {/*:root*/
-width: 15px;
-height: 15px;
-background-color: #f7e600;
-border-radius: 50%;
-margin-right: 10px;
-margin-left: 10px;
+.yellow-circle {
+  /*:root*/
+  width: 15px;
+  height: 15px;
+  background-color: #f7e600;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 /*노란원과 텍스트 정렬*/
 .additional-box-tag {
-flex: 1;
-display: flex;
-justify-content: flex; /* 오른쪽 정렬을 위한 스타일 */
-align-items: center; /* 수직 가운데 정렬 */
-margin-right: 10px; /* 오른쪽 여백 */
+  flex: 1;
+  display: flex;
+  justify-content: flex; /* 오른쪽 정렬을 위한 스타일 */
+  align-items: center; /* 수직 가운데 정렬 */
+  margin-right: 10px; /* 오른쪽 여백 */
 }
 
 /*북마크 버튼*/
 .SImages {
-flex: 1;
-align-items: center; /* 수직 가운데 정렬 */
-justify-content: flex-end;
-text-align: right;
+  flex: 1;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: flex-end;
+  text-align: right;
 }
 
 /*상단 카테고리 텍스트 위아래 여백*/
-#cate-top{
-margin-top: 0px;
-margin-bottom: 10px;
+#cate-top {
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 /*카테고리 추가 버튼 배치*/
 .addCate-btn {
-float: left;
+  float: left;
 }
 
 /*북마크 추가 이미지 비율*/
-.addbookBtn{
-width: 15px;
-height: 20px;
+.addbookBtn {
+  width: 15px;
+  height: 20px;
 }
 
 /*다크모드 전환시 애니메이션*/
 @keyframes fadeInAnimation {
-0% {
-  transform: scale(1);
-  opacity: 0; /* 최종 투명도 1으로 설정 */
-}
-50% {
-  transform: scale(0.995);
-  opacity: 0.5; /* 초기 투명도 0으로 설정 */
-}
-100% {
-  transform: scale(1);
-  opacity: 1; /* 최종 투명도 1으로 설정 */
-}
+  0% {
+    transform: scale(1);
+    opacity: 0; /* 최종 투명도 1으로 설정 */
+  }
+  50% {
+    transform: scale(0.995);
+    opacity: 0.5; /* 초기 투명도 0으로 설정 */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1; /* 최종 투명도 1으로 설정 */
+  }
 }
 
 .theme-transition {
-animation: fadeInAnimation 0.5s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
-
+  animation: fadeInAnimation 0.5s ease-in-out; /*애니메이션 시간 1초 / 부드러운 애니메이션*/
 }
 
-#profile_image{
+#profile_image {
   transition: all 0.2s ease-in-out;
 }
 
-#profile_image:hover{
-  transform: scale( 1.2 );
+#profile_image:hover {
+  transform: scale(1.2);
 }
-
-
-
