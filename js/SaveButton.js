@@ -365,6 +365,13 @@ saveBtn.onclick= function() {
 		UnclassifiedSpan.setAttribute('herf', '#');
 		UnclassifiedDiv.appendChild(UnclassifiedSpan);
 		UnClassifiedSidebarArea.appendChild(UnclassifiedDiv);
+
+		// 옆에 ... 이미지 추가해주는건데 이거 하면 카테고리 추가하고 모달창 띄우는게 안됌 중복나는듯?
+		const categoryTagImg = document.createElement('img');
+		categoryTagImg.classList.add('category', 'c2dep');
+		categoryTagImg.src = 'Images/category.png';
+		categoryTagImg.id = 'SBopenDeleteTagModal';
+		UnclassifiedSpan.appendChild(categoryTagImg);
 	}
 
 	// 요소를 추가할 위치를 찾아서 추가

@@ -73,22 +73,6 @@ function createSidebarMenu() {
     sidebarStart.appendChild(hasDropdownDiv);
 
 
-    // 카테고리 작은 모달 추가 함수화
-    var myCTModal = document.getElementById("myCTModal");
-    var openCTModalBtn = document.getElementById("openCTModalBtn");
-
-    openCTModalBtn.onclick = function (e) {
-        myCTModal.classList.remove("closing"); // 새로운 클래스 추가
-        myCTModal.style.display = "block";
-      
-        // 클릭 이벤트의 마우스 위치
-        var mouseX = e.clientX;
-        var mouseY = e.clientY;
-      
-        // 모달 위치 설정
-        myCTModal.style.left = mouseX + "px";
-        myCTModal.style.top = mouseY + "px";
-      };
   }
   
   ////////////////////////////////////////////////////////////////////
@@ -96,9 +80,9 @@ function createSidebarMenu() {
   // 함수 호출
   // createSidebarMenu();
   saveCategoryBtn.addEventListener('click', function(){
-    createSidebarMenu();
-    newCategoryModal.style.display = "none";
-    addCategoryText.value = "";
-    
+    createSidebarMenu(); // 함수화 한 함수 호출
+
+    newCategoryModal.style.display = "none"; // 디스플레이 설정 숨김
+    addCategoryText.value = ""; // 카테고리 추가 내부 내용 초기화    
   });
   
