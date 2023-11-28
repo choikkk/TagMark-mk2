@@ -23,6 +23,18 @@ inputSearch.addEventListener('keypress', function (event) {
 });
 
 function searchBooks() {
+  	// 배경색 판단 함수
+	function isBackgroundColorSameAs(rgbValue) {
+		// 현재 body의 배경색을 가져옴
+		var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+	
+		// 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+		return currentBackgroundColor === rgbValue;
+	}
+	
+	// 예시: RGB(53, 54, 58)과 비교
+	var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
+
   if (filter.length  <1) {
     alert('최소 1글자 이상 입력해주세요.');
     return;
@@ -78,7 +90,14 @@ function searchBooks() {
       // 북마크 수정 버튼 기능 구현
       let BmEditIcon = document.createElement("img");
       BmEditIcon.classList.add("BImages");
-      BmEditIcon.src = "Images/pencil.png";
+      
+      // 배경색 판단 알고리즘
+      if (isSameColor) {
+        BmEditIcon.src = "Images/pencil dark.png";
+        } else{
+        BmEditIcon.src = "Images/pencil.png";
+        }
+
       BmEditIcon.id = "onBookModify"
       SImageDiv.appendChild(BmEditIcon);
 
@@ -115,7 +134,14 @@ function searchBooks() {
       var BmDeleteIcon = document.createElement("img");
       BmDeleteIcon.classList.add("BImages");
       BmDeleteIcon.id = "onBookDelete";
-      BmDeleteIcon.src = "Images/trash.png";
+ 
+      // 배경색 판단 알고리즘
+      if (isSameColor) {
+        BmDeleteIcon.src = "Images/trash dark.png";
+        } else{
+        BmDeleteIcon.src = "Images/trash.png";
+        }
+        
       SImageDiv.appendChild(BmDeleteIcon);
 
       BmDeleteIcon.addEventListener('click', function() {
