@@ -100,27 +100,32 @@ function searchBooks() {
       SImageDiv.appendChild(BmDeleteIcon);
 
       BmDeleteIcon.addEventListener('click', function() {
-        // 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
-        const index = findBookmarkIndex(ElementBookMark);
-      
-        // AllBookMarkList 배열에서 북마크 제거
-        if (index !== -1) {
-          const deletedBookmark = AllBookMarkList.splice(index, 1)[0];
-      
-          // 태그 목록 업데이트
-          updateTagLists(deletedBookmark[2]);
-      
-          // UnClassifiedTagList 업데이트
-          updateUnClassifiedTagList(deletedBookmark[2]);
-      
-          // 정렬된 배열에서 북마크 제거
-          removeFromSortedArrays(deletedBookmark);
+        //defaultModal.js 삭제 북마크 모달 오픈 
+        BDmodal.style.display = "block";
+            
+        // 취소 버튼
+        DeleteSaveBtn.onclick = function() { 
+          // 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
+          const index = findBookmarkIndex(ElementBookMark);
+        
+          // AllBookMarkList 배열에서 북마크 제거
+          if (index !== -1) {
+            const deletedBookmark = AllBookMarkList.splice(index, 1)[0];
+        
+            // 태그 목록 업데이트
+            updateTagLists(deletedBookmark[2]);
+        
+            // UnClassifiedTagList 업데이트
+            updateUnClassifiedTagList(deletedBookmark[2]);
+        
+            // 정렬된 배열에서 북마크 제거
+            removeFromSortedArrays(deletedBookmark);
+          }
+        
+          // 북마크를 나타내는 HTML 요소를 DOM에서 제거
+          additionalBoxDiv.remove();
+          BDmodal.style.display = "none"
         }
-      
-        // 북마크를 나타내는 HTML 요소를 DOM에서 제거
-        additionalBoxDiv.remove();
-      
-        console.log('삭제 버튼 클릭>>> ' + AllBookMarkList);
       });
       
       // 태그 리스트 업데이트
@@ -218,62 +223,3 @@ function searchBooks() {
     }
   }
 }
-  
-  // else if(filter.length == 0){
-  //   // 요소를 추가할 위치를 찾아서 추가
-	// let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
-	// // 해당 공간 html요소 초기화
-	// SecondBoxDiv.innerHTML = '';
-
-	// SortAll(SortBookMarkList); // 북마크 정렬 알고리즘
-	// for(let i=0; i<SortBookMarkList.length; i++){
-	// 	// 북마크 Div요소 생성
-	// 	let additionalBoxDiv = document.createElement("div");
-	// 	additionalBoxDiv.classList.add("additional-box");
-
-	// 	// 제목 상자
-	// 	let h2Element = document.createElement("h2");
-	// 	h2Element.textContent = SortBookMarkList[i][0];
-	// 	additionalBoxDiv.appendChild(h2Element);
-
-	// 	// URL 상자
-	// 	let aElementUrl = document.createElement("a");
-	// 	aElementUrl.textContent = SortBookMarkList[i][1];
-	// 	aElementUrl.href = SortBookMarkList[i][1];
-	// 	aElementUrl.target = "_blank"; // 새창에서 링크 열기
-	// 	additionalBoxDiv.appendChild(aElementUrl);
-
-	// 	// 북마크쪽 아래 태그 Div
-	// 	let BmAdditionalBoxTagDiv = document.createElement("div");
-	// 	BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
-	// 	additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
-	// 	for(let j = 0; j < SortBookMarkList[i][2].length; j++){
-	// 		let yellowCircleDiv = document.createElement("div");
-	// 			yellowCircleDiv.classList.add("yellow-circle");
-	// 			BmAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
-			
-	// 			let pElement = document.createElement("p");
-	// 			pElement.textContent = SortBookMarkList[i][2][j];
-	// 			BmAdditionalBoxTagDiv.appendChild(pElement);
-			
-	// 	}
-	// 	// 북마크 박스 태그 Div 아이콘 추가
-	// 	let SImageDiv = document.createElement("div");
-	// 	SImageDiv.classList.add("SImages");
-	// 	BmAdditionalBoxTagDiv.appendChild(SImageDiv);
-	
-	// 	let BmEditIcon = document.createElement("img");
-	// 	BmEditIcon.classList.add("BImages");
-	// 	BmEditIcon.src = "Images/pencil.png";
-	// 	SImageDiv.appendChild(BmEditIcon);
-	
-	// 	let BmDeleteIcon = document.createElement("img");
-	// 	BmDeleteIcon.classList.add("BImages");
-	// 	BmDeleteIcon.src = "Images/trash.png";
-	// 	SImageDiv.appendChild(BmDeleteIcon);
-
-	// 	SecondBoxDiv.appendChild(additionalBoxDiv);
-		
-	// }
-  // }
-
