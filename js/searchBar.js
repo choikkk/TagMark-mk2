@@ -2,6 +2,15 @@ var inputSearch = document.getElementById('searchInput');
 var resultsList = document.getElementById('searchResults');
 var filter = ''; // 초기 검색어 저장 변수
 
+// 태그 검색을 위한 이벤트 리스너 추가
+inputSearch.addEventListener('input', function () {
+  filter = inputSearch.value.toLowerCase();
+  // 검색어가 입력될 때마다 책 검색 함수 호출
+  if (filter.length >= 2) {
+    searchBooks();
+  }
+});
+
 inputSearch.addEventListener('input', function () {
   filter = inputSearch.value.toLowerCase();
 });
@@ -14,8 +23,20 @@ inputSearch.addEventListener('keypress', function (event) {
 });
 
 function searchBooks() {
-  if (filter.length  <2) {
-    alert('최소 2글자 이상 입력해주세요.');
+  	// 배경색 판단 함수
+	function isBackgroundColorSameAs(rgbValue) {
+		// 현재 body의 배경색을 가져옴
+		var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+	
+		// 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+		return currentBackgroundColor === rgbValue;
+	}
+	
+	// 예시: RGB(53, 54, 58)과 비교
+	var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
+
+  if (filter.length  <1) {
+    alert('최소 1글자 이상 입력해주세요.');
     return;
   }
   resultsList.innerHTML = ''; // 검색 결과를 초기화합니다.
@@ -26,7 +47,7 @@ function searchBooks() {
 
   for (var i = 0; i < AllBookMarkList.length; i++) {
     var bookTitle = AllBookMarkList[i][0].toLowerCase();
-    if (bookTitle.includes(filter)) {
+    if (bookTitle.includes(filter) || containsTag(AllBookMarkList[i][2], filter)) {
 
 			// 클로저를 사용하여 ElementBookMark 변수를 유지
 			let ElementBookMark = SortBookMarkList[i];
@@ -69,14 +90,31 @@ function searchBooks() {
       // 북마크 수정 버튼 기능 구현
       let BmEditIcon = document.createElement("img");
       BmEditIcon.classList.add("BImages");
-      BmEditIcon.src = "Images/pencil.png";
+      
+      // 배경색 판단 알고리즘
+      if (isSameColor) {
+        BmEditIcon.src = "Images/pencil dark.png";
+        } else{
+        BmEditIcon.src = "Images/pencil.png";
+        }
+
       BmEditIcon.id = "onBookModify"
       SImageDiv.appendChild(BmEditIcon);
 
+      // 북마크 수정 모달 생성
       BmEditIcon.addEventListener('click', function() {
-        console.log('전체 태그 리스트 >>> ' + AllTagList);
-        console.log('현재 태그 리스트 >>> ' + tagTextareaValue)
-      });
+        //defaultModal.js 북마크 수정 모달창 오픈
+        MDmodal.style.display = "block";
+
+        modifySaveBtn.onclick = function(){
+          MDmodal.style.display = "none";
+          
+        }
+        modifyCancelBtn.onclick = function(){
+          MDmodal.style.display = "none";
+          
+        }
+        });
 
       // 마우스를 올렸을 때 스타일 변경
       BmEditIcon.addEventListener('mouseover', function() {
@@ -96,14 +134,24 @@ function searchBooks() {
       var BmDeleteIcon = document.createElement("img");
       BmDeleteIcon.classList.add("BImages");
       BmDeleteIcon.id = "onBookDelete";
-      BmDeleteIcon.src = "Images/trash.png";
+ 
+      // 배경색 판단 알고리즘
+      if (isSameColor) {
+        BmDeleteIcon.src = "Images/trash dark.png";
+        } else{
+        BmDeleteIcon.src = "Images/trash.png";
+        }
+        
       SImageDiv.appendChild(BmDeleteIcon);
 
       BmDeleteIcon.addEventListener('click', function() {
         //defaultModal.js 삭제 북마크 모달 오픈 
         BDmodal.style.display = "block";
-            
-        // 취소 버튼
+        // 삭제 취소 버튼
+        DeleteCancelBtn.onclick = function(){
+          BDmodal.style.display = "none";
+        }
+        // 삭제 확인 버튼
         DeleteSaveBtn.onclick = function() { 
           // 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
           const index = findBookmarkIndex(ElementBookMark);
@@ -222,4 +270,16 @@ function searchBooks() {
 
     }
   }
+}
+
+// 해당 북마크에 특정 태그가 포함되어 있는지 확인하는 함수
+function containsTag(tags, filter) {
+  for (let j = 0; j < tags.length; j++) {
+    // 태그에 검색어가 포함되어 있다면 true 반환
+    if (tags[j].toLowerCase().includes(filter)) {
+      return true;
+    }
+  }
+  // 검색어가 포함되지 않았다면 false 반환
+  return false;
 }
