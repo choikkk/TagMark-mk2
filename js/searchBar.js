@@ -23,8 +23,8 @@ inputSearch.addEventListener('keypress', function (event) {
 });
 
 function searchBooks() {
-  if (filter.length  <2) {
-    alert('최소 2글자 이상 입력해주세요.');
+  if (filter.length  <1) {
+    alert('최소 1글자 이상 입력해주세요.');
     return;
   }
   resultsList.innerHTML = ''; // 검색 결과를 초기화합니다.

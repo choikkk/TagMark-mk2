@@ -26,6 +26,8 @@ var SortBookMarkList = []; // 유니코드 순서 정렬된 북마크 배열
 var LatestSortBookMarkList = []; // 최신 순서 정렬된 북마크 배열
 var OldSortBookMarkList = []; // 오래된 순서 정렬된 북마크 배열
 
+
+
 // 정렬 함수
 function SortAll(arr) {
 	arr.sort((a, b) => {
@@ -74,6 +76,18 @@ cancelBtn.onclick = function() {
 
 // 확인(저장)버튼
 saveBtn.onclick= function() {
+	// 배경색 판단 함수
+	function isBackgroundColorSameAs(rgbValue) {
+		// 현재 body의 배경색을 가져옴
+		var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+	
+		// 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+		return currentBackgroundColor === rgbValue;
+	}
+	
+	// 예시: RGB(53, 54, 58)과 비교
+	var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
+
 
 	let titleInputValue = document.getElementById("bookmarkTitle").value;
 	let urlInputValue= document.getElementById("urlInput").value.trim();
@@ -122,7 +136,6 @@ saveBtn.onclick= function() {
 	}
 	
 // 북마크 버튼 기능 나눔선 -------------------------------------------
-
 	// 북마크 박스 태그 Div 아이콘 추가
 	let SImageDiv = document.createElement("div");
 	SImageDiv.classList.add("SImages");
@@ -131,7 +144,14 @@ saveBtn.onclick= function() {
 	// 북마크 수정 버튼 기능 구현
 	let BmEditIcon = document.createElement("img");
 	BmEditIcon.classList.add("BImages");
-	BmEditIcon.src = "Images/pencil.png";
+
+	// 배경색 판단 알고리즘
+	if (isSameColor) {
+		BmEditIcon.src = "Images/pencil dark.png";
+	  } else{
+		BmEditIcon.src = "Images/pencil.png";
+	  }
+
 	BmEditIcon.id = "onBookModify"
 	SImageDiv.appendChild(BmEditIcon);
 
@@ -168,7 +188,14 @@ saveBtn.onclick= function() {
 	var BmDeleteIcon = document.createElement("img");
 	BmDeleteIcon.classList.add("BImages");
 	BmDeleteIcon.id = "onBookDelete";
-	BmDeleteIcon.src = "Images/trash.png";
+
+	// 배경색 판단 알고리즘
+	if (isSameColor) {
+		BmDeleteIcon.src = "Images/trash dark.png";
+	  } else{
+		BmDeleteIcon.src = "Images/trash.png";
+	  }
+	
 	SImageDiv.appendChild(BmDeleteIcon);
 
 	BmDeleteIcon.addEventListener('click', function() {

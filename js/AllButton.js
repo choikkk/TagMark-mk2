@@ -1,4 +1,16 @@
 AllButton.onclick= function() {
+		// 배경색 판단 함수
+		function isBackgroundColorSameAs(rgbValue) {
+			// 현재 body의 배경색을 가져옴
+			var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+		
+			// 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+			return currentBackgroundColor === rgbValue;
+		}
+		
+		// 예시: RGB(53, 54, 58)과 비교
+		var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
+
 	// 요소를 추가할 위치를 찾아서 추가
 	let SecondBoxDiv = document.getElementsByClassName("second-box")[0];
 	// 해당 공간 html요소 초기화
@@ -49,7 +61,14 @@ AllButton.onclick= function() {
 
 		let BmEditIcon = document.createElement("img");
 		BmEditIcon.classList.add("BImages");
-		BmEditIcon.src = "Images/pencil.png";
+		
+		// 배경색 판단 알고리즘
+		if (isSameColor) {
+			BmEditIcon.src = "Images/pencil dark.png";
+		} else{
+			BmEditIcon.src = "Images/pencil.png";
+		}
+
 		BmEditIcon.id = "onBookModify"
 		SImageDiv.appendChild(BmEditIcon);
 		
@@ -85,7 +104,14 @@ AllButton.onclick= function() {
 // 북마크 삭제 버튼 기능 구현
 		let BmDeleteIcon = document.createElement("img");
 		BmDeleteIcon.classList.add("BImages");
-		BmDeleteIcon.src = "Images/trash.png";
+
+		// 배경색 판단 알고리즘
+		if (isSameColor) {
+			BmDeleteIcon.src = "Images/trash dark.png";
+		} else{
+			BmDeleteIcon.src = "Images/trash.png";
+		}
+
 		BmDeleteIcon.id = "onBookDelete"
 		SImageDiv.appendChild(BmDeleteIcon);
 
