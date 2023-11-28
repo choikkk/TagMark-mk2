@@ -87,11 +87,8 @@ saveBtn.onclick= function() {
 	LatestSortBookMarkList.push(ElementBookMark);
 	OldSortBookMarkList.unshift(ElementBookMark);
 	
-	
 	AllRecnetlyTag.push(tagTextareaValue);
 	var RecnetlyTag = AllRecnetlyTag[AllRecnetlyTag.length-1]
-	
-	console.log("최근 추가 태그 리스트 >>> " + RecnetlyTag)
 
 	// 북마크 Div요소 생성
 	let additionalBoxDiv = document.createElement("div");
@@ -114,8 +111,6 @@ saveBtn.onclick= function() {
 	BmAdditionalBoxTagDiv.classList.add("additional-box-tag");
 	additionalBoxDiv.appendChild(BmAdditionalBoxTagDiv);
 	
-
-
 	// 북마크 박스에 태그 받고 생성해주는 for문
 	for (let i = 0; i < tagTextareaValue.length; i++) {
 		let yellowCircleDiv = document.createElement("div");
@@ -195,7 +190,6 @@ saveBtn.onclick= function() {
 			// 북마크를 나타내는 HTML 요소를 DOM에서 제거
 			additionalBoxDiv.remove();
 			BDmodal.style.display = "none"
-			console.log('삭제 버튼 클릭>>> ' + AllBookMarkList);
 		}
 	});
 	
