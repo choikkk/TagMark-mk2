@@ -41,6 +41,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
   let addBookmarkImages = document.querySelectorAll('.addbookmarkIm');
   let addCaImages = document.querySelectorAll('.addCaIm');
   let categoryImages = document.querySelectorAll('#openCTModalBtn');
+  let category2depsImages = document.querySelectorAll('.openCT2depsModalBtnIM');
   let pencilImages = document.querySelectorAll('#onBookModify');
   let trashImages = document.querySelectorAll('#onBookDelete');
   let CTpencilImages = document.querySelectorAll('.pencilIm');
@@ -88,7 +89,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
       }
   });
 
-  // category 이미지 ?? 규문랑 같이 해보기
+  // category 이미지
   categoryImages.forEach(function(image) {
       if (document.body.classList.contains('dark-mode')) {
           if (image.src.includes('category dark.png')) {
@@ -105,7 +106,24 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
       }
   });
 
-  // pencil 이미지 ?? 현식이랑 같이 해보기
+   // category 2deps 이미지
+   category2depsImages.forEach(function(image) {
+    if (document.body.classList.contains('dark-mode')) {
+        if (image.src.includes('category dark.png')) {
+            image.src = 'Images/category.png';
+        } else {
+            image.src = 'Images/category dark.png';
+        }
+    } else {
+        if (image.src.includes('category.png')) {
+            image.src = 'Images/category dark.png';
+        } else {
+            image.src = 'Images/category.png';
+        }
+    }
+});
+
+  // pencil 이미지
   pencilImages.forEach(function(image) {
       if (document.body.classList.contains('dark-mode')) {
           if (image.src.includes('pencil dark.png')) {
@@ -122,7 +140,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
       }
   });
 
-  // trash 이미지 ?? 현식이랑 같이 해보기
+  // trash 이미지
   trashImages.forEach(function(image) {
       if (document.body.classList.contains('dark-mode')) {
           if (image.src.includes('trash dark.png')) {

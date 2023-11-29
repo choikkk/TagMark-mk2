@@ -88,6 +88,13 @@
   animation: CmodalCloseAnimation 0.5s ease-in-out;
 }
 
+#myCT2depsModal .cmodal-content {
+  animation: CmodalAnimation 0.5s ease-in-out;
+}
+#myCT2depsModal.closing .cmodal-content {
+  animation: CmodalCloseAnimation 0.5s ease-in-out;
+}
+
 /* Dark Mode 스타일 */
 body.dark-mode {
   background-color: var(--background-color-dark);

@@ -13,7 +13,6 @@ const closeModalBtn = document.getElementById("closeModalBtn");
 // 모달 참조
 const modal = document.getElementById("newModal");
 const categoryModal = document.getElementById("newCategoryModal");
-const SBdeleteTagModal = document.getElementById('SBdeleteTagModal');
 
 // 모달 열기 이벤트
 openModalBtn.onclick = function () {
@@ -74,6 +73,22 @@ document.addEventListener('click', function(e){
   
 });
 
+// #카테고리 작은 모달 마우스 위치#
+document.addEventListener('click', function(e){
+  if(e.target.id === 'openCT2depsModalBtn'){
+    myCT2depsModal.classList.remove("closing"); // 새로운 클래스 추가
+    myCT2depsModal.style.display = "block";
+  
+    // 클릭 이벤트의 마우스 위치
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+  
+    // 모달 위치 설정
+    myCT2depsModal.style.left = mouseX + "px";
+    myCT2depsModal.style.top = mouseY + "px";
+
+  }
+});
 
 
 // #카테고리 변경 모달
@@ -169,6 +184,38 @@ closeBDModalBtn.onclick = function () {
     BDmodal.classList.remove("closing"); // 새로운 클래스 제거
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 };
+
+// #태그 삭제 모달
+// 모달 열기 버튼과 모달 닫기 버튼 참조
+const open2depsDTModalBtn = document.getElementById("DeleteTagBtn"); // 변경된 부분
+const close2depsDTModalBtn = document.getElementById("SBcloseDeleteTagModalBtn");
+
+// 모달 참조
+const depsDTmodal = document.getElementById("SBdeleteTagModal"); // 변경된 부분
+
+// 모달 열기 이벤트
+open2depsDTModalBtn.onclick = function () {
+  // ChangeCTBtn 클릭 시 myCTModal을 닫음
+  myCT2depsModal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    myCT2depsModal.style.display = "none";
+    myCT2depsModal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+
+  // CCmodal 열기
+  depsDTmodal.style.display = "block";
+};
+
+// 모달 닫기 이벤트
+close2depsDTModalBtn.onclick = function () {
+  depsDTmodal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    depsDTmodal.style.display = "none";
+    depsDTmodal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+};
+
+
 
 // #윈도우 밖 클릭시 반응형 이벤트 추가
 window.addEventListener("click", function (event) {

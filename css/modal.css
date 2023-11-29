@@ -48,6 +48,14 @@
   }
 }
 
+.modal-content {
+  animation: modalAnimation 0.5s ease-in-out;
+}
+.closing .modal-content {
+  animation: modalCloseAnimation 0.5s ease-in-out;
+}
+
+/* 지울거
 #newModal .modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
@@ -90,6 +98,13 @@
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
 
+#SBdeleteTagModal .modal-content {
+  animation: modalAnimation 0.5s ease-in-out;
+}
+#SBdeleteTagModal.closing .modal-content {
+  animation: modalCloseAnimation 0.5s ease-in-out;
+}
+*/
 
 /* 상단 영역 스타일 */
 .modal-header {

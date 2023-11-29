@@ -48,47 +48,13 @@
   }
 }
 
-#newModal .modal-content {
+.modal-content {
   animation: modalAnimation 0.5s ease-in-out;
 }
-#newModal.closing .modal-content {
+.closing .modal-content {
   animation: modalCloseAnimation 0.5s ease-in-out;
 }
 
-#newCategoryModal .modal-content {
-  animation: modalAnimation 0.5s ease-in-out;
-}
-#newCategoryModal.closing .modal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
-}
-
-#ChangeCT .modal-content {
-  animation: modalAnimation 0.5s ease-in-out;
-}
-#ChangeCT.closing .modal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
-}
-
-#DeleteCT .modal-content {
-  animation: modalAnimation 0.5s ease-in-out;
-}
-#DeleteCT.closing .modal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
-}
-
-#ModiModal .modal-content {
-  animation: modalAnimation 0.5s ease-in-out;
-}
-#ModiModal.closing .modal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
-}
-
-#BDModal .modal-content {
-  animation: modalAnimation 0.5s ease-in-out;
-}
-#BDModal.closing .modal-content {
-  animation: modalCloseAnimation 0.5s ease-in-out;
-}
 
 /* 상단 영역 스타일 */
 .modal-header {
@@ -194,5 +160,7 @@
   width: 95%;
   height: 3em;
   border: none; /* 기존 테두리선 제거 */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
+  border-bottom: 1px solid #ffffff; /* 아래쪽에만 선 추가 */
+  background-color: #35363A;
+  color: #ffffff;
 }
