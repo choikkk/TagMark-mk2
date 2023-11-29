@@ -236,8 +236,11 @@ header h1 {
 
  /*search-bar placeholder 글자색*/
  .search-bar::placeholder {
-    color: var(--gray-color-5); /* 원하는 플레이스홀더 텍스트 색상으로 변경 */
-  }
+  background: url('/Images/search.png') no-repeat 0px center; /* 이미지 경로 지정 */
+  background-size: 20px 20px; /* 이미지 크기 지정 */
+  padding-left: 30px; /* 이미지와 텍스트 간격 조절 */
+  color: var(--gray-color-5); /* 원하는 플레이스홀더 텍스트 색상으로 변경 */
+}
 
 /*북마크 정렬 버튼*/
 .sectop-button {/*:root*/
