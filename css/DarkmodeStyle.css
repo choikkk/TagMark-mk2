@@ -83,13 +83,13 @@ header img.logo {
 
 /*다크모드 이미지 스타일링*/
 #chdarkmode{
-  transform: rotate(180deg); /*각도 회전 ㅋㅋ*/
+  transform: rotate(180deg); /*각도 회전 다크모드 이미지 변경 적용 하면서 주석*/
   transition: transform 0.5s ease-in-out;
-  background-color: #949393;
+  background-color: #ffffff;
 }
 
 #chdarkmode:hover{/*마우스 올렸을 때 각도 회전*/
-  transform: rotate( 540deg );
+  transform: rotate( 360deg );
 }
 
 /*버튼 이미지 스타일링*/
@@ -297,7 +297,7 @@ header h1 {
   padding: 5px;
   flex: 0.01; /* 가로 넓이 조절 */
   background-color: var(--gray-color-3);
-  color: var(--gray-color-4);
+  color: var(--gray-color-5);
 }
 
 /*북마크 상자*/
