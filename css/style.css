@@ -223,6 +223,13 @@ header h1 {
   min-width: 550px; /* 최소화시 최소 넓이 */
 }
 
+ /*search-bar placeholder 글자색*/
+ .search-bar::placeholder {
+  background: url('/Images/search.png') no-repeat 0px center; /* 이미지 경로 지정 */
+  background-size: 20px 20px; /* 이미지 크기 지정 */
+  padding-left: 30px; /* 이미지와 텍스트 간격 조절 */
+}
+
 /*북마크 정렬 버튼*/
 .sectop-button {
   /*:root*/
