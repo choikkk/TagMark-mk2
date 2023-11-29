@@ -33,7 +33,7 @@
 }
 
 .cmodal-header {
-  padding-bottom: 8px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--border-color-light);
 }
 
@@ -44,7 +44,7 @@
 
 .cmodal-footer {
   text-align: left;
-  max-height: 16px;
+  max-height: 18px;
   color: var(--text-color-light);
 }
 
