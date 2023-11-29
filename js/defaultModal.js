@@ -216,6 +216,36 @@ close2depsDTModalBtn.onclick = function () {
 };
 
 
+// #카테고리 삭제 모달
+// 모달 열기 버튼과 모달 닫기 버튼 참조
+const openChCTModalBtn = document.getElementById("ChCTBtn"); // 변경된 부분
+const closeChCTModalBtn = document.getElementById("closeChCTModalBtn");
+
+// 모달 참조
+const ChCTmodal = document.getElementById("ChCT"); // 변경된 부분
+
+// 모달 열기 이벤트
+openChCTModalBtn.onclick = function () {
+  // DeleteCTBtn 클릭 시 myCTModal을 닫음
+  myCT2depsModal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    myCT2depsModal.style.display = "none";
+    myCT2depsModal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+
+  ChCTmodal.style.display = "block";
+};
+
+// 모달 닫기 이벤트
+closeChCTModalBtn.onclick = function () {
+  ChCTmodal.classList.add("closing"); // 새로운 클래스 추가
+  setTimeout(function () {
+    ChCTmodal.style.display = "none";
+    ChCTmodal.classList.remove("closing"); // 새로운 클래스 제거
+  }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+};
+
+
 
 // #윈도우 밖 클릭시 반응형 이벤트 추가
 window.addEventListener("click", function (event) {
@@ -267,6 +297,12 @@ window.addEventListener("click", function (event) {
     setTimeout(function () {
       SBdeleteTagModal.style.display = "none";
       SBdeleteTagModal.classList.remove("closing"); // 새로운 클래스 제거
+    }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
+  }else if(event.target == ChCT ){
+    ChCT .classList.add("closing"); // 새로운 클래스 추가
+    setTimeout(function () {
+      ChCT .style.display = "none";
+      ChCT .classList.remove("closing"); // 새로운 클래스 제거
     }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
   }
   

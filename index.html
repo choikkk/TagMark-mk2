@@ -245,7 +245,7 @@
       </div>
     </div>
 
-    <!-- add category 모달 / -->
+    <!-- add category 모달 -->
     <div id="newCategoryModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -273,7 +273,7 @@
       </div>
     </div>
 
-    <!-- 북마크 삭제 모달 / 규문 여기도~ -->
+    <!-- 북마크 삭제 모달  -->
     <div id="BDModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -296,7 +296,7 @@
       </div>
     </div>
 
-    <!-- 태그 삭제 모달 / 규문 여기도~ -->
+    <!-- 태그 삭제 모달 -->
     <div id="SBdeleteTagModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -319,7 +319,7 @@
       </div>
     </div>
 
-    <!-- 카테고리 삭제 모달 / 규문 여기도~ -->
+    <!-- 카테고리 삭제 모달 -->
     <div id="DeleteCT" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
@@ -342,14 +342,14 @@
       </div>
     </div>
 
-     <!-- change category 모달 / 규문 여기서 id나 class 고쳐줭~-->
+     <!-- change category name 모달 -->
      <div id="ChangeCT" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
           <span class="close" id="closeCCModalBtn">&times;</span>
-          <h2 id="htext">Change Category</h2>
+          <h2 id="htext">Change Category Name</h2>
         </div>
 
         <!-- 하단 영역 -->
@@ -366,6 +366,34 @@
           <button id="saveChangeCTBtn">확인</button>
           <!-- 취소 버튼 -->
           <button id="cancelChangeCTBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- change category 모달 / 규문 여기 saveChCTBtn랑 cancelChCTBtn 넣은거 깡통이야~ -->
+     <div id="ChCT" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeChCTModalBtn">&times;</span>
+          <h2 id="htext">Change Category</h2>
+        </div>
+
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <input
+            type="text"
+            id="ChCTText"
+            placeholder="변경하는 카테고리를 입력해주세요."
+          />
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveChCTBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelChCTBtn">취소</button>
         </div>
       </div>
     </div>
@@ -387,7 +415,7 @@
     <!--<button id="openModalBtn">모달 열기</button>-->
     <div id="myCT2depsModal" class="cmodal">
       <div class="cmodal-content" >
-        <div class="cmodal-header" id="규문 추가할거" >
+        <div class="cmodal-header" id="ChCTBtn" >
           <h2>카테고리 변경 <img src="Images/pencil.png" class="pencilIm"></h2>
         </div>
         <div class="cmodal-footer" id="DeleteTagBtn">
