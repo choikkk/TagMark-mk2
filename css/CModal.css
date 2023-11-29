@@ -106,8 +106,11 @@ body.dark-mode .cmodal-content {
   border-color: var(--border-color-dark);
   box-shadow: var(--box-shadow-dark);
 }
-
+body.dark-mode .cmodal-header{
+  border-color: var(--border-color-dark);
+}
 body.dark-mode .cmodal-header h2,
 body.dark-mode .cmodal-footer {
   color: var(--text-color-dark);
+  
 }
