@@ -3,6 +3,10 @@ const cancelCategoryBtn = document.getElementById("cancelCategoryBtn"); // 카�
 const newCategoryModal = document.getElementById("newCategoryModal"); // 카테고리 추가 모달 참조
 const addCategoryText = document.getElementById("addCategory"); // 카테고리 명 받아온 텍스트
 
+
+let CategoryList = []; // 카테고리명 저장 배열
+
+
 // 취소버튼
 cancelCategoryBtn.onclick = function() {
 	newCategoryModal.style.display = "none";
@@ -11,7 +15,7 @@ cancelCategoryBtn.onclick = function() {
 }
 
 ///////////////////////////////////////////////////////////////
-// 함수화
+// 카테고리 추가 함수화
 function createSidebarMenu() {
     // 부모 요소 생성
     const hasDropdownDiv = document.createElement('div');
@@ -72,17 +76,64 @@ function createSidebarMenu() {
     sidebarStart = document.getElementById("sidebarStart");
     sidebarStart.appendChild(hasDropdownDiv);
 
+    CategoryList.push(addCategoryText.value)
 
   }
   
   ////////////////////////////////////////////////////////////////////
 
-  // 함수 호출
-  // createSidebarMenu();
+
   saveCategoryBtn.addEventListener('click', function(){
     createSidebarMenu(); // 함수화 한 함수 호출
 
     newCategoryModal.style.display = "none"; // 디스플레이 설정 숨김
     addCategoryText.value = ""; // 카테고리 추가 내부 내용 초기화    
+
   });
+
+  ////////////////////////////////////////////////////////////////////////
+
+  // 카테고리 이름 수정 모달 참조 및 기능
+  const saveChangeCTBtn = document.getElementById('saveChangeCTBtn');
+  const cancelChangeCTBtn = document.getElementById("cancelChangeCTBtn"); 
+  const changeCT = document.getElementById("ChangeCT"); 
+  const changeCTname = document.getElementById("changeCTname"); 
+  
+  // 카테고리 이름 수정 함수화
+  function ChangeCTname() {
+    const categoryImg = document.getElementById('openCTModalBtn');
+    // 클릭된 categoryImg의 부모 노드인 menuSpan을 찾기
+    const menuSpan = categoryImg.closest('.has-dropdown').querySelector('span');
+
+    // menuSpan의 값을 변경
+    const newValue = changeCTname.value;
+    menuSpan.textContent = newValue;
+
+    // 이미지 생성
+    const categoryChangeImg = document.createElement('img');
+    categoryChangeImg.classList.add('category', 'c2dep');
+    categoryChangeImg.src = 'Images/category.png';
+    categoryChangeImg.id = 'openCTModalBtn';
+  
+    // 메뉴명에 이미지 추가
+    menuSpan.appendChild(categoryChangeImg);
+
+  }
+
+  // 카테고리 이름 수정 확인 버튼
+  saveChangeCTBtn.addEventListener('click', function () {
+    ChangeCTname();
+
+    changeCT.style.display = 'none';
+    changeCTname.value = "";
+  });
+
+  // 카테고리 이름 수정 취소 버튼
+  // 취소 버튼
+  cancelChangeCTBtn.onclick = function() {
+    changeCT.style.display = 'none';
+    changeCTname.value = "";
+  }
+
+
   
