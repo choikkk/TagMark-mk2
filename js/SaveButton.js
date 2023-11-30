@@ -98,6 +98,11 @@ saveBtn.onclick= function() {
 	let urlInputValue= document.getElementById("urlInput").value.trim();
 	let tagTextareaValue= document.getElementById("tagTextarea").value.split(' ');
 
+	// 프로토콜이 없는 경우 기본적으로 http://를 추가
+	if (!urlInputValue.startsWith('http://') && !urlInputValue.startsWith('https://')) {
+		urlInputValue = 'http://' + urlInputValue;
+	}
+
 	var ElementBookMark = [titleInputValue, urlInputValue, tagTextareaValue]; // 북마크 요소 저장 배열
 	// 전체 북마크 리스트에 요소들 추가 / 북마크 리스트 요소들 정렬된 배열에 추가
 	AllBookMarkList.push(ElementBookMark);
