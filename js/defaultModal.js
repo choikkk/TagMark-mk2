@@ -55,41 +55,36 @@ closeCategoryModalBtn.onclick = function () {
   }, 500); // 애니메이션 지속 시간과 동일한 시간을 설정
 };
 
-// #카테고리 작은 모달 마우스 위치#
-document.addEventListener('click', function(e){
-  if(e.target.id === 'openCTModalBtn'){
-    myCTModal.classList.remove("closing"); // 새로운 클래스 추가
-    myCTModal.style.display = "block";
-  
-    // 클릭 이벤트의 마우스 위치
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
-  
-    // 모달 위치 설정
-    myCTModal.style.left = mouseX + "px";
-    myCTModal.style.top = mouseY + "px";
 
-  }
-  
-});
+// 클릭 이벤트 전파를 다시 가능하도록 하는 함수
+function enablePropagation() {
+  document.removeEventListener('click', enablePropagation);
+}
 
 // #카테고리 작은 모달 마우스 위치#
-document.addEventListener('click', function(e){
-  if(e.target.id === 'openCT2depsModalBtn'){
-    myCT2depsModal.classList.remove("closing"); // 새로운 클래스 추가
-    myCT2depsModal.style.display = "block";
-  
-    // 클릭 이벤트의 마우스 위치
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
-  
-    // 모달 위치 설정
-    myCT2depsModal.style.left = mouseX + "px";
-    myCT2depsModal.style.top = mouseY + "px";
+function openModal(modal, buttonId) {
+  document.addEventListener('click', function(e){
+    if(e.target.id === buttonId){
+      
+      // 클릭 이벤트의 전파 막기
+      e.stopPropagation();
 
-  }
-});
+      modal.classList.remove("closing"); // 새로운 클래스 추가
+      modal.style.display = "block";
+    
+      // 클릭 이벤트의 마우스 위치
+      var mouseX = e.clientX;
+      var mouseY = e.clientY;
+    
+      // 모달 위치 설정
+      modal.style.left = mouseX + "px";
+      modal.style.top = mouseY + "px";
+    }
+  });
+}
 
+openModal(myCTModal, 'openCTModalBtn');
+openModal(myCT2depsModal, 'openCT2depsModalBtn');
 
 // #카테고리 변경 모달
 // 모달 열기 버튼과 모달 닫기 버튼 참조

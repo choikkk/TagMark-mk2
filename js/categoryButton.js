@@ -17,6 +17,17 @@ cancelCategoryBtn.onclick = function() {
 ///////////////////////////////////////////////////////////////
 // 카테고리 추가 함수화
 function createSidebarMenu() {
+  // 배경색 판단 함수
+  function isBackgroundColorSameAs(rgbValue) {
+    // 현재 body의 배경색을 가져옴
+    var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+
+    // 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+    return currentBackgroundColor === rgbValue;
+  }
+
+  // 예시: RGB(53, 54, 58)과 비교
+  var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
   // 부모 요소 생성
   const hasDropdownDiv = document.createElement('div');
   hasDropdownDiv.classList.add('has-dropdown');
@@ -31,14 +42,47 @@ function createSidebarMenu() {
   menuSpan.textContent = addCategoryText.value;
 
   // 이미지 생성
-  const categoryImg = document.createElement('img');
+  var categoryImg = document.createElement('img');
   categoryImg.classList.add('category', 'c2dep');
-  categoryImg.src = 'Images/category.png';
   categoryImg.id = 'openCTModalBtn';
 
   // 메뉴명에 이미지 추가
   menuSpan.appendChild(categoryImg);
 
+  // 배경색 판단 알고리즘
+  if (isSameColor) {
+    categoryImg.src = "Images/category dark.png";
+  } else{
+    categoryImg.src = "Images/category.png";
+  }
+
+  // ...이미지 버튼
+  categoryImg.onclick = function() {
+    // 수정 버튼
+    saveChangeCTBtn.addEventListener('click', function () {
+      const newValue = changeCTname.value;
+      menuSpan.textContent = newValue;
+
+      // 이미지 생성
+      const categoryChangeImg = document.createElement('img');
+      categoryChangeImg.classList.add('category', 'c2dep');
+      categoryChangeImg.src = 'Images/category.png';
+      categoryChangeImg.id = 'openCTModalBtn';
+
+      // 메뉴명에 이미지 추가
+      menuSpan.appendChild(categoryChangeImg);
+
+      changeCT.style.display = 'none';
+      changeCTname.value = "";
+    });
+
+    saveDeleteCTBtn.onclick = function(){
+      hasDropdownDiv.remove();
+      DeleteCT.style.display = 'none';
+    }
+
+  }
+  
   // // 하위 메뉴 생성
   // const sidebarDropdown = document.createElement('ul');
   // sidebarDropdown.classList.add('sidebar-dropdown', 'list-unstyled');
@@ -76,8 +120,9 @@ function createSidebarMenu() {
   sidebarStart = document.getElementById("sidebarStart");
   sidebarStart.appendChild(hasDropdownDiv);
 
-  CategoryList.push(addCategoryText.value)
+  CategoryList.push(addCategoryText.value);
 
+  
 }
   
 // 카테고리 추가 확인 버튼
@@ -94,37 +139,9 @@ saveCategoryBtn.addEventListener('click', function(){
 // 카테고리 이름 수정 모달 참조 및 기능
 const saveChangeCTBtn = document.getElementById('saveChangeCTBtn');
 const cancelChangeCTBtn = document.getElementById("cancelChangeCTBtn"); 
-const changeCT = document.getElementById("ChangeCT"); 
-const changeCTname = document.getElementById("changeCTname"); 
+const changeCT = document.getElementById("ChangeCT");
+const changeCTname = document.getElementById("changeCTname");
 
-// 카테고리 이름 수정 함수화
-function ChangeCTname() {
-  const categoryImg = document.getElementById('openCTModalBtn');
-  // 클릭된 categoryImg의 부모 노드인 menuSpan을 찾기
-  const menuSpan = categoryImg.closest('.has-dropdown').querySelector('span');
-
-  // menuSpan의 값을 변경
-  const newValue = changeCTname.value;
-  menuSpan.textContent = newValue;
-
-  // 이미지 생성
-  const categoryChangeImg = document.createElement('img');
-  categoryChangeImg.classList.add('category', 'c2dep');
-  categoryChangeImg.src = 'Images/category.png';
-  categoryChangeImg.id = 'openCTModalBtn';
-
-  // 메뉴명에 이미지 추가
-  menuSpan.appendChild(categoryChangeImg);
-
-}
-
-// 카테고리 이름 수정 확인 버튼
-saveChangeCTBtn.addEventListener('click', function () {
-  ChangeCTname();
-
-  changeCT.style.display = 'none';
-  changeCTname.value = "";
-});
 
 // 카테고리 이름 수정 취소 버튼
 // 취소 버튼
@@ -135,31 +152,32 @@ cancelChangeCTBtn.onclick = function() {
 
 
 /////////////////////////////////////////////////////////////////////////////////
-// 카테고리 이름 수정 모달 참조 및 기능 ///// 태그 이동 만든 후 더 추가 예정
+// 카테고리 삭제 모달 참조 및 기능 ///// 태그 이동 만든 후 더 추가 예정
 const saveDeleteCTBtn = document.getElementById('saveDeleteCTBtn');
 const cancelDeleteCTBtn = document.getElementById("cancelDeleteCTBtn");
 const DeleteCT = document.getElementById("DeleteCT");
 
-function DelCT() {
-  const categoryImg = document.getElementById('openCTModalBtn');
-
-  // 클릭된 categoryImg의 부모 노드인 div 찾기
-  const deleteParentDiv = categoryImg.closest('.has-dropdown');
-  deleteParentDiv.remove(); // 해당 div 삭제
-
-  // 앞으로 넣어야할 태그 삭제 이동 추가 자리
-
-
-}
-
-
-saveDeleteCTBtn.onclick = function(){
-  DelCT();
-  DeleteCT.style.display = 'none';
-}
 
 cancelDeleteCTBtn.onclick = function(){
   DeleteCT.style.display = 'none';
 }
 
-  
+
+
+
+//////////////////////////////////////////////////////////////////////
+// 카테고리 내 태그 이동
+const saveChCTBtn = document.getElementById('saveChCTBtn');
+const cancelChCTBtn = document.getElementById("cancelChCTBtn"); 
+const ChCT = document.getElementById("ChCT"); 
+const ChCTText = document.getElementById("ChCTText");
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// 카테고리 내 태그 삭제
