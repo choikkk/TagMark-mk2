@@ -13,8 +13,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TagMark</title>
-</head>
- <body>
+  </head>
+  <body>
     <!-- 상단 영역 시작 -->
     <header>
       <div class="section-header-wrapper">
@@ -27,9 +27,8 @@
           <p>&nbsp;&nbsp;TagMark</p>
         </div>
         <div class="section-header3">
-          <img class="logo" id="chdarkmode" src="Images/darkmode.png" onclick="toggleDarkMode()"/>
+          <img class="logo darkmodeIm" id="chdarkmode" src="Images/darkmode.png" onclick="toggleDarkMode()"/>
           <img class="logo" src="Images/logo.png" onclick="signIn()" alt="드롭다운 이미지" id="profile_image">
-          </svg>
         </div>
       </div>
     </header>
@@ -40,8 +39,8 @@
       <div class="section full-box">
         <h2 id="cate-top">Categories</h2>
         <!--카테고리 버튼-->
-        <div class="catetop-button">
-          <img class="BImages addCate-btn" src="Images/addCa.png" />
+        <div class="catetop-button" id="openCategoryModalBtn">
+          <img class="BImages addCate-btn addCaIm" src="Images/addCa.png" />
           <div class="addCate-btn">Add Category</div>
         </div>
 
@@ -54,7 +53,6 @@
             <div class="search position-relative text-center px-4 py-3 mt-2">
               <i class="fa fa-search position-absolute d-block fs-6"></i>
             </div>
-
             <ul class="categories list-unstyled">
               <div class="has-dropdown">
                 <i class="uil-estate fa-fw"></i
@@ -63,302 +61,43 @@
                   <div>
                     <span href="#"
                       >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
+                        class="category openCT2depsModalBtnIM"
+                        src="Images/category.png" id="openCT2depsModalBtn"
                     /></span>
                   </div>
                   <div>
                     <span href="#"
                       >ipsum dolor<img
-                        class="category"
+                        class="category openCT2depsModalBtnIM"
                         src="Images/category.png"
                     /></span>
                   </div>
                   <div>
                     <span href="#"
                       >dolor ipsum<img
-                        class="category"
+                        class="category openCT2depsModalBtnIM"
                         src="Images/category.png"
                     /></span>
                   </div>
                   <div>
                     <span href="#"
                       >amet consectetur<img
-                        class="category"
+                        class="category openCT2depsModalBtnIM"
                         src="Images/category.png"
                     /></span>
                   </div>
                   <div>
                     <span href="#"
                       >ipsum dolor sit<img
-                        class="category"
+                        class="category openCT2depsModalBtnIM"
                         src="Images/category.png"
                     /></span>
                   </div>
                 </ul>
               </div>
-              <div class="has-dropdown">
-                <i class="uil-calendar-alt"></i
-                ><span href="#">
-                  Calender<img class="category c2dep" src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
-              <div class="has-dropdown">
-                <i class="uil-envelope-download fa-fw"></i
-                ><span href="#">
-                  Mailbox<img class="category c2dep" src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
-              <div class="has-dropdown">
-                <i class="uil-shopping-cart-alt"></i
-                ><span href="#">
-                  Ecommerce<img
-                    class="category c2dep"
-                    src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
-              <div class="has-dropdown">
-                <i class="uil-bag"></i
-                ><span href="#">
-                  Projects<img class="category c2dep" src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
-              <div class="has-dropdown">
-                <i class="uil-chart-pie-alt"></i
-                ><span href="#">
-                  Components<img
-                    class="category c2dep"
-                    src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
-              <div class="has-dropdown">
-                <i class="uil-panel-add"></i
-                ><span href="#">
-                  Charts<img class="category c2dep" src="Images/category.png"
-                /></span>
-                <ul class="sidebar-dropdown list-unstyled">
-                  <div>
-                    <span href="#"
-                      >Lorem ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >dolor ipsum<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >amet consectetur<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                  <div>
-                    <span href="#"
-                      >ipsum dolor sit<img
-                        class="category"
-                        src="Images/category.png"
-                    /></span>
-                  </div>
-                </ul>
-              </div>
+            </ul>
+            <ul class="categories list-unstyled" id="sidebarStart">
+              
             </ul>
           </aside>
 
@@ -409,13 +148,13 @@
       <div class="section third-section">
         <div class="third-box">
           <h2 id="sradius">
-            <img class="BImages" src="Images/add bookmark.png" />최근 추가 태그
+            <img class="BImages addbookmarkIm" src="Images/add bookmark.png" />최근 추가 태그
           </h2>
           <div id="currentTaglist"></div>
         </div>
         <div class="third-box">
           <h2 id="sradius">
-            <img class="BImages" src="Images/add bookmark.png" />전체 태그 목록
+            <img class="BImages addbookmarkIm" src="Images/add bookmark.png" />전체 태그 목록
           </h2>
           <div id="allTaglist"></div>
         </div>
@@ -460,12 +199,12 @@
     </div>
 
     <!-- 북마크 수정 모달 창 -->
-    <div id="newModal" class="modal">
+    <div id="ModiModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeMDModalBtn">&times;</span>
           <h2 id="htext">Modify BookMark</h2>
         </div>
 
@@ -473,14 +212,14 @@
         <div class="divTitle">
           <input
             type="text"
-            id="bookmarkTitle"
+            id="modifiedBookmarkTitle"
             placeholder="제목을 입력하세요"
           />
           <!-- URL 입력란 -->
-          <input type="url" id="urlInput" placeholder="URL을 입력하세요 " />
+          <input type="url" id="modifiedUrlInput" placeholder="URL을 입력하세요 " />
           <!-- 태그 작성란 -->
           <input
-            id="tagTextarea"
+            id="modifiedTagTextarea"
             placeholder="태그를 작성하세요"
             contenteditable="true"
           />
@@ -488,20 +227,20 @@
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="modifySaveBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="modifyCancelBtn">취소</button>
         </div>
       </div>
     </div>
 
-    <!-- add category 모달 / 규문 여기서 id나 class 고쳐줭~-->
-    <div id="newModal" class="modal">
+    <!-- add category 모달 -->
+    <div id="newCategoryModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeCategoryModalBtn">&times;</span>
           <h2 id="htext">Add Category</h2>
         </div>
 
@@ -510,26 +249,26 @@
           <input
             type="text"
             id="addCategory"
-            placeholder="추가할 카테고리를 입력해주세요."
+            placeholder="추가할 카테고리명을 입력해주세요."
           />
         </div>
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="saveCategoryBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="cancelCategoryBtn">취소</button>
         </div>
       </div>
     </div>
 
-    <!-- 북마크 삭제 모달 / 규문 여기도~ -->
-    <div id="newModal" class="modal">
+    <!-- 북마크 삭제 모달  -->
+    <div id="BDModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeBDModalBtn">&times;</span>
           <h2 id="htext">Delete BookMark</h2>
         </div>
         <!-- 하단 영역 -->
@@ -539,20 +278,20 @@
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="DeleteSaveBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="DeleteCancelBtn">취소</button>
         </div>
       </div>
     </div>
 
-    <!-- 태그 삭제 모달 / 규문 여기도~ -->
-    <div id="newModal" class="modal">
+    <!-- 태그 삭제 모달 -->
+    <div id="SBdeleteTagModal" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="SBcloseDeleteTagModalBtn">&times;</span>
           <h2 id="htext">Delete Tag</h2>
         </div>
         <!-- 하단 영역 -->
@@ -569,13 +308,13 @@
       </div>
     </div>
 
-    <!-- 카테고리 삭제 모달 / 규문 여기도~ -->
-    <div id="newModal" class="modal">
+    <!-- 카테고리 삭제 모달 -->
+    <div id="DeleteCT" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeDCModalBtn">&times;</span>
           <h2 id="htext">Delete Category</h2>
         </div>
         <!-- 하단 영역 -->
@@ -585,20 +324,48 @@
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="saveDeleteCTBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="cancelDeleteCTBtn">취소</button>
         </div>
       </div>
     </div>
 
-     <!-- change category 모달 / 규문 여기서 id나 class 고쳐줭~-->
-     <div id="newModal" class="modal">
+     <!-- change category name 모달 -->
+     <div id="ChangeCT" class="modal">
       <!-- 모달 콘텐츠 -->
       <div class="modal-content">
         <!-- 상단 영역 -->
         <div class="modal-header">
-          <span class="close" id="closeModalBtn">&times;</span>
+          <span class="close" id="closeCCModalBtn">&times;</span>
+          <h2 id="htext">Change Category Name</h2>
+        </div>
+
+        <!-- 하단 영역 -->
+        <div class="divTitle">
+          <input
+            type="text"
+            id="changeCTname"
+            placeholder="변경하는 카테고리 이름 입력해주세요."
+          />
+        </div>
+
+        <div class="modal-footer">
+          <!-- 확인 버튼 -->
+          <button id="saveChangeCTBtn">확인</button>
+          <!-- 취소 버튼 -->
+          <button id="cancelChangeCTBtn">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- change category 모달 / 규문 여기 saveChCTBtn랑 cancelChCTBtn 넣은거 깡통이야~ -->
+     <div id="ChCT" class="modal">
+      <!-- 모달 콘텐츠 -->
+      <div class="modal-content">
+        <!-- 상단 영역 -->
+        <div class="modal-header">
+          <span class="close" id="closeChCTModalBtn">&times;</span>
           <h2 id="htext">Change Category</h2>
         </div>
 
@@ -606,29 +373,42 @@
         <div class="divTitle">
           <input
             type="text"
-            id="addCategory"
-            placeholder="변경하는 카테고리를 선택해주세요."
+            id="ChCTText"
+            placeholder="변경하는 카테고리를 입력해주세요."
           />
         </div>
 
         <div class="modal-footer">
           <!-- 확인 버튼 -->
-          <button id="saveBtn">확인</button>
+          <button id="saveChCTBtn">확인</button>
           <!-- 취소 버튼 -->
-          <button id="cancelBtn">취소</button>
+          <button id="cancelChCTBtn">취소</button>
         </div>
       </div>
     </div>
 
-    <!-- 카테고리 작은 모달 / 규문 여기도~ 퇴근시간이라 아직 수정중 -->
+    <!-- 카테고리 작은 모달 -->
     <!--<button id="openModalBtn">모달 열기</button>-->
-    <div id="myModal" class="cmodal">
-      <div class="cmodal-content">
-        <div class="cmodal-header">
-          <h2>카테고리 이름 변경 <img src="Images/pencil.png"></h2>
+    <div id="myCTModal" class="cmodal">
+      <div class="cmodal-content" >
+        <div class="cmodal-header" id="ChangeCTBtn" >
+          <h2>카테고리 이름 변경 <img src="Images/pencil.png" class="pencilIm"></h2>
         </div>
-        <div class="cmodal-footer">
-          <h2>카테고리 삭제 <img src="Images/trash.png"></h2>
+        <div class="cmodal-footer" id="DeleteCTBtn">
+          <h2>카테고리 삭제 <img src="Images/trash.png" class="trashIm"></h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카테고리 작은 모달2 -->
+    <!--<button id="openModalBtn">모달 열기</button>-->
+    <div id="myCT2depsModal" class="cmodal">
+      <div class="cmodal-content" >
+        <div class="cmodal-header" id="ChCTBtn" >
+          <h2>카테고리 변경 <img src="Images/pencil.png" class="pencilIm"></h2>
+        </div>
+        <div class="cmodal-footer" id="DeleteTagBtn">
+          <h2>태그 삭제 <img src="Images/trash.png" class="trashIm"></h2>
         </div>
       </div>
     </div>
@@ -650,16 +430,30 @@
             <button id="close-button" class="close-button">&times;</button>
         </div>
     </div>
-
-    <script src="js/defaultModal.js"></script>
+    <!--script-->
     <script src="js/SaveButton.js"></script>
+    <script src="js/defaultModal.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/dropdown.js"></script>
     <script src="js/login.js">  </script>
-    <script src="js/modeChange.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/modeChange copy.js"></script>
+
     <script src="js/searchBar.js"></script>
     <script src="js/AllButton.js"></script>
     <script src="js/LatestButton.js"></script>
     <script src="js/OldButton.js"></script>
+    <script src="js/categoryButton.js"></script>
+
+<!-- 
+    
+    <script src="js/defaultModal.js"></script>
+    <script src="js/SaveButton.js"></script>
+    <script src="js/sidebar.js"></script>
+    
+    <script src="js/modeChange.js"></script>
+    <script src="js/searchBar.js"></script>
+    <script src="js/AllButton.js"></script>
+    <script src="js/LatestButton.js"></script>
+    <script src="js/OldButton.js"></script> -->
 </body>
 </html>
