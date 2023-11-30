@@ -41,7 +41,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
   let addBookmarkImages = document.querySelectorAll('.addbookmarkIm');
   let addCaImages = document.querySelectorAll('.addCaIm');
   let categoryImages = document.querySelectorAll('#openCTModalBtn');
-  let category2depsImages = document.querySelectorAll('.openCT2depsModalBtnIM');
+  let category2depsImages = document.querySelectorAll('#openCT2depsModalBtnIM');
   let pencilImages = document.querySelectorAll('#onBookModify');
   let trashImages = document.querySelectorAll('#onBookDelete');
   let CTpencilImages = document.querySelectorAll('.pencilIm');
@@ -51,7 +51,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // add bookmark 현재 클래스 상태를 확인하여 이미지 변경
   addBookmarkImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           // 현재 다크 모드일 때
           if (image.src.includes('add bookmark dark.png')) {
               // 이미지가 add bookmark dark.png일 경우에만 변경
@@ -74,7 +74,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // addCa 이미지
   addCaImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           if (image.src.includes('addCa dark.png')) {
               image.src = 'Images/addCa.png';
           } else {
@@ -91,7 +91,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // category 이미지
   categoryImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           if (image.src.includes('category dark.png')) {
               image.src = 'Images/category.png';
           } else {
@@ -108,7 +108,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
    // category 2deps 이미지
    category2depsImages.forEach(function(image) {
-    if (document.body.classList.contains('dark-mode')) {
+    if (!document.body.classList.contains('dark-mode')) {
         if (image.src.includes('category dark.png')) {
             image.src = 'Images/category.png';
         } else {
@@ -125,7 +125,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // pencil 이미지
   pencilImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           if (image.src.includes('pencil dark.png')) {
               image.src = 'Images/pencil.png';
           } else {
@@ -142,7 +142,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // trash 이미지
   trashImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           if (image.src.includes('trash dark.png')) {
               image.src = 'Images/trash.png';
           } else {
@@ -159,7 +159,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
   // CTpencil 이미지 
   CTpencilImages.forEach(function(image) {
-    if (document.body.classList.contains('dark-mode')) {
+    if (!document.body.classList.contains('dark-mode')) {
         if (image.src.includes('pencil dark.png')) {
             image.src = 'Images/pencil.png';
         } else {
@@ -176,7 +176,7 @@ document.getElementById('chdarkmode').addEventListener('click', function() {
 
 // CTtrash 이미지 
 CTtrashImages.forEach(function(image) {
-  if (document.body.classList.contains('dark-mode')) {
+  if (!document.body.classList.contains('dark-mode')) {
       if (image.src.includes('trash dark.png')) {
           image.src = 'Images/trash.png';
       } else {
@@ -193,7 +193,7 @@ CTtrashImages.forEach(function(image) {
 
   // darkmode 이미지
   lightModeImages.forEach(function(image) {
-      if (document.body.classList.contains('dark-mode')) {
+      if (!document.body.classList.contains('dark-mode')) {
           if (image.src.includes('lightmode.png')) {
               image.src = 'Images/darkmode.png';
           } else {

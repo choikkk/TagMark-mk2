@@ -205,3 +205,30 @@
   border: none; /* 기존 테두리선 제거 */
   border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
 }
+
+
+/*제목 입력*/
+#modifiedBookmarkTitle{
+  width: 95%;
+  height: 3em;
+  border: none; /* 기존 테두리선 제거 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
+}
+
+/*URL 입력*/
+#modifiedUrlInput{
+  margin-top: 15px; /*입력 사이 여백 조절*/
+  width: 95%;
+  height: 2em;
+  border: none; /* 기존 테두리선 제거 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.30); /* 아래쪽에만 선 추가 */
+}
+
+/*태그 입력*/
+#modifiedTagTextarea{
+  margin-top: 15px; /*입력 사이 여백 조절*/
+  width: 95%;
+  height: 3em;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+}

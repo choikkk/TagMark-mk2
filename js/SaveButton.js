@@ -15,6 +15,11 @@ const DeleteCancelBtn = document.getElementById("DeleteCancelBtn"); // 북마크
 const modifySaveBtn = document.getElementById("modifySaveBtn"); // 북마크 수정 확인 버튼
 const modifyCancelBtn = document.getElementById("modifyCancelBtn"); // 북마크 수정 취소 버튼
 
+const modifiedBookmarkTitle = document.getElementById("modifiedBookmarkTitle"); // 북마크 수정 타이틀 값
+const modifiedUrlInput = document.getElementById("modifiedUrlInput"); // 북마크 수정 url 값
+const modifiedTagTextarea = document.getElementById("modifiedTagTextarea"); // 북마크 수정 tag 값
+
+
 var AllRecnetlyTag = []; // 북마크 한개의 최근 추가 태그 리스트 배열
 var AllTagList = []; // 전체 태그 배열
 var UnClassifiedTagList = []; // UnClassified 사이드바 태그 삽입
@@ -151,25 +156,365 @@ saveBtn.onclick= function() {
 	  } else{
 		BmEditIcon.src = "Images/pencil.png";
 	  }
+	  
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+BmEditIcon.id = "onBookModify"
+SImageDiv.appendChild(BmEditIcon);
 
-	BmEditIcon.id = "onBookModify"
-	SImageDiv.appendChild(BmEditIcon);
+// 북마크 수정 모달 생성
+BmEditIcon.addEventListener('click', function() {
+    // 모달 열기
+    MDmodal.style.display = "block";
 
-	// 북마크 수정 모달 생성
-	BmEditIcon.addEventListener('click', function() {
-		//defaultModal.js 북마크 수정 모달창 오픈
-		MDmodal.style.display = "block";
+    // 북마크 수정 확인 버튼
+    modifySaveBtn.onclick = function() {
+		console.log("전체 태그 리스트 >>> " , AllTagList)
+        // 모달 입력값에서 수정된 값 가져오기
+        let modifiedTitle = document.getElementById("modifiedBookmarkTitle").value;
+        let modifiedUrl = document.getElementById("modifiedUrlInput").value.trim();
+        let modifiedTags = document.getElementById("modifiedTagTextarea").value.split(' ');
 
-		modifySaveBtn.onclick = function(){
-			MDmodal.style.display = "none";
-			
+        // 데이터 구조에서 북마크의 인덱스 찾기
+        const index = findBookmarkIndex(ElementBookMark);
+
+        if (index !== -1) {
+            // 북마크의 값을 수정된 값으로 업데이트
+            AllBookMarkList[index][0] = modifiedTitle;
+            AllBookMarkList[index][1] = modifiedUrl;
+            AllBookMarkList[index][2] = modifiedTags;
+
+            // HTML 엘리먼트를 통해 북마크를 나타내는 요소 업데이트
+            let additionalBoxDiv = document.getElementsByClassName("additional-box")[index];
+            additionalBoxDiv.querySelector("h2").textContent = modifiedTitle;
+            additionalBoxDiv.querySelector("a").textContent = modifiedUrl;
+            additionalBoxDiv.querySelector("a").href = modifiedUrl;
+
+            // 태그를 업데이트
+            let tagDiv = additionalBoxDiv.querySelector(".additional-box-tag");
+            tagDiv.innerHTML = ""; // 기존 태그 초기화
+
+            for (let i = 0; i < modifiedTags.length; i++) {
+                let yellowCircleDiv = document.createElement("div");
+                yellowCircleDiv.classList.add("yellow-circle");
+                tagDiv.appendChild(yellowCircleDiv);
+
+                let pElement = document.createElement("p");
+                pElement.textContent = modifiedTags[i];
+                tagDiv.appendChild(pElement);
+            }
+
+            // 수정 및 삭제 버튼을 추가 (수정된 부분)
+            addEditDeleteButtons(additionalBoxDiv, ElementBookMark);
+        }
+
+		// 태그 리스트 업데이트
+		function updateTagLists(deletedTags) {
+			// 삭제된 태그를 모든 태그 목록과 현재 태그 목록에서 찾아 제거
+			deletedTags.forEach(deletedTag => {
+				const allTagIndex = AllTagList.indexOf(deletedTag.toLowerCase());
+				if (allTagIndex !== -1) {
+					AllTagList.splice(allTagIndex, 1);
+				}
+			});
+
+			// 해당 공간 html 요소 초기화
+			allTagArea.innerHTML = '';
+
+			// 태그 추가
+			for (let i = 0; i < AllTagList.length; i++) {
+				let AllAdditionalBoxTagDiv = document.createElement("div");
+				AllAdditionalBoxTagDiv.classList.add("additional-box-tag");
+				allTagArea.appendChild(AllAdditionalBoxTagDiv);
+
+				let yellowCircleDiv = document.createElement("div");
+				yellowCircleDiv.classList.add("yellow-circle");
+				AllAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+
+				let pElement = document.createElement("p");
+				pElement.textContent = AllTagList[i];
+				AllAdditionalBoxTagDiv.appendChild(pElement);
+			}
+
+			// 현재 추가 태그 목록
+			let CurrentTagList = SetTagList; // 현재 추가 태그 배열
 		}
-		modifyCancelBtn.onclick = function(){
-			MDmodal.style.display = "none";
-			
-		}
-	  });
 
+		// UnClassifiedTagList 업데이트
+		function updateUnClassifiedTagList(deletedTags) {
+			// 삭제된 태그를 UnClassifiedTagList에서 찾아 제거
+			deletedTags.forEach(deletedTag => {
+				const unClassifiedIndex = UnClassifiedTagList.indexOf(deletedTag.toLowerCase());
+				if (unClassifiedIndex !== -1) {
+					UnClassifiedTagList.splice(unClassifiedIndex, 1);
+				}
+			});
+
+			// UnClassifiedTagList 업데이트
+			UnClassifiedSidebarArea.innerHTML = "";
+			for (let j = 0; j < UnClassifiedTagList.length; j++) {
+				let UnclassifiedDiv = document.createElement('div');
+				let UnclassifiedSpan = document.createElement('span');
+
+				UnclassifiedSpan.innerText = UnClassifiedTagList[j];
+
+				UnclassifiedSpan.setAttribute('herf', '#');
+				UnclassifiedDiv.appendChild(UnclassifiedSpan);
+				UnClassifiedSidebarArea.appendChild(UnclassifiedDiv);
+			}
+		}
+
+        // 수정 모달 닫기
+        MDmodal.style.display = "none";
+		modifiedBookmarkTitle.value = ""; // 제목 입력 필드 초기화
+		modifiedUrlInput.value = ""; // URL 입력 필드 초기화s
+		modifiedTagTextarea.value = ""; // 태그 입력 필드 초기화
+    };
+
+    // 북마크 수정 취소 버튼
+    modifyCancelBtn.onclick = function() {
+        // 모달 닫기
+        MDmodal.style.display = "none";
+		modifiedBookmarkTitle.value = ""; // 제목 입력 필드 초기화
+		modifiedUrlInput.value = ""; // URL 입력 필드 초기화s
+		modifiedTagTextarea.value = ""; // 태그 입력 필드 초기화
+    };
+});
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 수정 및 삭제 버튼을 추가하는 함수 (새로 추가된 부분)
+function addEditDeleteButtons(additionalBoxDiv, bookmark) {
+    // 북마크 박스 태그 Div 아이콘 추가
+    let SImageDiv = document.createElement("div");
+    SImageDiv.classList.add("SImages");
+    additionalBoxDiv.querySelector(".additional-box-tag").appendChild(SImageDiv);
+
+    // 북마크 수정 버튼 기능 구현
+    let BmEditIcon = document.createElement("img");
+    BmEditIcon.classList.add("BImages");
+    BmEditIcon.id = "onBookModify";
+	// 배경색 판단 알고리즘
+	if (isSameColor) {
+		BmEditIcon.src = "Images/pencil dark.png";
+	  } else{
+		BmEditIcon.src = "Images/pencil.png";
+	  }
+
+    SImageDiv.appendChild(BmEditIcon);
+
+	// 마우스를 올렸을 때 스타일 변경
+	BmEditIcon.addEventListener('mouseover', function() {
+		BmEditIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
+		BmEditIcon.style.opacity = '0.7';   // 원하는 스타일 변경
+	});
+
+	// 마우스가 벗어났을 때 스타일 원래대로 변경
+	BmEditIcon.addEventListener('mouseout', function() {
+		BmEditIcon.style.cursor = 'default'; // 마우스 커서를 기본값으로 변경
+		BmEditIcon.style.opacity = '1';      // 원래 스타일로 변경
+	});
+
+    // 북마크 수정 모달 생성
+    BmEditIcon.addEventListener('click', function() {
+        // 모달 열기
+        MDmodal.style.display = "block";
+        // 북마크 수정 확인 버튼
+        modifySaveBtn.onclick = function() {
+            // 모달 입력값에서 수정된 값 가져오기
+            let modifiedTitle = document.getElementById("modifiedBookmarkTitle").value;
+            let modifiedUrl = document.getElementById("modifiedUrlInput").value.trim();
+            let modifiedTags = document.getElementById("modifiedTagTextarea").value.split(' ');
+
+            // 데이터 구조에서 북마크의 인덱스 찾기
+            const index = findBookmarkIndex(bookmark);
+
+            if (index !== -1) {
+                // 북마크의 값을 수정된 값으로 업데이트
+                AllBookMarkList[index][0] = modifiedTitle;
+                AllBookMarkList[index][1] = modifiedUrl;
+                AllBookMarkList[index][2] = modifiedTags;
+
+                // HTML 엘리먼트를 통해 북마크를 나타내는 요소 업데이트
+                let additionalBoxDiv = document.getElementsByClassName("additional-box")[index];
+                additionalBoxDiv.querySelector("h2").textContent = modifiedTitle;
+                additionalBoxDiv.querySelector("a").textContent = modifiedUrl;
+                additionalBoxDiv.querySelector("a").href = modifiedUrl;
+
+                // 태그를 업데이트
+                let tagDiv = additionalBoxDiv.querySelector(".additional-box-tag");
+                tagDiv.innerHTML = ""; // 기존 태그 초기화
+
+                for (let i = 0; i < modifiedTags.length; i++) {
+                    let yellowCircleDiv = document.createElement("div");
+                    yellowCircleDiv.classList.add("yellow-circle");
+                    tagDiv.appendChild(yellowCircleDiv);
+
+                    let pElement = document.createElement("p");
+                    pElement.textContent = modifiedTags[i];
+                    tagDiv.appendChild(pElement);
+                }
+
+				
+
+                // 수정 및 삭제 버튼을 추가 (수정된 부분)
+                addEditDeleteButtons(additionalBoxDiv, bookmark);
+            }
+
+            // 수정 모달 닫기
+            MDmodal.style.display = "none";
+			modifiedBookmarkTitle.value = ""; // 제목 입력 필드 초기화
+			modifiedUrlInput.value = ""; // URL 입력 필드 초기화
+			modifiedTagTextarea.value = ""; // 태그 입력 필드 초기화
+			
+        };
+
+        // 북마크 수정 취소 버튼
+        modifyCancelBtn.onclick = function() {
+            // 모달 닫기
+            MDmodal.style.display = "none";
+			modifiedBookmarkTitle.value = ""; // 제목 입력 필드 초기화
+			modifiedUrlInput.value = ""; // URL 입력 필드 초기화
+			modifiedTagTextarea.value = ""; // 태그 입력 필드 초기화
+        };
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    });
+    // ... (삭제 버튼과 관련된 로직 추가)
+		// 북마크 삭제 버튼 기능 구현
+		var BmDeleteIcon = document.createElement("img");
+		BmDeleteIcon.classList.add("BImages");
+		BmDeleteIcon.id = "onBookDelete";
+
+		// 배경색 판단 알고리즘
+		if (isSameColor) {
+			BmDeleteIcon.src = "Images/trash dark.png";
+		} else{
+			BmDeleteIcon.src = "Images/trash.png";
+		}
+		
+		SImageDiv.appendChild(BmDeleteIcon);
+
+		BmDeleteIcon.addEventListener('click', function() {
+			//defaultModal.js 삭제 북마크 모달 오픈 
+			BDmodal.style.display = "block";
+			// 삭제 취소 버튼
+			DeleteCancelBtn.onclick = function(){
+				BDmodal.style.display = "none";
+			}
+			// 삭제 확인 버튼
+			DeleteSaveBtn.onclick = function() { 
+				// 북마크가 AllBookMarkList 배열에서의 인덱스를 찾기
+				const index = findBookmarkIndex(ElementBookMark);
+			
+				// AllBookMarkList 배열에서 북마크 제거
+				if (index !== -1) {
+					const deletedBookmark = AllBookMarkList.splice(index, 1)[0];
+			
+					// 태그 목록 업데이트
+					updateTagLists(deletedBookmark[2]);
+			
+					// UnClassifiedTagList 업데이트
+					updateUnClassifiedTagList(deletedBookmark[2]);
+			
+					// 정렬된 배열에서 북마크 제거
+					removeFromSortedArrays(deletedBookmark);
+				}
+			
+				// 북마크를 나타내는 HTML 요소를 DOM에서 제거
+				additionalBoxDiv.remove();
+				BDmodal.style.display = "none"
+			}
+		});
+		
+		// 태그 리스트 업데이트
+		function updateTagLists(deletedTags) {
+			// 삭제된 태그를 모든 태그 목록과 현재 태그 목록에서 찾아 제거
+			deletedTags.forEach(deletedTag => {
+				const allTagIndex = AllTagList.indexOf(deletedTag.toLowerCase());
+				if (allTagIndex !== -1) {
+					AllTagList.splice(allTagIndex, 1);
+				}
+			});
+		
+			// 해당 공간 html 요소 초기화
+			allTagArea.innerHTML = '';
+			// currentTagArea.innerHTML = '';
+		
+			// 태그 추가
+			for (let i = 0; i < AllTagList.length; i++) {
+				let AllAdditionalBoxTagDiv = document.createElement("div");
+				AllAdditionalBoxTagDiv.classList.add("additional-box-tag");
+				allTagArea.appendChild(AllAdditionalBoxTagDiv);
+		
+				let yellowCircleDiv = document.createElement("div");
+				yellowCircleDiv.classList.add("yellow-circle");
+				AllAdditionalBoxTagDiv.appendChild(yellowCircleDiv);
+		
+				let pElement = document.createElement("p");
+				pElement.textContent = AllTagList[i];
+				AllAdditionalBoxTagDiv.appendChild(pElement);
+			}
+		
+			// 현재 추가 태그 목록
+			let CurrentTagList = SetTagList; // 현재 추가 태그 배열
+		}
+		
+		// UnClassifiedTagList 업데이트
+		function updateUnClassifiedTagList(deletedTags) {
+			// 삭제된 태그를 UnClassifiedTagList에서 찾아 제거
+			deletedTags.forEach(deletedTag => {
+				const unClassifiedIndex = UnClassifiedTagList.indexOf(deletedTag.toLowerCase());
+				if (unClassifiedIndex !== -1) {
+					UnClassifiedTagList.splice(unClassifiedIndex, 1);
+				}
+			});
+		
+			// UnClassifiedTagList 업데이트
+			UnClassifiedSidebarArea.innerHTML = "";
+			for (let j = 0; j < UnClassifiedTagList.length; j++) {
+				let UnclassifiedDiv = document.createElement('div');
+				let UnclassifiedSpan = document.createElement('span');
+		
+				UnclassifiedSpan.innerText = UnClassifiedTagList[j];
+		
+				UnclassifiedSpan.setAttribute('herf', '#');
+				UnclassifiedDiv.appendChild(UnclassifiedSpan);
+				UnClassifiedSidebarArea.appendChild(UnclassifiedDiv);
+			}
+		}
+		
+		// 전체 북마크 리스트에서 북마크 인덱스 찾기
+		function findBookmarkIndex(bookmark) {
+			for (let i = 0; i < AllBookMarkList.length; i++) {
+				if (
+					AllBookMarkList[i][0] === bookmark[0] &&
+					AllBookMarkList[i][1] === bookmark[1] &&
+					JSON.stringify(AllBookMarkList[i][2]) === JSON.stringify(bookmark[2])
+				) {
+					return i;
+				}
+			}
+			return -1;
+		}
+		
+		// 정렬된 배열에서 북마크 목록 삭제
+		function removeFromSortedArrays(bookmark) {
+			SortBookMarkList = SortBookMarkList.filter(bm => bm !== bookmark);
+			LatestSortBookMarkList = LatestSortBookMarkList.filter(bm => bm !== bookmark);
+			OldSortBookMarkList = OldSortBookMarkList.filter(bm => bm !== bookmark);
+		}
+	////////////////////////////////////////////////////////////////////////////////////////////
+		// 마우스를 올렸을 때 스타일 변경
+		BmDeleteIcon.addEventListener('mouseover', function() {
+			BmDeleteIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
+			BmDeleteIcon.style.opacity = '0.7';   // 원하는 스타일 변경
+		});
+
+		// 마우스가 벗어났을 때 스타일 원래대로 변경
+		BmDeleteIcon.addEventListener('mouseout', function() {
+			BmDeleteIcon.style.cursor = 'default'; // 마우스 커서를 기본값으로 변경
+			BmDeleteIcon.style.opacity = '1';      // 원래 스타일로 변경
+		});
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// 마우스를 올렸을 때 스타일 변경
 	BmEditIcon.addEventListener('mouseover', function() {
 		BmEditIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
@@ -307,7 +652,7 @@ saveBtn.onclick= function() {
 		LatestSortBookMarkList = LatestSortBookMarkList.filter(bm => bm !== bookmark);
 		OldSortBookMarkList = OldSortBookMarkList.filter(bm => bm !== bookmark);
 	}
-	
+////////////////////////////////////////////////////////////////////////////////////////////
 	// 마우스를 올렸을 때 스타일 변경
 	BmDeleteIcon.addEventListener('mouseover', function() {
 		BmDeleteIcon.style.cursor = 'pointer'; // 마우스 커서를 포인터로 변경
@@ -363,6 +708,19 @@ saveBtn.onclick= function() {
 	// 해당 공간 html요소 초기화
 	currentTagArea.innerHTML = '';
 
+		// 배경색 판단 함수
+	function isBackgroundColorSameAs(rgbValue) {
+		// 현재 body의 배경색을 가져옴
+		var currentBackgroundColor = window.getComputedStyle(document.body).getPropertyValue('background-color');
+	
+		// 현재 body 배경색이 주어진 RGB 값과 같은지 확인
+		return currentBackgroundColor === rgbValue;
+	}
+	
+	// 예시: RGB(53, 54, 58)과 비교
+	var isSameColor = isBackgroundColorSameAs('rgb(53, 54, 58)');
+
+
 	// 최근 추가 태그 공간 태그 추가
 	for (let i = 0; i < RecnetlyTag.length; i++) {
 
@@ -392,12 +750,12 @@ saveBtn.onclick= function() {
 	UnClassifiedTagList = [...new Set(UnClassifiedTagList)];
 
 	for (let j = 0; j < UnClassifiedTagList.length; j++) {
+
 		let UnclassifiedDiv = document.createElement('div');
 		let UnclassifiedSpan = document.createElement('span');
 
 		UnclassifiedSpan.innerText = UnClassifiedTagList[j];
 
-		UnclassifiedSpan.classList.add('mvTag');
 		UnclassifiedSpan.setAttribute('herf', '#');
 		UnclassifiedDiv.appendChild(UnclassifiedSpan);
 		UnClassifiedSidebarArea.appendChild(UnclassifiedDiv);
@@ -405,9 +763,20 @@ saveBtn.onclick= function() {
 		// 옆에 ... 이미지 추가
 		const categoryTagImg = document.createElement('img');
 		categoryTagImg.classList.add('category', 'c2dep');
-		categoryTagImg.src = 'Images/category.png';
+		// categoryTagImg.src = 'Images/category.png';
+
 		categoryTagImg.id = 'openCT2depsModalBtn';
+		
+		if (isSameColor) {
+			categoryTagImg.src = 'Images/category dark.png';
+		  } else{
+			
+			categoryTagImg.src = 'Images/category.png';
+		  }
+
 		UnclassifiedSpan.appendChild(categoryTagImg);
+
+
 
 		UnclassifiedDiv.onclick = function() {
 			SecondBoxDiv.innerHTML = '';
