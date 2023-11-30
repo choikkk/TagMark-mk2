@@ -64,13 +64,13 @@ function createSidebarMenu() {
       menuSpan.textContent = newValue;
 
       // 이미지 생성
-      const categoryChangeImg = document.createElement('img');
-      categoryChangeImg.classList.add('category', 'c2dep');
-      categoryChangeImg.src = 'Images/category.png';
-      categoryChangeImg.id = 'openCTModalBtn';
+      const categoryImg = document.createElement('img');
+      categoryImg.classList.add('category', 'c2dep');
+      categoryImg.src = 'Images/category.png';
+      categoryImg.id = 'openCTModalBtn';
 
       // 메뉴명에 이미지 추가
-      menuSpan.appendChild(categoryChangeImg);
+      menuSpan.appendChild(categoryImg);
 
       changeCT.style.display = 'none';
       changeCTname.value = "";
